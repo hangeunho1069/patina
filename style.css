@@ -431,3 +431,193 @@ body {
   .philosophy-text-box p { font-size: 13px; line-height: 1.9; }
   .highlight-summary { margin-bottom: 80px; font-size: 16px; }
 }
+/* ==========================================================================
+   ARCHIVE 페이지 전용 레이아웃 스타일
+   ========================================================================== */
+.archive-page {
+  background-color: #ffffff;
+}
+
+/* 1. 상단 제품 메인 히어로 */
+.archive-hero {
+  width: 100%;
+  padding: 140px 50px 40px 50px;
+}
+.archive-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.archive-back-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  color: #000;
+  text-decoration: none;
+}
+.archive-hero-text {
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+.archive-hero-text h2 {
+  font-size: 40px;
+  font-family: serif;
+  font-weight: 500;
+}
+.archive-hero-text p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+.archive-hero-img-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.archive-hero-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 설명 인트로 텍스트 */
+.archive-intro-text {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 50px;
+}
+.archive-intro-text p {
+  font-size: 13px;
+  line-height: 2;
+  color: #000000;
+  word-break: keep-all;
+}
+
+/* 2. 제품 세로 리스트 섹션 */
+.archive-list-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+.archive-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+.archive-list-item {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.item-img-box {
+  width: 260px;
+  height: 260px;
+  background-color: #c9ceca; /* 시안 속 옅은 그레이베이지 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.item-img-box img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+.item-img-box.color-empty {
+  background-color: #d1d5d2; /* 3번 비어있는 칸용 */
+}
+.item-desc-box h3 {
+  font-size: 22px;
+  font-family: serif;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.item-desc-box h4 {
+  font-size: 12px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.item-desc-box p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #222;
+  word-break: keep-all;
+}
+
+/* 3. 대형 디테일 갤러리 */
+.archive-gallery-section {
+  width: 100%;
+  padding: 0 50px;
+  max-width: 1200px;
+  margin: 0 auto 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.gallery-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.gallery-row-2 img, .gallery-row-1 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 4. 최하단 Provenance Log 테이블 */
+.provenance-section {
+  max-width: 900px;
+  margin: 0 auto 150px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.provenance-title {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+.provenance-subtitle {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 60px;
+}
+.log-table {
+  width: 100%;
+  border-collapse: collapse; /* 테이블 테두리 선 겹치게 처리 */
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+.log-table th {
+  padding: 15px 10px;
+  border-bottom: 2px solid #000000; /* 헤더 아래 굵은 선 */
+  font-weight: 700;
+  color: #000;
+}
+.log-table td {
+  padding: 20px 10px;
+  border-bottom: 1px solid #e0e0e0; /* 행 사이 가느다란 선 */
+  color: #333;
+}
+.user-highlight {
+  font-weight: 700;
+}
+.status-available {
+  font-weight: 700;
+  color: #1e392a; /* 시안 속 두드러진 상태 텍스트 색상 */
+}
+
+/* 모바일 반응형 대응 */
+@media (max-width: 768px) {
+  .archive-hero { padding: 100px 20px 20px 20px; }
+  .archive-list-item { flex-direction: column; gap: 20px; text-align: center; }
+  .item-img-box { width: 100%; }
+  .gallery-row-2 { grid-template-columns: 1fr; }
+  .archive-gallery-section, .archive-intro-text { padding: 0 20px; }
+  .log-table th, .log-table td { padding: 12px 5px; font-size: 11px; }
+}
