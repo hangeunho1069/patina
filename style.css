@@ -1,0 +1,135 @@
+/* 기본 셋팅 및 레이아웃 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #1e392a; /* 시안에 맞는 딥그린 계열 텍스트 */
+}
+
+/* 헤더 디자인 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e392a;
+  letter-spacing: -1px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+}
+
+/* 히어로 섹션 (상단 이미지 + 타이틀) */
+.hero-section {
+  width: 100%;
+  height: 60vh;
+  padding: 20px 50px 0 50px;
+  margin-top: 20px;
+}
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url('images/hero.jpg'); /* 피그ما 초록 테이블 이미지 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main-title {
+  font-size: 90px;
+  color: #ffffff;
+  font-family: serif; /* 피그마 로고 서체 느낌 대용 */
+  font-weight: bold;
+}
+
+/* 3x3 그리드 섹션 */
+.grid-section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열 구조 */
+  gap: 16px; /* 이미지 사이의 여백 */
+}
+
+/* 카드 아이템 스타일 */
+.card {
+  position: relative;
+  aspect-ratio: 3 / 4; /* 세로가 약간 긴 피그마 비율 유지 */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* 박스가 나갈 때 깔끔하게 잘리도록 */
+  border-radius: 2px;
+}
+
+/* 오버레이 커버 (초록색 박스들) 기본 세팅 */
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1); /* 고급스러운 부드러운 가속도 모션 */
+  z-index: 2;
+}
+
+/* 피그마 시안 속 3가지 초록색 컬러 칩 구현 */
+.color-darkgreen { background-color: #1a321a; }
+.color-olive { background-color: #3b4427; }
+.color-lightgreen { background-color: #839953; }
+
+/* 방향별 슬라이드 모션 정의 (.active가 붙으면 발동) */
+.cover.slide-left.active { transform: translateX(-100%); }
+.cover.slide-right.active { transform: translateX(100%); }
+.cover.slide-up.active { transform: translateY(-100%); }
+.cover.slide-down.active { transform: translateY(100%); }
+
+
+/* --- 모바일 반응형 미디어 쿼리 --- */
+@media (max-width: 768px) {
+  .header { padding: 20px; }
+  .main-title { font-size: 50px; }
+  .nav a { display: none; } /* 모바일에서는 메뉴 숨기고 햄버거만 */
+  
+  /* 모바일에서는 3열이 좁으니 1열 세로 매칭으로 변경 */
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
