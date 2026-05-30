@@ -23,10 +23,12 @@ body {
   z-index: 9999;
 }
 .logo {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1e392a;
-  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 120px;  /* 피그마에 적힌 헤더 로고 가로 크기 */
+  height: auto;
 }
 .nav {
   display: flex;
@@ -72,11 +74,18 @@ body {
   align-items: center;
   position: relative;
 }
-.main-title {
-  font-size: 90px;
-  color: #ffffff;
-  font-family: serif; /* 피그마 로고 서체 느낌 대용 */
-  font-weight: bold;
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.hero-logo img {
+  width: 320px;  /* 👈 피그마에 적힌 테이블 위 커다란 메인 로고의 가로 크기(px) */
+  height: auto;
+  
+  /* 만약 피그마처럼 약간의 그림자나 은은한 효과를 주고 싶다면 아래 속성 활용 (선택) */
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15)); 
 }
 
 /* 3x3 그리드 섹션 */
