@@ -138,6 +138,10 @@ body {
 .cover.slide-right.active { transform: translateX(100%); }
 .cover.slide-up.active { transform: translateY(-100%); }
 .cover.slide-down.active { transform: translateY(100%); }
+.cover.active {
+  pointer-events: none; /* 👈 박스가 날아간 뒤에는 마우스 클릭을 그냥 통과시켜라! 라는 뜻 */
+}
+
 
 
 /* --- 모바일 반응형 미디어 쿼리 --- */
