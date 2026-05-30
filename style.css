@@ -440,7 +440,7 @@ body {
 
 /* 1. 상단 제품 메인 히어로 */
 .archive-hero {
-  width: 100%;
+  width: 150%;
   padding: 140px 50px 40px 50px;
 }
 .archive-hero-container {
