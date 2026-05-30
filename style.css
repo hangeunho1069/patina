@@ -13,34 +13,41 @@ body {
 /* 헤더 디자인 */
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 50px;
-  position: absolute;
+  justify-content: space-between; /* 좌측 끝에 로고, 우측 끝에 메뉴 배치 */
+  align-items: center;           /* 👈 좌우 요소들의 세로 정렬을 완벽하게 중앙으로 맞춤 */
+  padding: 40px 50px; 
+  
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 9999 !important; 
+  background-color: transparent;
 }
 .logo {
   display: flex;
-  align-items: center;
-}
-.logo img {
-  width: 120px;  /* 피그마에 적힌 헤더 로고 가로 크기 */
+  align-items: center; /* 로고 이미지의 세로 중앙 정렬 */
   height: auto;
+}
+
+.logo img {
+  width: 120px;       /* 피그마에서 설계한 헤더 로고 크기에 맞게 조절하세요 */
+  height: auto;
+  display: block;     /* 불필요한 하단 공백 제거 */
 }
 .nav {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  align-items: center; /* 👈 메뉴 글자들과 햄버거 버튼도 세로 중앙 정렬 */
+  gap: 30px;           /* 메뉴 간의 가로 간격을 일정하게 유지 */
 }
+
 .nav a {
   text-decoration: none;
-  color: #000;
+  color: #000000; 
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1px;
+  /* margin-left: 30px; 기존 마진은 지우고 상위 패널의 gap으로 제어합니다 */
 }
 .hamburger {
   display: flex;
@@ -48,12 +55,12 @@ body {
   gap: 4px;
   cursor: pointer;
 }
+
 .hamburger span {
   width: 20px;
   height: 2px;
-  background-color: #000;
+  background-color: #000000;
 }
-
 /* 히어로 섹션 (상단 이미지 + 타이틀) */
 .hero-section {
   width: 100%;
