@@ -23,11 +23,11 @@ body {
   width: 100%;
   z-index: 9999 !important; 
   background-color: transparent;
+  box-sizing: border-box;
 }
 .logo {
   display: flex;
   align-items: center; /* 로고 이미지의 세로 중앙 정렬 */
-  height: auto;
 }
 
 .logo img {
@@ -38,7 +38,7 @@ body {
 .nav {
   display: flex;
   align-items: center; /* 👈 메뉴 글자들과 햄버거 버튼도 세로 중앙 정렬 */
-  gap: 30px;           /* 메뉴 간의 가로 간격을 일정하게 유지 */
+  gap: 40px;           /* 메뉴 간의 가로 간격을 일정하게 유지 */
 }
 
 .nav a {
