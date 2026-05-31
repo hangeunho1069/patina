@@ -655,93 +655,116 @@ body {
   .log-table th, .log-table td { padding: 12px 5px; font-size: 11px; }
 }
 /* ==========================================================================
-   SHOP 페이지 전용 레이아웃 & 인터랙션 스타일
+   SHOP 페이지 시안 100% 매칭 모자이크 그리드 스타일
    ========================================================================== */
-.shop-page {
-  background-color: #ffffff;
-  overflow-x: hidden;
-}
 
-/* 숍 레이아웃 메인 컨테이너 (시안 특유의 비대칭 여백 확보) */
-.shop-container {
-  max-width: 1300px;
+.shop-wrapper {
+  max-width: 1100px; /* 시안 디자인 비율에 가장 이쁜 가로폭 제한 */
   margin: 0 auto;
-  padding: 60px 50px 150px 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  padding: 40px 60px 120px 60px;
 }
 
-/* 카테고리 필터 스타일 */
-.shop-filter {
-  display: flex;
-  gap: 20px;
-  font-size: 13px;
+/* 상단 타이틀 배치 */
+.shop-header-text {
+  margin-bottom: 40px;
+  text-align: left;
+}
+.shop-header-text h2 {
+  font-size: 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 6px 0;
+}
+.shop-header-text p {
+  font-size: 15px;
+  color: #222222;
   font-weight: 500;
-  color: #999999;
-  margin-bottom: 10px;
-}
-.filter-item {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.filter-item:hover, .filter-item.active {
-  color: #000000; /* 활성화 및 호버 시 검은색 */
-  font-weight: 700;
-}
-
-/* 2열 상품 그리드 시스템 */
-.shop-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 👈 가로로 똑바르게 2열 배치 */
-  column-gap: 50px;                     /* 시안 속 넓직한 가로 여백 */
-  row-gap: 80px;                        /* 세로 여백 */
-}
-
-/* 개별 상품 카드 래퍼 */
-.shop-card-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* 이미지 카드 자체의 속성 (가림막 애니메이션 포함) */
-.shop-card {
-  width: 100%;
-  aspect-ratio: 4 / 3; /* 1번 메인보다 세로 비율이 정갈하게 잡히도록 설정 */
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;    /* 날아가는 초록 박스가 영역 밖으로 안 터지게 제어 */
-}
-
-/* 상품 정보 라벨 세팅 (숫자와 텍스트 정렬) */
-.shop-item-info {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-}
-.item-number {
-  font-size: 12px;
-  font-weight: 700;
-  color: #000000;
-  margin-top: 3px; /* 폰트 베이스라인 교정 */
-}
-.item-text h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #000000;
-  margin: 0 0 4px 0;
-}
-.item-text p {
-  font-size: 12px;
-  color: #666666;
   margin: 0;
 }
 
-/* 반응형 모바일 최적화 */
+/* [핵심] 시안의 불규칙한 칸 세기를 위한 정밀 CSS Grid 구조 설계 */
+.shop-mosaic-grid {
+  display: grid;
+  grid-template-columns: 3.5fr 6.5fr; /* 좌측 열과 우측 열의 황금 비율 분할 */
+  gap: 15px; /* 시안 속 하얀색 미세 경계 여백 */
+  width: 100%;
+}
+
+/* 공통 아이템 속성 */
+.grid-item {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 각 아이템별 시안 비율에 맞춘 세로 고정 크기(px) 및 칸 점유율 지정 */
+.item-1 {
+  grid-column: 1 / 2;
+  height: 250px;
+}
+.item-2 {
+  grid-column: 2 / 3;
+  height: 250px;
+}
+
+/* 좌측에 길게 세로로 붙는 3번 아이템 */
+.item-3 {
+  grid-column: 1 / 2;
+  height: 400px;
+}
+
+/* 4번 흔들의자는 3번의 우측 상단에 붙음 */
+.item-4 {
+  grid-column: 2 / 3;
+  height: 240px;
+}
+
+/* 5번 하단 의자들은 4번 의자 바로 밑에 붙음 */
+.item-5 {
+  grid-column: 2 / 3;
+  height: 270px;
+  margin-top: -145px; /* 👈 시안처럼 3번 세로 카드 옆으로 완벽하게 맞물려 퍼즐처럼 들어가도록 마진 튜닝 */
+}
+
+/* 버튼이 들어갈 영역 위치 교정 */
+.item-btn-zone {
+  grid-column: 1 / 2;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+/* [시안 매칭] MOVE TO ARCHIVE 타원형 초록색 버튼 스타일 */
+.move-archive-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b462c; /* 시안 특유의 카키-딥올리브 톤 조색 */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  /* 알약 모양 라운딩 구현 */
+  width: 220px;
+  height: 75px;
+  border-radius: 40px; 
+  
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.move-archive-btn:hover {
+  background-color: #2a331f;
+  transform: scale(1.02);
+}
+
+/* 모바일 화면 대응 반응형 일렬 정렬 */
 @media (max-width: 768px) {
-  .shop-container { padding: 40px 20px 80px 20px; }
-  .shop-grid { grid-template-columns: 1fr; row-gap: 50px; } /* 모바일은 1열로 시원하게 */
-  .shop-card { aspect-ratio: 4 / 3; }
+  .shop-wrapper { padding: 20px; }
+  .shop-mosaic-grid { grid-template-columns: 1fr; gap: 20px; }
+  .item-1, .item-2, .item-3, .item-4, .item-5 { grid-column: auto; height: 250px; margin-top: 0; }
+  .item-btn-zone { justify-content: center; padding-top: 20px; }
 }
