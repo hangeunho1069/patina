@@ -761,9 +761,9 @@ body {
   letter-spacing: 0.2px;
   
   /* 시안의 알약 형태 가로세로 수치 고정 */
-  width: 323px;
-  height: 163px;
-  border-radius: 200px; 
+  width: 626px;
+  height: 326px;
+  border-radius: 400px; 
   
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
