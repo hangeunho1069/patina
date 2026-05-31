@@ -654,3 +654,94 @@ body {
   .archive-gallery-section, .archive-intro-text { padding: 0 20px; }
   .log-table th, .log-table td { padding: 12px 5px; font-size: 11px; }
 }
+/* ==========================================================================
+   SHOP 페이지 전용 레이아웃 & 인터랙션 스타일
+   ========================================================================== */
+.shop-page {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* 숍 레이아웃 메인 컨테이너 (시안 특유의 비대칭 여백 확보) */
+.shop-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 50px 150px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* 카테고리 필터 스타일 */
+.shop-filter {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #999999;
+  margin-bottom: 10px;
+}
+.filter-item {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.filter-item:hover, .filter-item.active {
+  color: #000000; /* 활성화 및 호버 시 검은색 */
+  font-weight: 700;
+}
+
+/* 2열 상품 그리드 시스템 */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 👈 가로로 똑바르게 2열 배치 */
+  column-gap: 50px;                     /* 시안 속 넓직한 가로 여백 */
+  row-gap: 80px;                        /* 세로 여백 */
+}
+
+/* 개별 상품 카드 래퍼 */
+.shop-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 이미지 카드 자체의 속성 (가림막 애니메이션 포함) */
+.shop-card {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* 1번 메인보다 세로 비율이 정갈하게 잡히도록 설정 */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;    /* 날아가는 초록 박스가 영역 밖으로 안 터지게 제어 */
+}
+
+/* 상품 정보 라벨 세팅 (숫자와 텍스트 정렬) */
+.shop-item-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.item-number {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 3px; /* 폰트 베이스라인 교정 */
+}
+.item-text h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 4px 0;
+}
+.item-text p {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+
+/* 반응형 모바일 최적화 */
+@media (max-width: 768px) {
+  .shop-container { padding: 40px 20px 80px 20px; }
+  .shop-grid { grid-template-columns: 1fr; row-gap: 50px; } /* 모바일은 1열로 시원하게 */
+  .shop-card { aspect-ratio: 4 / 3; }
+}
