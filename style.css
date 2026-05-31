@@ -438,80 +438,82 @@ body {
   background-color: #ffffff;
 }
 
-archive-hero {
+.header.archive-header {
+  position: relative !important; /* 👈 공중부양을 해제하여 독자적인 하얀 바(Bar) 공간을 만듭니다 */
+  background-color: #ffffff !important; /* 배경색을 흰색으로 고정 */
+  padding: 30px 50px !important;
+  z-index: 1000 !important;
+}
+
+/* [추가] 아카이브 헤더 안의 메뉴 글자색을 시안처럼 블랙으로 강제 고정 */
+.header.archive-header .nav a {
+  color: #000000 !important;
+}
+
+/* [수정] 히어로 섹션 전체 세팅: 헤더 밑에 딱 붙어서 가로로 꽉 차게 설정 */
+.archive-hero {
   width: 100% !important;
-  /* 👈 기존의 padding: 140px 50px... 부분을 0으로 날려서 꽉 채웁니다! */
   padding: 0 !important; 
   margin: 0 !important;
   position: relative !important;
-  
-  /* 헤더가 이미지 위에 오게 하기 위해 기준점 마련 */
-  z-index: 1 !important; 
+  background-color: #ffffff;
 }
 
-/* [수정] 히어로 컨테이너: 풀 스크린 구현을 위해 너비와 간격을 리셋 */
+/* 히어로 컨테이너 가로폭 100% 선언 */
 .archive-hero-container {
   width: 100% !important;
-  max-width: 100% !important; /* 👈 기존의 max-width: 1200px를 해제합니다 */
+  max-width: 100% !important;
   margin: 0 !important;
   position: relative;
-  
-  /* 내부 텍스트 정렬을 위한 설정 */
-  display: flex;
-  flex-direction: column;
 }
 
-/* [수정] 뒤로가기 화살표: 풀 스크린 이미지 위에 오도록 위치 재조정 */
+/* [수정] 뒤로가기 화살표 및 타이틀 텍스트 위치 재조정 (1번 시안 싱크로율 100%) */
 .archive-back-arrow {
   position: absolute !important;
-  top: 130px !important; /* 👈 꽉 찬 이미지 위에 둥둥 뜨게 위치 */
-  left: 50px !important;
+  top: 40px !important;  /* 👈 이미지 내부 상단 여백 조절 */
+  left: 60px !important;
   font-size: 28px !important;
-  color: #ffffff !important; /* 👈 초록 테이블 위에서 잘 보이도록 화이트로 변경 */
+  color: #000000 !important; /* 👈 1번 시안처럼 블랙으로 변경 */
   text-decoration: none;
-  z-index: 100 !important; /* 이미지보다 앞으로 오게 */
+  z-index: 10 !important;
 }
 
-/* [수정] 히어로 텍스트 (Graft 004, This is patina.): 이미지 중앙 근처로 이동 */
 .archive-hero-text {
   position: absolute !important;
-  top: 40% !important; /* 👈 이미지 정중앙 근처로 배치 */
-  left: 50px !important;
+  top: 90px !important;  /* 👈 뒤로가기 화살표 아래에 자연스럽게 안착 */
+  left: 60px !important;
   margin: 0 !important;
   z-index: 10 !important;
 }
 
 .archive-hero-text h2 {
-  font-size: 40px;
-  font-family: serif;
-  font-weight: 500;
-  color: #ffffff !important; /* 👈 꽉 찬 이미지 위 가독성을 위해 흰색으로 변경 */
+  font-size: 42px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* 1번 시안 고딕 느낌 매칭 */
+  font-weight: 700;
+  color: #000000 !important; /* 👈 블랙으로 변경 */
+  letter-spacing: -0.5px;
 }
 
 .archive-hero-text p {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8) !important; /* 👈 흰색으로 변경 */
-  margin-top: 5px;
+  color: #333333 !important; /* 👈 1번 시안처럼 어두운 톤으로 변경 */
+  margin-top: 8px;
+  font-weight: 500;
 }
 
-
-/* [수정] 히어로 이미지 박스: 가장 중요한 속성 변경! */
+/* [수정] 히어로 이미지 박스 너비 세팅 */
 .archive-hero-img-box {
-  width: 100vw !important; /* 👈 뷰포트 너비 전체를 다 쓰게 만듭니다 (Full Width) */
-  height: 60vh !important; /* 👈 1번 메인처럼 높이를 잡아줍니다 */
+  width: 100% !important;
+  height: auto !important; /* 👈 고정 높이 대신 이미지 원본 비율이 다 나오도록 설정 */
   overflow: hidden;
-  position: relative;
-  
-  /* 이미지가 이 박스 바로 위에 뜨도록 설정 */
-  z-index: 5 !important;
 }
 
 .archive-hero-img-box img {
   width: 100% !important;
-  height: 100% !important;
-  /* 👈 요게 핵심! 사진 비율을 유지하면서 박스에 꽉 채워줍니다. */
-  object-fit: cover !important; 
+  height: auto !important;
+  display: block; /* 하단 미세 여백 제거 */
 }
+
 /* 설명 인트로 텍스트 */
 .archive-intro-text {
   max-width: 1000px;
