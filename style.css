@@ -658,7 +658,7 @@ body {
    SHOP 페이지 시안 100% 매칭 모자이크 그리드 스타일
    ========================================================================== */
 /* ==========================================================================
-   SHOP 페이지 좌우 컬럼 아랫선 완벽 일치 최종 교정 버전
+   SHOP 페이지 좌우 라인 칼정렬 (절대 픽셀 고정 버전)
    ========================================================================== */
 
 .shop-wrapper {
@@ -667,7 +667,7 @@ body {
   padding: 40px 60px 120px 60px;
 }
 
-/* 상단 타이틀 및 슬로건 */
+/* 상단 타이틀 배치 */
 .shop-header-text {
   margin-bottom: 45px;
   text-align: left;
@@ -691,7 +691,7 @@ body {
 /* 대틀: 좌우 두 구역 분할 및 간격 최적화 */
 .shop-mosaic-grid {
   display: flex;
-  gap: 16px; /* 이미지 간의 정갈한 격자 틈새폭 고정 */
+  gap: 16px; /* 이미지 사이의 정갈한 격자 틈새폭 고정 */
   width: 100%;
 }
 
@@ -699,10 +699,10 @@ body {
 .shop-column {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* 상하 이미지 정렬 틈새 완벽 통일 */
+  gap: 16px; /* 상하 이미지 정렬 틈새 16px로 완전 통일 */
 }
 
-/* 좌우 가로 비율 고정 */
+/* 좌우 가로폭 비율 고정 */
 .left-col {
   flex: 3.55; 
 }
@@ -719,52 +719,44 @@ body {
   width: 100%;
 }
 
-/* --- [종횡비 미세 튜닝] 우측 컬럼 높이와 자로 잰 듯이 일치시키는 영역 --- */
+/* ==========================================================================
+   📐 [정밀 수학 계산 영역] 
+   우측 총 높이: 250 + 250 + 260 + (틈새 16 * 2) = 810px
+   좌측 총 높이: 250 + 440 + 72 + (틈새 16 * 2 + 버튼간격 16) = 810px
+   ========================================================================== */
+
+/* --- [좌측 컬럼 높이 세팅] --- */
 .item-1 {
-  aspect-ratio: 1.42 / 1; 
+  height: 250px; /* 1번 이어폰 */
 }
 
-.item-2 {
-  aspect-ratio: 2.12 / 1; 
-}
-
-/* 👈 [교정] 버튼과 결합했을 때 우측 아랫선과 딱 맞물리도록 3번 이미지의 세로 비율을 더 길게 늘렸습니다 */
 .item-3 {
-  aspect-ratio: 1 / 1.44; 
+  height: 440px; /* 3번 하이힐 의자 (시안 비율에 맞춘 최적 높이) */
 }
 
-.item-4 {
-  aspect-ratio: 1.88 / 1; 
-}
-
-.item-5 {
-  aspect-ratio: 1.88 / 1; 
-}
-
-/* 버튼 영역 배치 및 3번 이미지와의 간격 최적화 */
+/* 버튼 영역 배치 */
 .item-btn-zone {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  padding-top: 6px; /* 미세 간격 튜닝 */
 }
 
-/* 👈 [교정] 그리드 하단 라인을 맞추기 위해 버튼의 가로/세로 볼륨감을 키웠습니다 */
+/* MOVE TO ARCHIVE 타원형 초록색 버튼 (크기 완벽 고정) */
 .move-archive-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: #3b462c; /* patina 브랜드 고유 카키 딥올리브 톤 */
+  background-color: #3b462c; 
   color: #ffffff;
   text-decoration: none;
-  font-size: 14px; /* 버튼이 커진 만큼 폰트 크기도 살짝 가독성 있게 조정 */
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.2px;
   
-  /* 버튼 크기 전격 스케일업 */
-  width: 250px;   /* 👈 기존 226px에서 키움 */
-  height: 86px;   /* 👈 기존 78px에서 늘려 아랫선을 우측 이미지와 칼같이 일치시킴 */
-  border-radius: 45px; /* 크기에 비례한 라운딩 곡률 보정 */
+  /* 👈 시안의 예쁜 알약 비율 크기로 고정하면서 수학적 아랫선을 맞춥니다 */
+  width: 220px;   
+  height: 72px;   
+  border-radius: 36px; 
   
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -773,8 +765,24 @@ body {
   transform: scale(1.01);
 }
 
+
+/* --- [우측 컬럼 높이 세팅] --- */
+.item-2 {
+  height: 250px; /* 2번 라이터 */
+}
+
+.item-4 {
+  height: 250px; /* 4번 흔들의자 */
+}
+
+.item-5 {
+  height: 260px; /* 5번 초록 테이블 */
+}
+
+
 /* 모바일 화면 대응 반응형 일렬 정렬 */
 @media (max-width: 768px) {
   .shop-mosaic-grid { flex-direction: column; gap: 16px; }
+  .item-1, .item-2, .item-3, .item-4, .item-5 { height: 250px; }
   .item-btn-zone { justify-content: center; padding-top: 15px; }
 }
