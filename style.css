@@ -658,10 +658,6 @@ body {
    SHOP 페이지 시안 100% 매칭 모자이크 그리드 스타일
    ========================================================================== */
 
-/* ==========================================================================
-   SHOP 페이지 시안 100% 매칭 모자이크 그리드 완벽 교정 버전
-   ========================================================================== */
-
 .shop-wrapper {
   max-width: 1100px;
   margin: 0 auto;
@@ -670,7 +666,7 @@ body {
 
 /* 상단 타이틀 배치 */
 .shop-header-text {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   text-align: left;
 }
 .shop-header-text h2 {
@@ -687,12 +683,13 @@ body {
   margin: 0;
 }
 
-/* [교정 핵심] 촘촘한 세로 그리드 선을 그어 퍼즐 격자판을 생성합니다 */
+/* [교정 치트키] 촘촘한 세로 눈금을 파서 퍼즐 조각의 절대 위치를 지정합니다 */
 .shop-mosaic-grid {
   display: grid;
-  grid-template-columns: 3.8fr 6.2fr; /* 좌우 열의 정교한 분할 */
-  grid-auto-rows: minmax(10px, auto); /* 행 높이를 유연하고 촘촘하게 제어 */
-  gap: 15px; /* 시안 속 하얀색 미세 경계 여백 */
+  /* 좌측 열과 우측 열의 너비 비율 */
+  grid-template-columns: 3.8fr 6.2fr;
+  /* 가로 세로 비율을 완벽하게 통제하기 위해 자동 높이 설정 및 간격 고정 */
+  gap: 20px; 
   width: 100%;
 }
 
@@ -705,60 +702,60 @@ body {
   width: 100%;
 }
 
-/* --- 각 아이템별 위치 정밀 격자 지정 (grid-row / grid-column 명시) --- */
+/* --- 각 아이템별 시안 비율 높이 및 격자 좌표 강제 선언 --- */
 
+/* 1번 이어폰: 좌측 1열의 첫 번째 칸 */
 .item-1 {
   grid-column: 1 / 2;
-  grid-row: 1 / 4;  /* 상단 구역 차지 */
-  height: 240px;
+  height: 250px;
 }
 
+/* 2번 라이터: 우측 2열의 첫 번째 칸 */
 .item-2 {
   grid-column: 2 / 3;
-  grid-row: 1 / 5;  /* 우측 첫 번째 칸 */
-  height: 290px;
+  height: 250px;
 }
 
+/* 3번 세로 긴 카드: 좌측 1열의 두 번째 칸 */
 .item-3 {
   grid-column: 1 / 2;
-  grid-row: 4 / 10; /* 좌측 길게 내려오는 세로 카드 */
-  height: 420px;
+  height: 520px; /* 👈 길이를 충분히 늘려 4번과 5번을 완전히 커버하도록 설정 */
 }
 
+/* 4번 흔들의자: 우측 2열의 두 번째 칸 (3번 이미지 옆구리 상단에 안착) */
 .item-4 {
   grid-column: 2 / 3;
-  grid-row: 5 / 9;  /* 2번 밑으로 바짝 달라붙어 시작 */
-  height: 240px;
+  height: 250px;
 }
 
+/* 5번 의자들: 우측 2열의 세 번째 칸 (4번 흔들의자 바로 밑에 붙고, 3번 이미지의 하단 라인과 딱 맞물림) */
 .item-5 {
   grid-column: 2 / 3;
-  grid-row: 9 / 13; /* 4번 밑으로 빈틈없이 달라붙음 */
-  height: 270px;
+  height: 250px;
 }
 
-/* 버튼 영역: 3번 세로 카드 밑 공간에 안착 */
+/* 버튼 구역: 3번 세로 카드 아래 공간에 깔끔하게 안착 */
 .item-btn-zone {
   grid-column: 1 / 2;
-  grid-row: 10 / 14;
   height: auto;
   display: flex;
   align-items: flex-start;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
-/* [시안 매칭] MOVE TO ARCHIVE 타원형 버튼 스타일 */
+/* MOVE TO ARCHIVE 타원형 초록색 버튼 스타일 */
 .move-archive-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: #3b462c; /* 시안 특유의 카키-딥올리브 톤 */
+  background-color: #3b462c; /* 시안 특유의 묵직한 카키 카모색 */
   color: #ffffff;
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.5px;
   
+  /* 완전한 알약 모양 */
   width: 220px;
   height: 75px;
   border-radius: 40px; 
@@ -775,5 +772,5 @@ body {
   .shop-wrapper { padding: 20px; }
   .shop-mosaic-grid { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 20px; }
   .item-1, .item-2, .item-3, .item-4, .item-5 { height: 250px; }
-  .item-btn-zone { justify-content: center; padding-top: 20px; }
+  .item-btn-zone { justify-content: center; padding-top: 10px; }
 }
