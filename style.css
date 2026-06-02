@@ -786,3 +786,157 @@ body {
   .item-1, .item-2, .item-3, .item-4, .item-5 { height: 250px; }
   .item-btn-zone { justify-content: center; padding-top: 15px; }
 }
+/* ==========================================================================
+   CONTACT 페이지 시안 100% 매칭 레이아웃 스타일
+   ========================================================================== */
+
+.contact-page {
+  background-color: #ffffff;
+}
+
+.contact-wrapper {
+  max-width: 1000px; /* 시안의 정갈한 중앙 정렬 폭 제한 */
+  margin: 0 auto;
+  padding: 40px 50px 150px 50px;
+}
+
+/* 1. 상단 타이틀 */
+.contact-header-text {
+  margin-bottom: 35px;
+  text-align: left;
+}
+.contact-header-text h2 {
+  font-size: 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* 2. 메인 이미지 배너 */
+.contact-hero-banner {
+  width: 100%;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+.contact-hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 3. 섹션 공통 소제목 스타일 (의뢰 시 가치, 의뢰 절차) */
+.contact-value-section h3,
+.contact-process-section h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+/* 의뢰 시 가치 본문 상자 */
+.value-text-box {
+  margin-bottom: 65px;
+}
+.value-text-box p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #333333;
+  margin: 0 0 4px 0;
+  word-break: keep-all;
+}
+
+/* 4. 의뢰 절차 3열 2행 그리드 시스템 */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 👈 자로 잰 듯 똑바르게 3열 배치 */
+  gap: 16px; /* 카드 사이 간격 */
+  margin-bottom: 16px;
+}
+
+/* 개별 프로세스 연그레이 카드 디자인 */
+.process-card {
+  background-color: #f4f5f6; /* 시안 속 부드러운 연그레이 배경색 조색 */
+  border-radius: 12px;       /* 은은한 라운딩 */
+  padding: 30px 24px;
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* 워크플로우 추가 시 호버 액션 미리 심어두기 (선택사항) */
+.process-card:hover {
+  background-color: #ededed;
+  transform: translateY(-2px);
+}
+
+.process-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.2px;
+}
+.process-card p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #666666;
+  margin: 0;
+}
+
+/* 하단 작은 유의사항 안내 문구 */
+.process-notice {
+  font-size: 11px;
+  color: #666666;
+  text-align: left;
+  margin: 0 0 75px 0;
+}
+
+/* 5. 하단 2개 큰 버튼 영역 */
+.contact-action-zone {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* 버튼 사이의 넓직한 간격 균형 */
+  width: 100%;
+}
+
+/* 버튼 공통 외형 */
+.btn-contact {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1.5px solid #000000; /* 시안 특유의 정갈한 블랙 외곽선 */
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  
+  /* 시안 맞춤형 사각형 스케일 고정 */
+  width: 240px;
+  height: 60px;
+  
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 마우스 올렸을 때 반전 호버 효과 */
+.btn-contact:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* 반응형 모바일 최적화 (화면이 작아지면 카드가 세로로 1열 정렬됨) */
+@media (max-width: 768px) {
+  .contact-wrapper { padding: 20px; }
+  .process-grid { grid-template-columns: 1fr; gap: 12px; }
+  .contact-action-zone { flex-direction: column; align-items: center; gap: 15px; }
+  .btn-contact { width: 100%; }
+}
