@@ -47,3 +47,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+// ==========================================================================
+// START A REQUEST 페이지 카드 토글 및 유효성 인터랙션
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.selectable-card');
+  const nextBtn = document.getElementById('nextStepBtn');
+  let selectedLevel = null; // 선택된 레벨을 저장할 변수
+
+  if (cards.length > 0) {
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        // 1. 기존에 선택되어 있던 카드의 active(진한 녹색 테두리) 클래스를 전부 제거
+        cards.forEach(c => c.classList.remove('active'));
+        
+        // 2. 내가 방금 클릭한 카드에만 active 클래스 주입 (테두리 등장!)
+        this.classList.add('active');
+        
+        // 3. 선택된 데이터 레벨 저장 (예: lv1, lv2, lv3)
+        selectedLevel = this.getAttribute('data-level');
+        console.log("선택된 서비스 단계:", selectedLevel);
+      });
+    });
+  }
+
+  // Next 버튼 클릭 시 액션 (인터랙션 ③)
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      if (!selectedLevel) {
+        alert('진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요!');
+        return;
+      }
+      
+      // 성공 시 다음 단계 페이지로 연결 (예: 다음 주소창 입력 폼 이동)
+      alert(`[${selectedLevel.toUpperCase()}] 단계가 선택되었습니다. 다음 의뢰서 입력 단계로 이동합니다!`);
+      // window.location.href = "./request_form_next.html"; // 👈 나중에 다음 페이지 만들면 여기에 연결!
+    });
+  }
+});
