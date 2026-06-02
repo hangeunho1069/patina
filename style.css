@@ -940,3 +940,196 @@ body {
   .contact-action-zone { flex-direction: column; align-items: center; gap: 15px; }
   .btn-contact { width: 100%; }
 }
+/* ==========================================================================
+   REQUEST (How to use patina) 페이지 시안 100% 매칭 스타일
+   ========================================================================== */
+
+.request-page {
+  background-color: #ffffff;
+}
+
+.request-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 50px 150px 50px;
+}
+
+/* 1. 상단 타이틀 */
+.request-header-text {
+  margin-bottom: 35px;
+  text-align: left;
+}
+.request-header-text h2 {
+  font-size: 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+.request-header-text p {
+  font-size: 15px;
+  color: #000000;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 2. 메인 이미지 배너 및 중앙 안내 문구 오버레이 */
+.request-hero-banner {
+  width: 100%;
+  margin-bottom: 80px;
+  position: relative;
+}
+.request-hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.banner-overlay-text {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5); /* 어두운 사진 위 글씨 가독성 확보 */
+}
+.banner-overlay-text p {
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.2px;
+}
+
+/* 3. 단계별 3열 안내 그리드 보드 */
+.level-showcase-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+/* 개별 행 배치 (반응형 2열 구조) */
+.level-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 480px;
+}
+
+/* 시안 특유의 은은한 미색, 올리브베이지 배경색 매칭 */
+.row-standard .level-info-box { background-color: #ededed; }      /* 아주 연한 그레이미색 */
+.row-advanced .level-info-box { background-color: #f1f2eb; }      /* 연한 올리브 미색 */
+.row-masterpiece .level-info-box { background-color: #dadccf; }  /* 은은한 세이지 베이지 */
+
+/* 정보 텍스트 상자 패딩 및 정렬 */
+.level-info-box {
+  padding: 60px 50px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.info-content {
+  width: 100%;
+}
+
+/* 타이틀 타이포그래피 */
+.level-info-box h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e392a; /* patina 고유 딥그린 */
+  margin: 0 0 8px 0;
+}
+.level-info-box h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222222;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+.eng-sub {
+  display: block;
+  font-size: 11px;
+  color: #777777;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+/* 세부 항목 (Best for, What we do, Signature finish) */
+.detail-item {
+  margin-bottom: 24px;
+}
+.detail-item strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 6px;
+}
+.detail-item p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* Lv3의 특별 안내 사항 빨간색이나 강조 색상 대신 차분히 처리 */
+.detail-item.important-note p {
+  color: #555555;
+  font-weight: 600;
+}
+
+/* 우측/좌측 이미지 구역 속성 */
+.level-img-box {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* 4. 최하단 의뢰 시작 버튼 */
+.request-action-zone {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.start-request-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1.5px solid #000000;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  
+  /* 시안 맞춤형 직사각형 규격 고정 */
+  width: 240px;
+  height: 60px;
+  
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.start-request-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* 모바일 화면 반응형 최적화 (화면 작아지면 글씨-이미지 순으로 아래로 쌓임) */
+@media (max-width: 768px) {
+  .request-wrapper { padding: 20px; }
+  .level-row { grid-template-columns: 1fr; min-height: auto; }
+  .row-advanced .level-img-box { grid-row: 2; } /* 모바일에서도 글씨가 먼저 나오게 순서 교정 */
+  .level-info-box { padding: 40px 25px; }
+  .level-img-box { height: 300px; }
+  .level-info-box h3 { font-size: 22px; }
+  .level-info-box h4 { font-size: 16px; }
+  .eng-sub { margin-bottom: 25px; }
+  .start-request-btn { width: 100%; }
+}
