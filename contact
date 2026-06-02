@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>patina - CONTACT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+  <header class="header archive-header">
+    <div class="logo">
+      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+    </div>
+    <nav class="nav">
+      <a href="./about.html">ABOUT</a>
+      <a href="./shop.html">SHOP</a>
+      <a href="./contact.html" class="active">CONTACT</a>
+      <a href="#">DONATE</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contact-wrapper">
+    
+    <div class="contact-header-text">
+      <h2>Contact</h2>
+    </div>
+
+    <section class="contact-hero-banner">
+      <img src="./workshop.jpg" alt="patina workshop process">
+    </section>
+
+    <section class="contact-value-section">
+      <h3>의뢰 시 가치</h3>
+      <div class="value-text-box">
+        <p>세상 모든 사물들은 그것의 쓰임이 있습니다. 하지만 시간이 지남에 따라 그 쓰임을 다하여 종말을 맞이하게 됩니다.</p>
+        <p>patina는 이점에 주목하여 쓰임을 다한 사물들에 새로운 가치를 주고자 합니다.</p>
+        <p>쓰임을 다한 사물들일지라도, 그들은 분명 그 사용자의 추억의 조각들로 가득차있을 것입니다.</p>
+        <p>우리는 그러한 조각들을 기반으로 사물들을 재탄생 시켜, 다시 돌려 드리고자 합니다.</p>
+      </div>
+    </section>
+
+    <section class="contact-process-section">
+      <h3>의뢰 절차</h3>
+      
+      <div class="process-grid">
+        
+        <div class="process-card card-step-1">
+          <h4>제품의뢰서 작성</h4>
+          <p>가이드라인에 맞춰<br>간단한 의뢰서 작성</p>
+        </div>
+
+        <div class="process-card card-step-2">
+          <h4>의뢰서 검토 및 견적서 전달</h4>
+          <p>의뢰서 기반 제작자 산정<br>예상 견적서 전달</p>
+        </div>
+
+        <div class="process-card card-step-3">
+          <h4>최종 제안서 작성</h4>
+          <p>견적서 토대로 고객과 소통<br>최종 제안서 확정</p>
+        </div>
+
+        <div class="process-card card-step-4">
+          <h4>파티나 박스 전달</h4>
+          <p>제품 수거용 patina 박스 전달<br>(크기에 따라 상이)</p>
+        </div>
+
+        <div class="process-card card-step-5">
+          <h4>최종 작업물 전달</h4>
+          <p>고객과의 소통으로 완성된<br>최종 patina 작업물 전달</p>
+        </div>
+
+        <div class="process-card card-step-6">
+          <h4>제작 과정 아카이브</h4>
+          <p>제작과정 실시간 공유<br>고객이 직접 확인가능</p>
+        </div>
+
+      </div>
+
+      <p class="process-notice">* 작업물은 추후 파티나 아카이브에 업로드될 수 있습니다.</p>
+    </section>
+
+    <section class="contact-action-zone">
+      <button class="btn-contact request-btn" id="triggerRequest">REQUEST</button>
+      <a href="./shop.html" class="btn-contact go-shop-btn">GO TO SHOP</a>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
