@@ -1601,3 +1601,150 @@ body {
   .form-row-2 { grid-template-columns: 1fr; gap: 24px; }
   .submit-donate-btn { width: 100%; }
 }
+/* ==========================================================================
+   REQUEST FORM (Lv1. Standard) 상세 페이지 최종 스타일
+   ========================================================================== */
+
+.request-form-lv1-page {
+  background-color: #ffffff;
+}
+
+/* Lv1 폼 전용 상단 뱃지 라벨 */
+.lv1-form-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b462c; /* 파티나 시그니처 카키 그린 */
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+/* 상세 폼 레이아웃 정렬 */
+.actual-lv1-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 항목 간 정갈하고 넒은 간격 유지 */
+  text-align: left;
+}
+
+.input-group-lv1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group-lv1 label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase; /* 라벨 명 영문 대문자 시크 감성 고정 */
+  letter-spacing: 0.5px;
+}
+
+.upload-guide-text {
+  font-size: 11px;
+  color: #666666;
+  margin: -4px 0 4px 0;
+}
+
+/* 입력 필드들 미니멀 외형 스타일링 */
+.input-group-lv1 input[type="text"],
+.input-group-lv1 select,
+.input-group-lv1 textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-size: 14px;
+  border-radius: 6px;
+  color: #000000;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+.input-group-lv1 input[type="text"]:focus,
+.input-group-lv1 select:focus,
+.input-group-lv1 textarea:focus {
+  outline: none;
+  border-color: #3b462c; /* 포커싱 시 파티나 시그니처 딥그린 테두리 적용 */
+}
+
+.input-group-lv1 textarea {
+  resize: none;
+  line-height: 1.6;
+}
+
+/* [고급 UI] 감각적인 사진 업로드 던지기 존(Drop-zone) 스타일 */
+.photo-upload-zone {
+  border: 1.5px dashed #3b462c; /* 점선 테두리 처리 */
+  background-color: #f8f9f6;     /* 은은한 작업지 무드 미색 */
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+.photo-upload-zone:hover {
+  background-color: #f1f2eb;
+}
+.upload-trigger-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #3b462c;
+}
+.upload-plus-icon {
+  font-size: 28px;
+  font-weight: 300;
+}
+.upload-prompt {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 업로드된 파일 목록 글씨 레이아웃 */
+.file-preview-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  padding: 0 10px;
+}
+.file-preview-item {
+  font-size: 12px;
+  color: #1e392a;
+  font-weight: 600;
+}
+
+/* 최종 의뢰서 제출 버튼 */
+.submit-lv1-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1.5px solid #000000;
+  font-size: 14px;
+  font-weight: 600;
+  width: 240px;
+  height: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.submit-lv1-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* 모바일 화면 최적화 */
+@media (max-width: 768px) {
+  .submit-lv1-btn { width: 100%; }
+  .photo-upload-zone { padding: 30px 15px; }
+}
