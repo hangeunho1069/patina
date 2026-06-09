@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>patina - Request Form (Lv1)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="request-form-lv1-page">
+
+  <header class="header archive-header">
+    <div class="logo">
+      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+    </div>
+    <nav class="nav">
+      <a href="./about.html">ABOUT</a>
+      <a href="./shop.html">SHOP</a>
+      <a href="./contact.html" class="active">CONTACT</a>
+      <a href="./donate.html">DONATE</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="form-wrapper bounce-up-animation">
+    
+    <div class="form-header-zone">
+      <a href="./request_form.html" class="form-back-arrow">←</a>
+      <div class="form-title-text">
+        <h2>Start a Request</h2>
+        <p>How to use patina</p>
+      </div>
+    </div>
+
+    <section class="lv1-form-section">
+      <div class="lv1-form-badge">Lv1. Standard</div>
+      
+      <form id="lv1RequestForm" class="actual-lv1-form" onsubmit="return false;">
+        
+        <div class="input-group-lv1">
+          <label for="objName">Object name</label>
+          <input type="text" id="objName" placeholder="의뢰하실 사물의 이름을 적어주세요 (예: 빈티지 나무 의자)" required>
+        </div>
+
+        <div class="input-group-lv1">
+          <label for="objType">Type</label>
+          <select id="objType" required>
+            <option value="" disabled selected>사물의 카테고리를 선택해 주세요</option>
+            <option value="clothing">의류 및 패브릭 (Clothing / Fabric)</option>
+            <option value="bag">가방 및 패션잡화 (Bag / Accessories)</option>
+            <option value="furniture">가구 및 리빙 (Furniture / Living)</option>
+            <option value="etc">기타 오브제 (Etc)</option>
+          </select>
+        </div>
+
+        <div class="input-group-lv1">
+          <label for="objSize">Size</label>
+          <select id="objSize" required>
+            <option value="" disabled selected>사물의 대략적인 크기를 선택해 주세요</option>
+            <option value="S">Small (한 손에 들어오는 소형 소품, 파우치 등)</option>
+            <option value="M">Medium (토트백, 재킷, 일반적인 의자 크기 등)</option>
+            <option value="L">Large (코트, 대형 선반, 테이블 등 수거박스 초과 규격)</option>
+          </select>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Photos (1-5 images)</label>
+          <p class="upload-guide-text">표면의 경년 변화와 흠집이 잘 보이도록 밝은 곳에서 촬영한 사진을 첨부해 주세요.</p>
+          
+          <div class="photo-upload-zone" id="uploadZone">
+            <input type="file" id="objPhotos" multiple accept="image/*" style="display: none;">
+            <div class="upload-trigger-box">
+              <span class="upload-plus-icon">+</span>
+              <span class="upload-prompt">Click to upload object photos</span>
+            </div>
+            <div class="file-preview-list" id="filePreview"></div>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label for="objNotes">Additional Notes</label>
+          <textarea id="objNotes" rows="5" placeholder="특별히 보존하고 싶은 흔적이나 디자이너에게 전달하고 싶은 요청 사항이 있다면 자유롭게 들려주세요." required></textarea>
+        </div>
+
+        <div class="form-submit-zone">
+          <button type="submit" class="submit-lv1-btn">Submit a Request</button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
