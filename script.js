@@ -72,19 +72,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Next 버튼 클릭 시 액션 (인터랙션 ③)
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function() {
-      if (!selectedLevel) {
-        alert('진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요!');
-        return;
-      }
-      
-      // 성공 시 다음 단계 페이지로 연결 (예: 다음 주소창 입력 폼 이동)
-      alert(`[${selectedLevel.toUpperCase()}] 단계가 선택되었습니다. 다음 의뢰서 입력 단계로 이동합니다!`);
-      // window.location.href = "./request_form_next.html"; // 👈 나중에 다음 페이지 만들면 여기에 연결!
-    });
-  }
-});
+  // request_form.html과 연결된 script.js 내부의 Next 버튼 처리 로직 부분 수정
+if (nextBtn) {
+  nextBtn.addEventListener('click', function() {
+    if (!selectedLevel) {
+      alert('진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요!');
+      return;
+    }
+    
+    // 👈 핵심 수정: Lv1 단계를 고르고 Next를 누르면 방금 만든 양식 창으로 순간 이동 시킵니다!
+    if (selectedLevel === 'lv1') {
+      window.location.href = "./request_form_lv1.html";
+    } else {
+      alert(`[${selectedLevel.toUpperCase()}] 단계는 현재 서브 양식 준비 중입니다! Lv1 단계를 선택해 보세요.`);
+    }
+  });
+}
 // ==========================================================================
 // DONATE 페이지 신청서 제출 유효성 검사 및 인터랙션 피드백
 // ==========================================================================
@@ -112,6 +115,65 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // 알림 확인 후 폼 깔끔하게 리셋 초기화
       donateForm.reset();
+    });
+  }
+});
+// ==========================================================================
+// REQUEST FORM (Lv1. Standard) 파일 업로드 트리거 및 폼 제출 피드백
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const uploadZone = document.getElementById('uploadZone');
+  const fileInput = document.getElementById('objPhotos');
+  const filePreview = document.getElementById('filePreview');
+  const lv1RequestForm = document.getElementById('lv1RequestForm');
+
+  // 1. 가상 업로드 박스 클릭 시 진짜 히든된 input file 단추 강제 클릭 트리거
+  if (uploadZone && fileInput) {
+    uploadZone.addEventListener('click', function() {
+      fileInput.click();
+    });
+
+    // 2. 파일이 정상 선택되면 파일명을 눈에 보이게 리스트업 출력
+    fileInput.addEventListener('change', function() {
+      filePreview.innerHTML = ''; // 기존 리스트 초기화
+      const files = Array.from(this.files);
+
+      if (files.length > 5) {
+        alert('사진은 최대 5장까지만 업로드 가능합니다!');
+        this.value = ''; // 선택 초기화
+        return;
+      }
+
+      files.forEach(file => {
+        const item = document.createElement('div');
+        item.className = 'file-preview-item';
+        item.innerText = `✓ 첨부 완료: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        filePreview.appendChild(item);
+      });
+    });
+  }
+
+  // 3. 최종 의뢰서 서브밋 제출 핸들링
+  if (lv1RequestForm) {
+    lv1RequestForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const objName = document.getElementById('objName').value.trim();
+      const objType = document.getElementById('objType').value;
+      const objSize = document.getElementById('objSize').value;
+
+      if (!objName || !objType || !objSize) {
+        alert('필수 입력 항목을 확인해 주세요!');
+        return;
+      }
+
+      // 최종 접수 성공 안내 메시지 바인딩
+      alert(`[Lv1. Standard] 의뢰서 접수가 성공적으로 완료되었습니다!\n\n의뢰 사물: ${objName}\n카테고리: ${objType.toUpperCase()}\n\n작성하신 요청 내용을 토대로 디자이너가 1차 디지털 진단을 진행한 후 영업일 기준 4시간 이내에 최종 매칭 알림을 발송해 드리겠습니다.`);
+      
+      // 전송 완료 후 폼 비우고 메인으로 슥 보내기
+      lv1RequestForm.reset();
+      if (filePreview) filePreview.innerHTML = '';
+      window.location.href = "./index.html"; 
     });
   }
 });
