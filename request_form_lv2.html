@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>patina - Request: Advanced</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="request-form-lv2-page">
+
+  <div class="page-master-covers">
+    <div class="cover color-darkgreen slide-left"></div>
+    <div class="cover color-olive slide-up"></div>
+    <div class="cover color-lightgreen slide-right"></div>
+  </div>
+
+  <header class="header archive-header">
+    <div class="logo">
+      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+    </div>
+    <nav class="nav">
+      <a href="./about.html">ABOUT</a>
+      <a href="./shop.html">SHOP</a>
+      <a href="./contact.html" class="active">CONTACT</a>
+      <a href="./donate.html">DONATE</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="form-wrapper">
+    
+    <div class="form-header-zone-lv1">
+      <a href="./request_form.html" class="form-back-arrow">←</a>
+      <h2 class="form-main-title-lv1">Request: Advanced</h2>
+    </div>
+
+    <section class="lv1-form-section">
+      <form id="lv2RequestForm" class="actual-lv1-form" onsubmit="return false;">
+        
+        <div class="input-group-lv1">
+          <label>Object name</label>
+          <input type="text" id="objName" required>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Object type</label>
+          <div class="radio-selector-group">
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Clothing" required>
+              <span class="custom-radio"></span> Clothing
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Bag">
+              <span class="custom-radio"></span> Bag
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Furniture">
+              <span class="custom-radio"></span> Furniture
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Other" id="typeOtherRadio">
+              <span class="custom-radio"></span> Other
+            </label>
+            <div class="other-underline-box">
+              <span>:</span>
+              <input type="text" id="objTypeOtherText" class="underline-input" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Size</label>
+          <div class="radio-selector-group">
+            <label class="radio-container">
+              <input type="radio" name="objSize" value="Small" required>
+              <span class="custom-radio"></span> 
+              <div class="radio-label-content">
+                <span class="size-title">Small</span>
+                <span class="size-guide-desc">소형 소품 및 패션 잡화 (지갑, 파우치, 벨트 등)</span>
+              </div>
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objSize" value="Medium">
+              <span class="custom-radio"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Medium</span>
+                <span class="size-guide-desc">의류 및 소형 가구 (재킷, 토트백, 1인용 스툴/의자 등)</span>
+              </div>
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objSize" value="Large">
+              <span class="custom-radio"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Large</span>
+                <span class="size-guide-desc">부피가 큰 아우터 및 대형 가구 (롱코트, 벤치, 테이블 등)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Stitch Pattern</label>
+          <p class="upload-sub-label-lv1">구조 보강에 사용될 가시적인 자수 스티치 기법을 고정합니다.</p>
+          <div class="radio-selector-group">
+            <label class="radio-container">
+              <input type="radio" name="stitchPattern" value="Cross" required>
+              <span class="custom-radio"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Cross-Stitch (X)</span>
+                <span class="size-guide-desc">직관적이고 단단한 결합력을 보여주는 전통적인 십자형 구조 봉합</span>
+              </div>
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="stitchPattern" value="Running">
+              <span class="custom-radio"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Running-Stitch (---)</span>
+                <span class="size-guide-desc">절제미가 돋보이며 사물의 실루엣을 따라 흐르는 미니멀한 일직선 홈질</span>
+              </div>
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="stitchPattern" value="Blanket">
+              <span class="custom-radio"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Blanket-Stitch (⊓)</span>
+                <span class="size-guide-desc">헤진 단면과 모서리를 완벽하게 감싸 안아 추가 마모를 방지하는 외부 마감</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Reinforcement Patch</label>
+          <p class="upload-sub-label-lv1">물리적 손상 부위를 덧댈 파티나 아카이브 원단 베이스 (중복 선택 가능)</p>
+          <div class="checkbox-selector-group">
+            
+            <label class="checkbox-container">
+              <input type="checkbox" name="patchMaterial" value="Denim">
+              <span class="custom-checkbox"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Heavy Denim</span>
+                <span class="size-guide-desc">세월의 워싱 흔적이 남아있어 튼튼하고 빈티지한 무드를 자아내는 데님 패치</span>
+              </div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" name="patchMaterial" value="Leather">
+              <span class="custom-checkbox"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Vegetable Leather</span>
+                <span class="size-guide-desc">시간이 흐를수록 은은하게 에이징되며 깊은 경년변화를 선사하는 천연 가죽</span>
+              </div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" name="patchMaterial" value="Canvas">
+              <span class="custom-checkbox"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Rough Canvas</span>
+                <span class="size-guide-desc">밀도 높은 짜임새로 가구 표면이나 가방 바닥면 보강에 탁월한 캔버스 천</span>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Upload photos</label>
+          <p class="upload-sub-label-lv1">5-10 images of damaged areas (찢어지거나 마모된 부위 상세 컷 필수)</p>
+          <div class="photo-upload-box-canvas" id="uploadZone">
+            <input type="file" id="objPhotos" multiple accept="image/*" style="display: none;">
+            <div class="canvas-center-icon">
+              <i class="fa-regular fa-image" style="font-size: 32px; color: #666;"></i>
+            </div>
+            <div class="file-preview-list" id="filePreview"></div>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Additional notes</label>
+          <p class="upload-sub-label-lv1">Free description of your request</p>
+          <textarea id="objNotes" rows="8" required></textarea>
+        </div>
+
+        <div class="form-submit-zone-lv1">
+          <button type="submit" class="submit-action-btn-lv1">SUBMIT</button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
