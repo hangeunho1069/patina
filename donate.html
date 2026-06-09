@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>patina - DONATE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="donate-page">
+
+  <header class="header archive-header">
+    <div class="logo">
+      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+    </div>
+    <nav class="nav">
+      <a href="./about.html">ABOUT</a>
+      <a href="./shop.html">SHOP</a>
+      <a href="./contact.html">CONTACT</a>
+      <a href="./donate.html" class="active">DONATE</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="donate-wrapper">
+    
+    <div class="donate-header-text">
+      <h2>Donate</h2>
+      <p>Don't throw away, just patina!</p>
+    </div>
+
+    <section class="donate-hero-banner">
+      <img src="./donate_main.jpg" alt="patina donate visual">
+      <div class="donate-banner-overlay">
+        <p>버리기엔 아깝거나 귀찮고, 그대로 두기엔 자리를 차지하는 애매한 물건이 있나요?</p>
+      </div>
+    </section>
+
+    <section class="donate-intro-section">
+      <p class="intro-bold">유행이 지나서, 혹은 작은 흠집 때문에 쓰지 않는 옷과 물건들.</p>
+      <p class="intro-desc">
+        그냥 버리면 쓰레기가 되지만, patina를 만나면 새로운 이야기가 담긴 오브제로 다시 태어납니다.<br>
+        당신의 일상을 채웠던 흔적을 patina에 기부해 주세요. 지속 가능한 사물의 순환이 당신의 손에서부터 시작됩니다.
+      </p>
+    </section>
+
+    <section class="collect-section">
+      <h3>What we collect</h3>
+      
+      <div class="collect-grid">
+        <div class="collect-card">
+          <div class="collect-img-box" style="background-image: url('./Group 51.png');"></div>
+          <span>의류 및 패브릭</span>
+        </div>
+        <div class="collect-card">
+          <div class="collect-img-box" style="background-image: url('./Group 53.png');"></div>
+          <span>선반 및 리빙</span>
+        </div>
+        <div class="collect-card">
+          <div class="collect-img-box" style="background-image: url('./Mask group.png');"></div>
+          <span>패션 잡화</span>
+        </div>
+      </div>
+      
+      <p class="collect-notice">기부 불가 항목 (오염이 너무 심해 재작업이 불가능한 의류, 일회용 플라스틱 제품 등)</p>
+    </section>
+
+    <hr class="donate-divider">
+
+    <section class="donate-process-section">
+      <h3>Donate process</h3>
+      
+      <div class="process-flow-container">
+        <div class="flow-step">
+          <div class="step-icon">01</div>
+          <h4>기부 신청서 작성</h4>
+          <p>하단 폼에 물품 정보와<br>스토리, 사진을 등록합니다.</p>
+        </div>
+        
+        <div class="flow-arrow">→</div>
+        
+        <div class="flow-step">
+          <div class="step-icon">02</div>
+          <h4>수거 박스 발송</h4>
+          <p>선정된 기부자께 물품을 담을<br>파티나 에코 수거백을 보냅니다.</p>
+        </div>
+        
+        <div class="flow-arrow">→</div>
+        
+        <div class="flow-step">
+          <div class="step-icon">03</div>
+          <h4>오브제 업사이클</h4>
+          <p>디자이너들의 개입을 통해<br>새로운 아카이브 가구로 탄생합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="donate-form-section">
+      <div class="form-title-box">
+        <h3>기부 신청하기</h3>
+        <p>사물이 품고 있는 소중한 흔적과 이야기를 들려주세요.</p>
+      </div>
+
+      <form id="donateForm" class="actual-donate-form" onsubmit="return false;">
+        <div class="form-row-2">
+          <div class="input-group">
+            <label for="donateName">기부자 성함</label>
+            <input type="text" id="donateName" placeholder="성함을 입력해주세요" required>
+          </div>
+          <div class="input-group">
+            <label for="donateContact">연락처</label>
+            <input type="tel" id="donateContact" placeholder="010-0000-0000" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="donateCategory">기부 물품 카테고리</label>
+          <select id="donateCategory" required>
+            <option value="" disabled selected>선택해 주세요</option>
+            <option value="fabric">의류 및 패브릭</option>
+            <option value="living">선반 및 리빙 가구</option>
+            <option value="etc">패션 잡화 및 기타 오브제</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="donateStory">사물에 담긴 기억이나 이야기</label>
+          <textarea id="donateStory" rows="5" placeholder="이 물건을 언제, 어떻게 주로 사용하셨나요? 버리기 아쉬웠던 특별한 추억이나 흔적에 대해 자유롭게 들려주세요." required></textarea>
+        </div>
+
+        <div class="form-submit-zone">
+          <button type="submit" class="submit-donate-btn">Submit Request</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
