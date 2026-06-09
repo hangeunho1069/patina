@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // 👈 핵심 에러 교정: 메인 페이지에 nextBtn이 없어도 에러가 나지 않도록 철저히 감싸둠!
+  // script.js 내부의 nextBtn 이벤트 부분을 찾아서 이 구조로 덮어쓰기!
   if (nextBtn) {
     nextBtn.addEventListener('click', function() {
       if (!selectedLevel) {
@@ -48,12 +49,15 @@ document.addEventListener('DOMContentLoaded', function() {
       if (selectedLevel === 'lv1') {
         alert('[LV1] 단계가 선택되었습니다. 의뢰서 입력 단계로 이동합니다!');
         window.location.href = "./request_form_lv1.html";
+      } else if (selectedLevel === 'lv2') {
+        // 👈 [교정 추가] Lv2를 고르고 Next를 누르면 여기로 순간이동!
+        alert('[LV2] 단계가 선택되었습니다. 구조 봉합 의뢰서 단계로 이동합니다!');
+        window.location.href = "./request_form_lv2.html";
       } else {
-        alert(`[${selectedLevel.toUpperCase()}] 단계는 현재 준비 중입니다. Lv1 단계를 선택해 보세요!`);
+        alert(`[${selectedLevel.toUpperCase()}] 단계는 현재 준비 중입니다. Lv1 또는 Lv2 단계를 선택해 보세요!`);
       }
     });
   }
-
 
   // ------------------------------------------------------------------------
   // 3. [Request: Standard 페이지] Other 라디오 단추 및 밑줄 입력창 제어
