@@ -1957,3 +1957,73 @@ body.about-page .about-wrapper {
   max-width: 800px;
   margin: 0 auto;
 }
+/* ==========================================================================
+   REQUEST: ADVANCED (Lv2) 전용 사각형 체크박스 커스텀 스타일
+   ========================================================================== */
+
+.request-form-lv2-page {
+  background-color: #ffffff;
+}
+
+/* 폼 페이지 격리 스와이프 복사 */
+.request-form-lv2-page .page-master-covers {
+  position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; z-index: 9999999 !important; pointer-events: none;        
+}
+.request-form-lv2-page .page-master-covers .cover {
+  position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; transform: translateX(0); transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1) !important; 
+}
+.request-form-lv2-page .page-master-covers .cover.slide-left.active { transform: translateX(-100%) !important; }
+.request-form-lv2-page .page-master-covers .cover.slide-up.active { transform: translateY(-100%) !important; }
+.request-form-lv2-page .page-master-covers .cover.slide-right.active { transform: translateX(100%) !important; }
+.request-form-lv2-page .cover.color-darkgreen { background-color: #1e2516 !important; }
+.request-form-lv2-page .cover.color-olive { background-color: #3b462c !important; }
+.request-form-lv2-page .cover.color-lightgreen { background-color: #7f8e61 !important; }
+.request-form-lv2-page .cover.active { pointer-events: none !important; }
+
+/* 체크박스 그룹 정렬 */
+.checkbox-selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 4px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start !important;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* [디자인 핵심] 각진 사각형 와이어프레임 무드 체크박스 외곽선 */
+.custom-checkbox {
+  position: absolute;
+  top: 1px !important;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #ffffff;
+  border: 1.5px solid #000000; /* 칼같은 블랙 스트로크 */
+  border-radius: 0px; /* 라운딩 없는 직사각형 고정 */
+}
+
+/* 마우스 체크 시 내부에 힙한 블랙 스퀘어 도트 등장 */
+.checkbox-container input:checked ~ .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #000000; /* 정갈한 블랙 박스 알맹이 */
+}
