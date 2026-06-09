@@ -181,3 +181,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+  // ==========================================================================
+// [추가] Request: Standard 폼 페이지 세부 라디오 인터랙션 핸들러
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const typeRadios = document.querySelectorAll('input[name="objType"]');
+  const otherText = document.getElementById('objTypeOtherText');
+
+  if (typeRadios.length > 0 && otherText) {
+    typeRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        // Other 단추가 체크되면 밑줄 입력창 활성화, 다른 거 선택되면 다시 잠금
+        if (document.getElementById('typeOtherRadio').checked) {
+          otherText.disabled = false;
+          otherText.focus();
+        } else {
+          otherText.disabled = true;
+          otherText.value = ''; // 적혀있던 내용 리셋
+        }
+      });
+    });
+  }
+});
