@@ -1911,3 +1911,49 @@ body {
   top: 10px !important; 
   transform: none !important;
 }
+/* ==========================================================================
+   🚨 [최종 구원] 모든 서브 페이지 헤더 고정 해제 및 본문 여백 자동 보정
+   ========================================================================== */
+
+/* 1. 메인 페이지(index.html)를 제외한 모든 서브 페이지의 헤더 고정을 전격 해제합니다. */
+body.about-page .header,
+body.shop-page .header,
+body.contact-page .header,
+body.request-page .header,
+body.request-form-page .header,
+body.request-form-lv1-page .header,
+body.donate-page .header,
+.header.archive-header {
+  /* 👈 화면에 고정되던 fixed/sticky를 일반 절대 좌표로 변경하여 최상단에만 딱 박아둡니다 */
+  position: absolute !important; 
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background-color: #ffffff !important; /* 배경 투명화 방지 */
+  
+  /* 기존에 적용된 패딩과 정렬 무드는 그대로 유지 */
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* 2. 헤더가 absolute로 빠지면서 본문 타이틀이나 글귀가 헤더 밑으로 파묻혀 가려지는 현상 철저히 방지 */
+body.about-page .about-wrapper,
+body.about-page main,
+.shop-wrapper,
+.contact-wrapper,
+.request-wrapper,
+.form-wrapper,
+.donate-wrapper,
+.request-form-lv1-page .form-wrapper {
+  /* 👈 헤더의 세로폭 높이만큼 본문 최상단 영역에 고정 공백 여백을 강제로 부여합니다 */
+  padding-top: 150px !important; 
+  box-sizing: border-box !important;
+}
+
+/* [디테일 튜닝] ABOUT 페이지 본문 중앙 정렬 및 여백 균형 최적화 */
+body.about-page .about-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
