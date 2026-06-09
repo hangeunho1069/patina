@@ -1830,3 +1830,50 @@ body {
   .input-group-lv1 label { font-size: 18px; }
   .submit-action-btn-lv1 { width: 100%; }
 }
+/* ==========================================================================
+   📐 Size 가이드라인 텍스트 정밀 타이포그래피 스타일
+   ========================================================================== */
+
+/* 라디오 버튼 내부의 텍스트들을 세로로 정렬해주는 상자 */
+.radio-label-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 6px; /* 라디오 단추와의 세련된 간격 */
+  text-align: left;
+}
+
+/* Small, Medium, Large 글씨 강세 유지 */
+.size-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.2;
+}
+
+/* 👈 [브랜드 톤 반영] 사용자가 읽기 편한 미니멀 가이드라인 서체 속성 */
+.size-guide-desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666666; /* 너무 튀지 않는 차분한 회색 */
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  word-break: keep-all;
+}
+
+/* [기존 코드 교정] 가이드라인이 추가되면서 라디오 단추가 위쪽 중앙에 정렬되도록 수정 */
+.radio-container {
+  display: flex;
+  align-items: flex-start !important; /* 👈 center에서 flex-start로 바꾸어 첫 줄에 단추를 맞춤 */
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 8px; /* 항목 간 간격 여유 확보 */
+}
+
+/* 동그라미 라디오 단추 위치 미세 교정 (첫 줄 글씨 높이에 맞춤) */
+.radio-container .custom-radio {
+  top: 10px !important; 
+  transform: none !important;
+}
