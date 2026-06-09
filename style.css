@@ -1605,126 +1605,164 @@ body {
    REQUEST FORM (Lv1. Standard) 상세 페이지 최종 스타일
    ========================================================================== */
 
+/* ==========================================================================
+   REQUEST: STANDARD 시안 100% 매칭 최종 교정 스타일
+   ========================================================================== */
+
 .request-form-lv1-page {
   background-color: #ffffff;
 }
 
-/* Lv1 폼 전용 상단 뱃지 라벨 */
-.lv1-form-badge {
-  display: inline-flex;
+/* 상단 타이틀 구역 정렬 */
+.form-header-zone-lv1 {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #3b462c; /* 파티나 시그니처 카키 그린 */
-  color: #ffffff;
-  font-size: 12px;
+  gap: 24px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+.form-main-title-lv1 {
+  font-size: 42px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
-  padding: 8px 16px;
-  border-radius: 20px;
-  margin-bottom: 40px;
-  letter-spacing: 0.5px;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
-/* 상세 폼 레이아웃 정렬 */
+/* 폼 그룹 간격 세팅 */
 .actual-lv1-form {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* 항목 간 정갈하고 넒은 간격 유지 */
+  gap: 45px; /* 시안 속 널찍한 항목 간격 */
   text-align: left;
 }
 
 .input-group-lv1 {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
+/* 시안 속 굵직한 서체 스타일 */
 .input-group-lv1 label {
-  font-size: 14px;
+  font-size: 22px;
   font-weight: 700;
   color: #000000;
-  text-transform: uppercase; /* 라벨 명 영문 대문자 시크 감성 고정 */
-  letter-spacing: 0.5px;
+  letter-spacing: -0.3px;
+}
+.upload-sub-label-lv1 {
+  font-size: 13px;
+  color: #222222;
+  margin: -6px 0 4px 0;
 }
 
-.upload-guide-text {
-  font-size: 11px;
-  color: #666666;
-  margin: -4px 0 4px 0;
-}
-
-/* 입력 필드들 미니멀 외형 스타일링 */
+/* Object Name 입력창 (시안 특유의 사각형 테두리 형태) */
 .input-group-lv1 input[type="text"],
-.input-group-lv1 select,
 .input-group-lv1 textarea {
   width: 100%;
-  padding: 16px;
-  border: 1px solid #d1d5db;
+  padding: 14px 16px;
+  border: 1.5px solid #000000; /* 시안 특유의 선명한 검은선 */
   background-color: #ffffff;
-  font-size: 14px;
-  border-radius: 6px;
+  font-size: 15px;
+  border-radius: 0px; /* 👈 라운딩을 제거하여 완전한 직사각형으로 고정 */
   color: #000000;
   box-sizing: border-box;
-  transition: border-color 0.25s ease;
 }
 
-.input-group-lv1 input[type="text"]:focus,
-.input-group-lv1 select:focus,
-.input-group-lv1 textarea:focus {
-  outline: none;
-  border-color: #3b462c; /* 포커싱 시 파티나 시그니처 딥그린 테두리 적용 */
-}
-
-.input-group-lv1 textarea {
-  resize: none;
-  line-height: 1.6;
-}
-
-/* [고급 UI] 감각적인 사진 업로드 던지기 존(Drop-zone) 스타일 */
-.photo-upload-zone {
-  border: 1.5px dashed #3b462c; /* 점선 테두리 처리 */
-  background-color: #f8f9f6;     /* 은은한 작업지 무드 미색 */
-  border-radius: 8px;
-  padding: 40px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-}
-.photo-upload-zone:hover {
-  background-color: #f1f2eb;
-}
-.upload-trigger-box {
+/* --- 라디오 버튼 커스텀 (시안 속 동그라미 단추 구현) --- */
+.radio-selector-group {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding-left: 4px;
+}
+.radio-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  user-select: none;
+}
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* 기본 동그라미 외곽선 */
+.custom-radio {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 16px;
+  width: 16px;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 50%;
+}
+/* 체크되었을 때 안쪽에 검은 점 쏙 박히기 */
+.radio-container input:checked ~ .custom-radio::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+/* Other 선택 시 작성하는 언더라인 */
+.other-underline-box {
+  display: flex;
   align-items: center;
   gap: 10px;
-  color: #3b462c;
+  padding-left: 28px;
+  margin-top: -4px;
 }
-.upload-plus-icon {
-  font-size: 28px;
-  font-weight: 300;
-}
-.upload-prompt {
-  font-size: 12px;
-  font-weight: 600;
+.underline-input {
+  border: none !important;
+  border-bottom: 1.5px solid #000000 !important; /* 밑줄선만 표기 */
+  border-radius: 0 !important;
+  padding: 4px 0 !important;
+  width: 100%;
+  max-width: 500px;
+  font-size: 14px;
+  background-color: transparent !important;
 }
 
-/* 업로드된 파일 목록 글씨 레이아웃 */
-.file-preview-list {
-  margin-top: 15px;
+/* [시안 반영] Upload Photos 커다란 사각형 박스 캔버스 */
+.photo-upload-box-canvas {
+  width: 100%;
+  aspect-ratio: 2.1 / 1; /* 시안 속 널찍한 가로형 박스 비율 무드 고정 */
+  border: 1.5px solid #000000;
+  background-color: #ffffff;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.canvas-center-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 최하단 SUBMIT 중앙 정렬 박스 버튼 */
+.form-submit-zone-lv1 {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  text-align: left;
-  padding: 0 10px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 }
-.file-preview-item {
-  font-size: 12px;
-  color: #1e392a;
-  font-weight: 600;
-}
-
-/* 최종 의뢰서 제출 버튼 */
-.submit-lv1-btn {
+.submit-action-btn-lv1 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1733,18 +1771,23 @@ body {
   border: 1.5px solid #000000;
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  /* 시안 속 사각형 버튼 스케일 */
   width: 240px;
   height: 60px;
+  border-radius: 0px; /* 각진 직사각형 고정 */
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
-.submit-lv1-btn:hover {
+.submit-action-btn-lv1:hover {
   background-color: #000000;
   color: #ffffff;
 }
 
 /* 모바일 화면 최적화 */
 @media (max-width: 768px) {
-  .submit-lv1-btn { width: 100%; }
-  .photo-upload-zone { padding: 30px 15px; }
+  .form-main-title-lv1 { font-size: 32px; }
+  .input-group-lv1 label { font-size: 18px; }
+  .submit-action-btn-lv1 { width: 100%; }
 }
