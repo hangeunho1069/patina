@@ -85,3 +85,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+// ==========================================================================
+// DONATE 페이지 신청서 제출 유효성 검사 및 인터랙션 피드백
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const donateForm = document.getElementById('donateForm');
+
+  if (donateForm) {
+    donateForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // 기본 폼 새로고침 전송 차단
+
+      // 입력 데이터 캐싱
+      const name = document.getElementById('donateName').value.trim();
+      const contact = document.getElementById('donateContact').value.trim();
+      const category = document.getElementById('donateCategory').value;
+      const story = document.getElementById('donateStory').value.trim();
+
+      // 간단한 유효성 재확인
+      if (!name || !contact || !category || !story) {
+        alert('신청서 항목을 빠짐없이 모두 기입해 주세요!');
+        return;
+      }
+
+      // 기부 완료 피드백 알림 가동
+      alert(`감사합니다, ${name}님!\n보내주신 사물의 소중한 이야기와 흔적을 디자이너들이 면밀히 검토한 후, 3일 이내로 연락처(${contact})를 통해 기부 수거 에코백 발송 안내를 드리겠습니다.`);
+      
+      // 알림 확인 후 폼 깔끔하게 리셋 초기화
+      donateForm.reset();
+    });
+  }
+});
