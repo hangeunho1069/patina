@@ -73,6 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Next 버튼 클릭 시 액션 (인터랙션 ③)
   // request_form.html과 연결된 script.js 내부의 Next 버튼 처리 로직 부분 수정
+// ==========================================================================
+// [교정] 레벨 선택 후 Next 버튼 클릭 시 실제 페이지 전환 이동 제어
+// ==========================================================================
 if (nextBtn) {
   nextBtn.addEventListener('click', function() {
     if (!selectedLevel) {
@@ -80,11 +83,12 @@ if (nextBtn) {
       return;
     }
     
-    // 👈 핵심 수정: Lv1 단계를 고르고 Next를 누르면 방금 만든 양식 창으로 순간 이동 시킵니다!
+    // 👈 핵심 교정: 알림창을 띄우는 동시에, 확인을 누르면 실제 페이지로 이동시킵니다!
     if (selectedLevel === 'lv1') {
-      window.location.href = "./request_form_lv1.html";
+      alert('[LV1] 단계가 선택되었습니다. 의뢰서 입력 단계로 이동합니다!');
+      window.location.href = "./request_form_lv1.html"; // 👈 알림창 닫히면 바로 이동!
     } else {
-      alert(`[${selectedLevel.toUpperCase()}] 단계는 현재 서브 양식 준비 중입니다! Lv1 단계를 선택해 보세요.`);
+      alert(`[${selectedLevel.toUpperCase()}] 단계는 현재 준비 중입니다. Lv1 단계를 선택해 보세요!`);
     }
   });
 }
