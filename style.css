@@ -1609,8 +1609,47 @@ body {
    REQUEST: STANDARD 시안 100% 매칭 최종 교정 스타일
    ========================================================================== */
 
-.request-form-lv1-page {
-  background-color: #ffffff;
+/* 👈 앞에 .request-form-lv1-page를 붙여 메인 페이지(.request-form-lv1-page가 없음)에는 절대 침범하지 못하게 막습니다! */
+.request-form-lv1-page .page-master-covers {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999999 !important; 
+  pointer-events: none;        
+}
+
+/* 마스터 래퍼 안의 커버 박스들이 화면 전체를 3중으로 겹쳐 덮고 있도록 세팅 */
+.request-form-lv1-page .page-master-covers .cover {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: translateX(0); /* 초기 위치 지정 */
+  transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1) !important; 
+}
+
+/* active 클래스가 붙으면 폼 페이지의 커버들도 날아가라 */
+.request-form-lv1-page .page-master-covers .cover.slide-left.active { transform: translateX(-100%) !important; }
+.request-form-lv1-page .page-master-covers .cover.slide-up.active { transform: translateY(-100%) !important; }
+.request-form-lv1-page .page-master-covers .cover.slide-right.active { transform: translateX(100%) !important; }
+
+/* 세 가지 초록색 브랜딩 컬러 톤 정밀 조색 코드 매칭 (폼 페이지용만 지정) */
+.request-form-lv1-page .cover.color-darkgreen {
+  background-color: #1e2516 !important; 
+}
+.request-form-lv1-page .cover.color-olive {
+  background-color: #3b462c !important; 
+}
+.request-form-lv1-page .cover.color-lightgreen {
+  background-color: #7f8e61 !important; 
+}
+
+/* 유령 박스 방해 원천 차단 속성 한 번 더 굳히기 */
+.request-form-lv1-page .cover.active {
+  pointer-events: none !important;
 }
 
 /* 상단 타이틀 구역 정렬 */
