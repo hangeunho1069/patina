@@ -1307,3 +1307,297 @@ body {
   .level-notice { margin-top: 40px; }
   .form-next-btn { width: 100%; }
 }
+/* ==========================================================================
+   DONATE 페이지 시안 100% 매칭 및 신청 폼 최종 스타일
+   ========================================================================== */
+
+.donate-page {
+  background-color: #ffffff;
+}
+
+.donate-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 50px 150px 50px;
+}
+
+/* 1. 상단 타이틀 */
+.donate-header-text {
+  margin-bottom: 35px;
+  text-align: left;
+}
+.donate-header-text h2 {
+  font-size: 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+.donate-header-text p {
+  font-size: 15px;
+  color: #000000;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 2. 메인 와이드 어두운 비주얼 배너 */
+.donate-hero-banner {
+  width: 100%;
+  margin-bottom: 70px;
+  position: relative;
+}
+.donate-hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.donate-banner-overlay {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 30px;
+}
+.donate-banner-overlay p {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  margin: 0;
+}
+
+/* 3. 중간 감성 서사 카피 (시안 정렬 매칭) */
+.donate-intro-section {
+  text-align: center;
+  margin-bottom: 75px;
+  padding: 0 20px;
+}
+.intro-bold {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 24px;
+}
+.intro-desc {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #000000;
+  font-weight: 500;
+  word-break: keep-all;
+}
+
+/* 4. What we collect 섹션 3열 격자 */
+.collect-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.collect-section h3,
+.donate-process-section h3 {
+  font-size: 26px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+.collect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 24px;
+}
+.collect-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.collect-img-box {
+  width: 100%;
+  aspect-ratio: 1.25 / 1; /* 시안 속 약간 가로형 이미지 비율 고정 */
+  background-size: cover;
+  background-position: center;
+  background-color: #f4f5f6;
+}
+.collect-card span {
+  font-size: 11px;
+  color: #000000;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+.collect-notice {
+  font-size: 10px;
+  color: #555555;
+  font-weight: 600;
+  margin-top: 35px;
+}
+
+/* 정갈한 회색 구분선 */
+.donate-divider {
+  border: 0;
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 80px 0;
+}
+
+/* 5. [신규 인포그래픽] Donate process 세부 정렬 */
+.donate-process-section {
+  text-align: center;
+  margin-bottom: 110px;
+}
+.process-flow-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.flow-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #3b462c; /* 파티나 시그니처 카키 그린 */
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.flow-step h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+.flow-step p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #666666;
+  margin: 0;
+  word-break: keep-all;
+}
+.flow-arrow {
+  font-size: 20px;
+  color: #bbbbbb;
+  font-weight: 400;
+  padding-bottom: 30px;
+}
+
+/* 6. [신규 신청서 폼] 파티나 아카이브 폼 스타일 페인팅 */
+.donate-form-section {
+  background-color: #f8f9f6; /* 정갈한 워크숍 페이퍼 느낌의 미색 백그라운드 */
+  border-radius: 16px;
+  padding: 60px 50px;
+  text-align: left;
+}
+.form-title-box {
+  margin-bottom: 40px;
+  border-bottom: 1.5px solid #3b462c; /* 브랜드 컬러 하이라이트 선 */
+  padding-bottom: 20px;
+}
+.form-title-box h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e392a;
+  margin: 0 0 6px 0;
+}
+.form-title-box p {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+
+/* 폼 레이아웃 규칙 */
+.actual-donate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.input-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* 인풋, 셀렉트, 텍스트에어리어 미니멀 외형 통일 */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-size: 13px;
+  border-radius: 6px;
+  color: #000000;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #3b462c; /* 포커싱 시 파티나 딥올리브 선 선점 */
+}
+
+.input-group textarea {
+  resize: none;
+  line-height: 1.6;
+}
+
+/* 제출 버튼 바닥 구역 */
+.form-submit-zone {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.submit-donate-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1.5px solid #000000;
+  font-size: 14px;
+  font-weight: 600;
+  width: 240px;
+  height: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.submit-donate-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* 반응형 스마트폰 규격 최적화 */
+@media (max-width: 768px) {
+  .donate-wrapper { padding: 20px; }
+  .collect-grid { grid-template-columns: 1fr; gap: 25px; }
+  .process-flow-container { flex-direction: column; gap: 30px; }
+  .flow-arrow { display: none; } /* 모바일은 화살표 숨김 */
+  .donate-form-section { padding: 35px 20px; }
+  .form-row-2 { grid-template-columns: 1fr; gap: 24px; }
+  .submit-donate-btn { width: 100%; }
+}
