@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>patina - Request: L3 Masterpiece</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="request-form-lv3-page">
+
+  <div class="page-master-covers">
+    <div class="cover color-darkgreen slide-left"></div>
+    <div class="cover color-olive slide-up"></div>
+    <div class="cover color-lightgreen slide-right"></div>
+  </div>
+
+  <header class="header archive-header">
+    <div class="logo">
+      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+    </div>
+    <nav class="nav">
+      <a href="./about.html">ABOUT</a>
+      <a href="./shop.html">SHOP</a>
+      <a href="./contact.html" class="active">CONTACT</a>
+      <a href="./donate.html">DONATE</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="form-wrapper bounce-up-animation">
+    
+    <div class="form-header-zone-lv1">
+      <a href="./request_form.html" class="form-back-arrow">←</a>
+      <h2 class="form-main-title-lv1">Request: L3</h2>
+    </div>
+
+    <section class="lv1-form-section">
+      <div class="lv3-identity-label">MASTERPIECE PRE-DIAGNOSIS</div>
+
+      <form id="lv3RequestForm" class="actual-lv1-form" onsubmit="return false;">
+        
+        <div class="input-group-lv1">
+          <label>Object name</label>
+          <input type="text" id="objName" required placeholder="사물의 고유한 명칭을 입력해 주세요">
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Object type</label>
+          <div class="radio-selector-group">
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Clothing" required>
+              <span class="custom-radio"></span> Clothing
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Bag">
+              <span class="custom-radio"></span> Bag
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Furniture">
+              <span class="custom-radio"></span> Furniture
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objType" value="Other" id="typeOtherRadio">
+              <span class="custom-radio"></span> Other
+            </label>
+            <div class="other-underline-box">
+              <span>:</span>
+              <input type="text" id="objTypeOtherText" class="underline-input" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Size</label>
+          <div class="radio-selector-group">
+            <label class="radio-container">
+              <input type="radio" name="objSize" value="Small" required>
+              <span class="custom-radio"></span> 
+              <div class="radio-label-content">
+                <span class="size-title">Small</span>
+                <span class="size-guide-desc">소형 소품 및 패션 잡화 (지갑, 파우치, 벨트 등)</span>
+              </div>
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objSize" value="Medium">
+              <span class="custom-radio"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Medium</span>
+                <span class="size-guide-desc">의류 및 소형 가구 (재킷, 토트백, 1인용 스툴/의자 등)</span>
+              </div>
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="objSize" value="Large">
+              <span class="custom-radio"></span>
+              <div class="radio-label-content">
+                <span class="size-title">Large</span>
+                <span class="size-guide-desc">부피가 큰 아우터 및 대형 가구 (롱코트, 벤치, 테이블 등)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Upload photos</label>
+          <p class="upload-sub-label-lv1">1-5 images of current condition (전체 및 파손 부위 필수)</p>
+          <div class="photo-upload-box-canvas" id="uploadZone">
+            <input type="file" id="objPhotos" multiple accept="image/*" style="display: none;">
+            <div class="canvas-center-icon">
+              <i class="fa-regular fa-image" style="font-size: 32px; color: #666;"></i>
+            </div>
+            <div class="file-preview-list" id="filePreview"></div>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>공개 범위</label>
+          <p class="upload-sub-label-lv1">Free description of your request</p>
+          <div class="publicity-tab-group">
+            <label class="tab-item">
+              <input type="radio" name="publicity" value="Public" required>
+              <span class="tab-btn">공개</span>
+            </label>
+            <label class="tab-item">
+              <input type="radio" name="publicity" value="Partial">
+              <span class="tab-btn">부분 공개</span>
+            </label>
+            <label class="tab-item">
+              <input type="radio" name="publicity" value="Private">
+              <span class="tab-btn">비공개</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>Request Details & Additional Materials</label>
+          <p class="upload-sub-label-lv1">Please describe your request and specify any additional materials needed.</p>
+          <textarea id="objDetails" rows="8" required placeholder="재구성하고 싶은 사물의 새로운 용도나, 추가하고 싶은 소재(가죽, 금속 등)에 대해 상세히 적어주세요."></textarea>
+        </div>
+
+        <div class="input-group-lv1">
+          <label>1:1 Consultation</label>
+          <p class="upload-sub-label-lv1">Please specify your constraints and budget. Work will proceed after the consultation.</p>
+          <textarea id="objConsult" rows="8" required placeholder="예산 범위나 희망 작업 기간, 그 외 디자이너와 상의하고 싶은 제약 사항을 입력해 주세요."></textarea>
+        </div>
+
+        <div class="form-submit-zone-lv1">
+          <button type="submit" class="submit-action-btn-lv1">NEXT</button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
