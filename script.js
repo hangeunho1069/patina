@@ -152,3 +152,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
+// script.js 내부의 nextBtn 이벤트를 아래 구조로 최종 업데이트!
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      if (!selectedLevel) {
+        alert('진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요!');
+        return;
+      }
+      
+      if (selectedLevel === 'lv1') {
+        alert('[LV1] 단계가 선택되었습니다. 의뢰서 입력 단계로 이동합니다!');
+        window.location.href = "./request_form_lv1.html";
+      } else if (selectedLevel === 'lv2') {
+        alert('[LV2] 단계가 선택되었습니다. 구조 봉합 의뢰서 단계로 이동합니다!');
+        window.location.href = "./request_form_lv2.html";
+      } else if (selectedLevel === 'lv3') {
+        // 👈 [Lv3 연동 추가] 마스터피스 양식으로 이동
+        alert('[LV3] 단계가 선택되었습니다. 마스터피스 정밀 진단 단계로 이동합니다!');
+        window.location.href = "./request_form_lv3.html";
+      }
+    });
+  }
