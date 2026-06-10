@@ -2103,3 +2103,84 @@ body.about-page .about-wrapper {
   margin: 35px 0 70px 0;
   text-align: left;
 }
+/* ==========================================================================
+   REQUEST: MASTERPIECE (Lv3) 전용 고도화 스타일
+   ========================================================================== */
+
+.request-form-lv3-page {
+  background-color: #ffffff;
+}
+
+/* 폼 페이지 격리 스와이프 (Lv1/Lv2와 동일하게 적용) */
+.request-form-lv3-page .page-master-covers {
+  position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; z-index: 9999999 !important; pointer-events: none;        
+}
+.request-form-lv3-page .page-master-covers .cover {
+  position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; transform: translateX(0); transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1) !important; 
+}
+.request-form-lv3-page .page-master-covers .cover.slide-left.active { transform: translateX(-100%) !important; }
+.request-form-lv3-page .page-master-covers .cover.slide-up.active { transform: translateY(-100%) !important; }
+.request-form-lv3-page .page-master-covers .cover.slide-right.active { transform: translateX(100%) !important; }
+.request-form-lv3-page .cover.color-darkgreen { background-color: #1e2516 !important; }
+.request-form-lv3-page .cover.color-olive { background-color: #3b462c !important; }
+.request-form-lv3-page .cover.color-lightgreen { background-color: #7f8e61 !important; }
+.request-form-lv3-page .cover.active { pointer-events: none !important; }
+
+/* Lv3 아이덴티티 라벨 */
+.lv3-identity-label {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* [시안 매칭] 공개 범위 3단 탭 스타일 */
+.publicity-tab-group {
+  display: flex;
+  width: 100%;
+  border: 1.5px solid #000;
+  box-sizing: border-box;
+}
+
+.tab-item {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+
+.tab-item input {
+  position: absolute;
+  opacity: 0;
+}
+
+.tab-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  border-right: 1.5px solid #000;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* 마지막 탭은 오른쪽 테두리 제거 */
+.tab-item:last-child .tab-btn {
+  border-right: none;
+}
+
+/* 👈 [인터랙션] 선택된 탭은 파티나 딥그린으로 배경색 채우기 */
+.tab-item input:checked ~ .tab-btn {
+  background-color: #3b462c;
+  color: #ffffff;
+}
+
+/* [교정] 텍스트 입력창 각진 무드 유지 */
+.request-form-lv3-page input[type="text"],
+.request-form-lv3-page textarea {
+  border-radius: 0px !important;
+}
