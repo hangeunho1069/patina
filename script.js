@@ -193,4 +193,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+// ==========================================================================
+  // 🎯 [Lv3 전용] NEXT 버튼 클릭 시 수거 방식 선택 페이지로 연결
+  // ==========================================================================
+  const lv3NextBtn = document.getElementById('lv3NextBtn');
+  const lv3RequestForm = document.getElementById('lv3RequestForm');
 
+  if (lv3NextBtn && lv3RequestForm) {
+    lv3NextBtn.addEventListener('click', function() {
+      // 1. 필수 입력 사항들이 비어있는지 브라우저에게 체크 요청
+      const isFormValid = lv3RequestForm.reportValidity();
+      
+      if (isFormValid) {
+        const objName = document.getElementById('objName').value.trim();
+        alert(`[${objName}] 사전 진단서 작성이 완료되었습니다. 최종 수거 방식 선택 단계로 이동합니다!`);
+        
+        // 2. 👈 핵심: 팝업창 닫히면 방금 만든 수거 방식 선택 HTML로 직행합니다!
+        window.location.href = "./request_form_collection.html";
+      }
+    });
+  }
