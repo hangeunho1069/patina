@@ -1,16 +1,15 @@
 // ==========================================================================
-// patina 통합 마스터 스크립트 (메인 마비 에러 완벽 교정 버전)
+// patina 통합 마스터 스크립트 (구형 알림창 중복 충돌 완벽 클린업 버전)
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
   
   // ------------------------------------------------------------------------
-  // 1. [메인 및 전 페이지 공통] 초록색 커버 박스 사방 스와이프 엔진
+  // 1. [공통] 초록색 커버 박스 사방 스와이프 엔진
   // ------------------------------------------------------------------------
   const covers = document.querySelectorAll('.cover');
   
   if (covers.length > 0) {
-    // 페이지 로드 후 0.5초 뒤에 active 클래스를 주어 사방으로 날려버림
     setTimeout(() => {
       covers.forEach(cover => {
         cover.classList.add('active');
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // ------------------------------------------------------------------------
-  // 2. [Start a Request 페이지] 서비스 레벨 카드 클릭 및 Next 이동 제어
+  // 2. [Start a Request 페이지] 서비스 레벨 카드 클릭 활성화
   // ------------------------------------------------------------------------
   const cards = document.querySelectorAll('.selectable-card');
   const nextBtn = document.getElementById('nextStepBtn');
@@ -29,55 +28,50 @@ document.addEventListener('DOMContentLoaded', function() {
   if (cards.length > 0) {
     cards.forEach(card => {
       card.addEventListener('click', function() {
+        // 기존 active(진한 녹색 테두리) 모두 제거
         cards.forEach(c => c.classList.remove('active'));
+        // 클릭한 카드에 클래스 추가
         this.classList.add('active');
         selectedLevel = this.getAttribute('data-level');
-        console.log("선택된 서비스 단계:", selectedLevel);
+        console.log("현재 선택된 레벨 변수 업데이트:", selectedLevel);
       });
     });
   }
 
-  // 👈 핵심 에러 교정: 메인 페이지에 nextBtn이 없어도 에러가 나지 않도록 철저히 감싸둠!
-  // script.js 내부의 nextBtn 이벤트 부분을 찾아서 이 구조로 덮어쓰기!
- // ========================================================================
-  // 🎯 [마스터피스 봉인 해제] Next 버튼 클릭 시 Lv1, Lv2, Lv3 완벽 분기 제어
-  // ========================================================================
+
+  // ------------------------------------------------------------------------
+  // 3. [교정 완료] Next 버튼 클릭 시 주소창 강제 순간이동 제어 (단 하나의 분기만 실행)
+  // ------------------------------------------------------------------------
   if (nextBtn) {
     nextBtn.addEventListener('click', function() {
-      // 레벨을 아무것도 선택하지 않고 Next를 눌렀을 때 방어막
       if (!selectedLevel) {
         alert('진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요!');
         return;
       }
       
-      // 1단계: Standard 선택 시
+      // 👈 구형 알림창의 찌꺼기 텍스트를 모두 원천 삭제하고, 실제 파일 경로로 명시적 매칭합니다.
       if (selectedLevel === 'lv1') {
-        alert('[LV1. Standard] 단계가 선택되었습니다. 의뢰서 입력 단계로 이동합니다!');
         window.location.href = "./request_form_lv1.html";
       } 
-      // 2단계: Advanced 선택 시 (봉인 해제 완료)
       else if (selectedLevel === 'lv2') {
-        alert('[LV2. Advanced] 단계가 선택되었습니다. 구조 봉합 의뢰서 단계로 이동합니다!');
         window.location.href = "./request_form_lv2.html";
       } 
-      // 3단계: Masterpiece 선택 시 (🔥 이번에 완벽하게 뚫어낸 핵심 구역!)
       else if (selectedLevel === 'lv3') {
-        alert('[LV3. Masterpiece] 파티나 최상위 마스터피스 사전 진단 단계로 이동합니다!');
         window.location.href = "./request_form_lv3.html";
       } 
-      // 예외 처리용 방어 코드
       else {
-        alert('올바른 서비스 단계를 선택해 주세요.');
+        alert('올바른 서비스 단계를 고른 뒤 Next를 눌러주세요.');
       }
     });
   }
+
+
   // ------------------------------------------------------------------------
-  // 3. [Request: Standard 페이지] Other 라디오 단추 및 밑줄 입력창 제어
+  // 4. [각 서브 폼 공통] Other 라디오 단추 및 하단 인풋창 잠금해제 제어
   // ------------------------------------------------------------------------
   const typeRadios = document.querySelectorAll('input[name="objType"]');
   const otherText = document.getElementById('objTypeOtherText');
 
-  // 👈 에러 방지 안전장치
   if (typeRadios.length > 0 && otherText) {
     typeRadios.forEach(radio => {
       radio.addEventListener('change', function() {
@@ -94,17 +88,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // ------------------------------------------------------------------------
-  // 4. [Request: Standard 페이지] 가상 업로드 박스 및 파일명 프리뷰 출력
+  // 5. [각 서브 폼 공통] 가상 업로드 존 캔버스 및 파일 첨부 프리뷰 리스트업
   // ------------------------------------------------------------------------
   const uploadZone = document.getElementById('uploadZone');
   const fileInput = document.getElementById('objPhotos');
   const filePreview = document.getElementById('filePreview');
   const lv1RequestForm = document.getElementById('lv1RequestForm');
+  const lv2RequestForm = document.getElementById('lv2RequestForm');
+  const lv3RequestForm = document.getElementById('lv3RequestForm');
 
-  // 👈 에러 방지 안전장치
   if (uploadZone && fileInput && filePreview) {
     uploadZone.addEventListener('click', function(e) {
-      // .cover 가림막 박스를 누를 때 이벤트가 씹히지 않도록 인풋 창 강제 구동
       if (e.target.id !== 'objPhotos') {
         fileInput.click();
       }
@@ -129,29 +123,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 👈 에러 방지 안전장치
-  if (lv1RequestForm) {
-    lv1RequestForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const objName = document.getElementById('objName').value.trim();
-      if (!objName) {
-        alert('필수 입력 항목을 확인해 주세요!');
-        return;
-      }
-      alert(`[Lv1. Standard] 의뢰서 접수가 성공적으로 완료되었습니다!`);
-      lv1RequestForm.reset();
-      if (filePreview) filePreview.innerHTML = '';
-      window.location.href = "./index.html"; 
-    });
+  // 폼 제출 핸들러 (Lv1, Lv2, Lv3 통합 방어막)
+  function handleFormSubmit(formElement, successMsg) {
+    if (formElement) {
+      formElement.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert(successMsg);
+        formElement.reset();
+        if (filePreview) filePreview.innerHTML = '';
+        window.location.href = "./index.html";
+      });
+    }
   }
+
+  handleFormSubmit(lv1RequestForm, '[Lv1. Standard] 의뢰서 접수가 성공적으로 완료되었습니다!');
+  handleFormSubmit(lv2RequestForm, '[Lv2. Advanced] 의뢰서 접수가 성공적으로 완료되었습니다!');
+  handleFormSubmit(lv3RequestForm, '[Lv3. Masterpiece] 의뢰서 접수가 성공적으로 완료되었습니다!');
 
 
   // ------------------------------------------------------------------------
-  // 5. [DONATE 페이지] 기부 신청서 제출 핸들러
+  // 6. [DONATE 페이지] 기부 신청서 제출 피드백
   // ------------------------------------------------------------------------
   const donateForm = document.getElementById('donateForm');
 
-  // 👈 에러 방지 안전장치
   if (donateForm) {
     donateForm.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -164,4 +158,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
-
