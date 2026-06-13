@@ -158,3 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
+// script.js 내부 nextBtn 분기 로직 점검용
+else if (selectedLevel === 'lv3') {
+  window.location.href = "./request_form_collection.html"; // 👈 방금 만든 이 파일 이름과 정확히 매칭하기!
+}
