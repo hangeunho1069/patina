@@ -158,7 +158,39 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
-// script.js 내부 nextBtn 분기 로직 점검용
-else if (selectedLevel === 'lv3') {
-  window.location.href = "./request_form_collection.html"; // 👈 방금 만든 이 파일 이름과 정확히 매칭하기!
-}
+// ==========================================================================
+// Collection Method 선택 및 최종 제출 인터랙션
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const collectionCards = document.querySelectorAll('.collection-method-card');
+  const finalSubmitBtn = document.getElementById('finalSubmitBtn');
+  let selectedMethod = null;
+
+  if (collectionCards.length > 0) {
+    collectionCards.forEach(card => {
+      card.addEventListener('click', function() {
+        // 모든 카드의 진한 녹색 스트로크 제거
+        collectionCards.forEach(c => c.classList.remove('active'));
+        // 클릭한 카드에만 스트로크 입히기
+        this.classList.add('active');
+        selectedMethod = this.getAttribute('data-method');
+      });
+    });
+  }
+
+  if (finalSubmitBtn) {
+    finalSubmitBtn.addEventListener('click', function() {
+      if (!selectedMethod) {
+        alert('수거 방식을 하나 선택해 주세요!');
+        return;
+      }
+      
+      const methodText = selectedMethod === 'box' ? 'Send patina Box' : 'Self Drop-off';
+      alert(`[${methodText}] 수거 방식이 선택되었습니다.\n모든 의뢰 절차가 성공적으로 접수되었습니다. 곧 작가님이 연락드릴 예정입니다!`);
+      
+      // 메인 페이지로 복귀
+      window.location.href = "./index.html";
+    });
+  }
+});
+
