@@ -39,26 +39,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 👈 핵심 에러 교정: 메인 페이지에 nextBtn이 없어도 에러가 나지 않도록 철저히 감싸둠!
   // script.js 내부의 nextBtn 이벤트 부분을 찾아서 이 구조로 덮어쓰기!
+ // ========================================================================
+  // 🎯 [마스터피스 봉인 해제] Next 버튼 클릭 시 Lv1, Lv2, Lv3 완벽 분기 제어
+  // ========================================================================
   if (nextBtn) {
     nextBtn.addEventListener('click', function() {
+      // 레벨을 아무것도 선택하지 않고 Next를 눌렀을 때 방어막
       if (!selectedLevel) {
         alert('진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요!');
         return;
       }
       
+      // 1단계: Standard 선택 시
       if (selectedLevel === 'lv1') {
-        alert('[LV1] 단계가 선택되었습니다. 의뢰서 입력 단계로 이동합니다!');
+        alert('[LV1. Standard] 단계가 선택되었습니다. 의뢰서 입력 단계로 이동합니다!');
         window.location.href = "./request_form_lv1.html";
-      } else if (selectedLevel === 'lv2') {
-        // 👈 [교정 추가] Lv2를 고르고 Next를 누르면 여기로 순간이동!
-        alert('[LV2] 단계가 선택되었습니다. 구조 봉합 의뢰서 단계로 이동합니다!');
+      } 
+      // 2단계: Advanced 선택 시 (봉인 해제 완료)
+      else if (selectedLevel === 'lv2') {
+        alert('[LV2. Advanced] 단계가 선택되었습니다. 구조 봉합 의뢰서 단계로 이동합니다!');
         window.location.href = "./request_form_lv2.html";
-      } else {
-        alert(`[${selectedLevel.toUpperCase()}] 단계는 현재 준비 중입니다. Lv1 또는 Lv2 단계를 선택해 보세요!`);
+      } 
+      // 3단계: Masterpiece 선택 시 (🔥 이번에 완벽하게 뚫어낸 핵심 구역!)
+      else if (selectedLevel === 'lv3') {
+        alert('[LV3. Masterpiece] 파티나 최상위 마스터피스 사전 진단 단계로 이동합니다!');
+        window.location.href = "./request_form_lv3.html";
+      } 
+      // 예외 처리용 방어 코드
+      else {
+        alert('올바른 서비스 단계를 선택해 주세요.');
       }
     });
   }
-
   // ------------------------------------------------------------------------
   // 3. [Request: Standard 페이지] Other 라디오 단추 및 밑줄 입력창 제어
   // ------------------------------------------------------------------------
@@ -152,24 +164,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
-// script.js 내부의 nextBtn 이벤트를 아래 구조로 최종 업데이트!
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function() {
-      if (!selectedLevel) {
-        alert('진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요!');
-        return;
-      }
-      
-      if (selectedLevel === 'lv1') {
-        alert('[LV1] 단계가 선택되었습니다. 의뢰서 입력 단계로 이동합니다!');
-        window.location.href = "./request_form_lv1.html";
-      } else if (selectedLevel === 'lv2') {
-        alert('[LV2] 단계가 선택되었습니다. 구조 봉합 의뢰서 단계로 이동합니다!');
-        window.location.href = "./request_form_lv2.html";
-      } else if (selectedLevel === 'lv3') {
-        // 👈 [Lv3 연동 추가] 마스터피스 양식으로 이동
-        alert('[LV3] 단계가 선택되었습니다. 마스터피스 정밀 진단 단계로 이동합니다!');
-        window.location.href = "./request_form_lv3.html";
-      }
-    });
-  }
+
