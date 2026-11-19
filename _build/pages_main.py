@@ -13,6 +13,14 @@ OBJECTS = [
 ]
 
 
+# 표지 스티커: (파일, 설명, 모양, 너비, 데스크톱 left%, top%, 모바일 left%, top%, 회전, 지연)
+STICKERS = [
+    ("Group 59.png", "초록 방석", "round", "clamp(96px, 8vw, 128px)", 56, 74, 6, 30, -6, 1.2),
+    ("Group 53.png", "구두가 걸린 스툴", "pill", "clamp(80px, 6.4vw, 104px)", 92, 50, 70, 8, 8, 1.35),
+    ("Group 52.png", "덤벨", "soft", "clamp(84px, 7vw, 112px)", 48, 34, 40, 40, -10, 1.5),
+]
+
+
 # --------------------------------------------------------------------------
 # HOME
 # --------------------------------------------------------------------------
@@ -20,6 +28,11 @@ def home():
     strip = "\n".join(
         fig(f"./{src}", kr, f"No.{i:02d}", en, ratio="", href="./shop.html")
         for i, (src, en, kr) in enumerate(OBJECTS, 1)
+    )
+    stickers = "\n".join(
+        f'          <div class="sticker {shape}" tabindex="0" role="img" aria-label="{alt}" data-left="{l}" data-top="{t}" data-mleft="{ml}" data-mtop="{mt}" data-r="{r}" '
+        f'style="--w:{w};--r:{r}deg;--delay:{d}s"><img src="./{src}" alt="" draggable="false"></div>'
+        for src, alt, shape, w, l, t, ml, mt, r, d in STICKERS
     )
     body = f"""
     <!-- 표지 -->
@@ -32,6 +45,14 @@ def home():
           <p class="lede">버려지는 것들이 사라지지 않는 세계를 만듭니다.</p>
         </div>
         {fig("./Mask group.png", "초록색으로 칠해진 오래된 테이블", "Cover — Fig. 01", "Table, signature green", ratio="", lazy=False, cls="cover-figure")}
+        <div class="playground" aria-label="끌어서 움직여 볼 수 있는 오브젝트 사진들">
+{stickers}
+          <div class="badge" style="left:52%;top:6%" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><defs><path id="badge-circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text textLength="234" lengthAdjust="spacing"><textPath href="#badge-circle" textLength="234" lengthAdjust="spacing">still in use · still in use · </textPath></text></svg>
+            <b>✳</b>
+          </div>
+          <span class="drag-hint" style="left:44%;top:68%" aria-hidden="true">↻ drag</span>
+        </div>
       </div>
       <nav class="cover-foot" aria-label="이번 호 주요 기사">
         <a href="./about.html"><span class="no">01</span><span><span class="ttl">About</span><br><span class="kr">시간이 쌓인 사물</span></span></a>
@@ -211,6 +232,7 @@ def shop():
     </section>
     <section class="section-tight">
       <div class="wrap">
+        <div class="shop-tools"><span class="kicker">10 objects</span><button type="button" class="btn" data-shuffle=".catalog">섞어 보기 <span class="arr">↻</span></button></div>
         <div class="catalog">
 {figs}
         </div>

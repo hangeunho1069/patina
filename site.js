@@ -49,6 +49,9 @@
       if (url.origin !== location.origin) return;
       if (url.pathname === location.pathname && url.hash) return;
       e.preventDefault();
+      // 클릭한 지점에서 커튼(원)이 퍼지도록
+      curtain.style.setProperty('--cx', e.clientX + 'px');
+      curtain.style.setProperty('--cy', e.clientY + 'px');
       go(url.href);
     });
     window.addEventListener('pageshow', function (ev) {
@@ -417,6 +420,170 @@
   }
 
   // ------------------------------------------------------------------------
+  // 8. 플레이그라운드 스티커: 끌어서 던지기 (관성 + 벽 튕김)
+  // ------------------------------------------------------------------------
+  function setupStickers() {
+    var ground = document.querySelector('.playground');
+    if (!ground) return;
+    var stickers = Array.prototype.slice.call(ground.querySelectorAll('.sticker'));
+    var z = 5;
+
+    stickers.forEach(function (el) {
+      var st = { x: 0, y: 0, r: parseFloat(el.dataset.r || '0'), vx: 0, vy: 0, raf: 0 };
+      // 시작 위치: data-left/top(%)을 픽셀 좌표로
+      function place() {
+        var gw = ground.clientWidth, gh = ground.clientHeight;
+        var w = el.offsetWidth, h = el.offsetHeight;
+        var m = window.innerWidth < 860 ? 'm' : '';
+        var lx = parseFloat(el.dataset[m ? 'mleft' : 'left'] || el.dataset.left);
+        var ty = parseFloat(el.dataset[m ? 'mtop' : 'top'] || el.dataset.top);
+        st.x = Math.max(0, Math.min(gw - w, gw * lx / 100));
+        st.y = Math.max(0, Math.min(gh - h, gh * ty / 100));
+        apply();
+      }
+      function apply() {
+        el.style.setProperty('--x', st.x + 'px');
+        el.style.setProperty('--y', st.y + 'px');
+        el.style.setProperty('--r', st.r + 'deg');
+      }
+      place();
+      window.addEventListener('resize', place);
+      // 등장 애니메이션이 끝난 뒤엔 transform을 직접 제어
+      el.addEventListener('animationend', function () { el.style.animation = 'none'; });
+
+      var dragging = false, ox = 0, oy = 0, lastX = 0, lastY = 0, lastT = 0;
+      el.addEventListener('pointerdown', function (e) {
+        dragging = true;
+        cancelAnimationFrame(st.raf);
+        el.setPointerCapture(e.pointerId);
+        el.classList.add('is-grab');
+        el.style.zIndex = ++z;
+        el.style.setProperty('--s', '1.06');
+        ox = e.clientX - st.x; oy = e.clientY - st.y;
+        lastX = e.clientX; lastY = e.clientY; lastT = performance.now();
+        st.vx = st.vy = 0;
+      });
+      el.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        var now = performance.now(), dt = Math.max(16, now - lastT);
+        // 던지는 속도는 프레임당 최대 28px로 제한 (튐 방지)
+        st.vx = Math.max(-28, Math.min(28, (e.clientX - lastX) / dt * 16));
+        st.vy = Math.max(-28, Math.min(28, (e.clientY - lastY) / dt * 16));
+        lastX = e.clientX; lastY = e.clientY; lastT = now;
+        st.x = e.clientX - ox; st.y = e.clientY - oy;
+        st.r = Math.max(-18, Math.min(18, st.r + st.vx * 0.15));
+        apply();
+      });
+      function release() {
+        if (!dragging) return;
+        dragging = false;
+        el.classList.remove('is-grab');
+        el.style.setProperty('--s', '1');
+        if (reduce) return;
+        // 던진 속도만큼 미끄러지고, 벽에 닿으면 튕김
+        var gw = ground.clientWidth, gh = ground.clientHeight;
+        var w = el.offsetWidth, h = el.offsetHeight;
+        (function step() {
+          st.vx *= 0.9; st.vy *= 0.9;
+          st.x += st.vx; st.y += st.vy;
+          if (st.x < -w * 0.3) { st.x = -w * 0.3; st.vx = Math.abs(st.vx) * 0.6; }
+          if (st.x > gw - w * 0.7) { st.x = gw - w * 0.7; st.vx = -Math.abs(st.vx) * 0.6; }
+          if (st.y < -h * 0.2) { st.y = -h * 0.2; st.vy = Math.abs(st.vy) * 0.6; }
+          if (st.y > gh - h * 0.6) { st.y = gh - h * 0.6; st.vy = -Math.abs(st.vy) * 0.6; }
+          apply();
+          if (Math.abs(st.vx) + Math.abs(st.vy) > 0.3) st.raf = requestAnimationFrame(step);
+        })();
+      }
+      el.addEventListener('pointerup', release);
+      el.addEventListener('pointercancel', release);
+      // 키보드로도 살짝 움직일 수 있게
+      el.addEventListener('keydown', function (e) {
+        var d = e.shiftKey ? 40 : 12, k = e.key;
+        if (k === 'ArrowLeft') st.x -= d; else if (k === 'ArrowRight') st.x += d;
+        else if (k === 'ArrowUp') st.y -= d; else if (k === 'ArrowDown') st.y += d;
+        else return;
+        e.preventDefault(); apply();
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // 9. 틸트 카드 & 자석 버튼
+  // ------------------------------------------------------------------------
+  function setupTiltAndMagnet() {
+    if (reduce || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    document.querySelectorAll('[data-tilt]').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = 'perspective(900px) rotateY(' + (px * 10) + 'deg) rotateX(' + (-py * 10) + 'deg) translateZ(0)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+    document.querySelectorAll('.btn').forEach(function (b) {
+      b.addEventListener('pointermove', function (e) {
+        var r = b.getBoundingClientRect();
+        var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+        b.style.transform = 'translate(' + dx * 0.18 + 'px,' + dy * 0.3 + 'px)';
+      });
+      b.addEventListener('pointerleave', function () { b.style.transform = ''; });
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // 10. 오브젝트 섞기 (FLIP 애니메이션)
+  // ------------------------------------------------------------------------
+  function setupShuffle() {
+    var btn = document.querySelector('[data-shuffle]');
+    var grid = btn && document.querySelector(btn.getAttribute('data-shuffle'));
+    if (!grid) return;
+    btn.addEventListener('click', function () {
+      var items = Array.prototype.slice.call(grid.children);
+      var first = new Map(items.map(function (el) { return [el, el.getBoundingClientRect()]; }));
+      for (var i = items.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = items[i]; items[i] = items[j]; items[j] = t;
+      }
+      items.forEach(function (el) { grid.appendChild(el); });
+      if (reduce) return;
+      items.forEach(function (el) {
+        var a = first.get(el), b = el.getBoundingClientRect();
+        var dx = a.left - b.left, dy = a.top - b.top;
+        if (!dx && !dy) return;
+        el.animate([
+          { translate: dx + 'px ' + dy + 'px', rotate: (Math.random() * 20 - 10) + 'deg' },
+          { translate: '0 0', rotate: '0deg' }
+        ], { duration: 700 + Math.random() * 300, easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)' });
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // 11. 커서
+  // ------------------------------------------------------------------------
+  function setupCursor() {
+    if (reduce || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var c = document.createElement('div');
+    c.className = 'cursor';
+    c.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(c);
+    var x = -100, y = -100, cx = -100, cy = -100;
+    window.addEventListener('pointermove', function (e) { x = e.clientX; y = e.clientY; c.classList.add('is-on'); }, { passive: true });
+    document.addEventListener('mouseleave', function () { c.classList.remove('is-on'); });
+    (function loop() {
+      cx += (x - cx) * 0.25; cy += (y - cy) * 0.25;
+      c.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)';
+      requestAnimationFrame(loop);
+    })();
+    document.addEventListener('pointerover', function (e) {
+      var drag = e.target.closest('.sticker, .strip');
+      c.classList.toggle('is-drag', !!drag);
+      c.textContent = drag ? 'drag' : '';
+      c.classList.toggle('is-link', !drag && !!e.target.closest('a, button, label, .upload'));
+    });
+  }
+
+  // ------------------------------------------------------------------------
   // 시작
   // ------------------------------------------------------------------------
   document.addEventListener('DOMContentLoaded', function () {
@@ -428,6 +595,10 @@
     setupReveal();
     setupStrips();
     setupForms();
+    setupStickers();
+    setupTiltAndMagnet();
+    setupShuffle();
+    setupCursor();
     requestAnimationFrame(function () {
       setTimeout(function () { root.classList.add('is-loaded'); }, 60);
     });

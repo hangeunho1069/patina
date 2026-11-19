@@ -2,7 +2,7 @@
 # Pages are written as plain static HTML; this file only keeps header/footer identical.
 import html as _html
 
-V = "2"  # asset version (cache busting)
+V = "h1"  # asset version (cache busting)
 
 NAV = [
     ("About", "./about.html", "Still in use", "./Group 55.png"),
@@ -37,7 +37,7 @@ def head(title, desc):
   <script>try{{if(sessionStorage.getItem('pt-arrive')){{document.documentElement.classList.add('arriving');sessionStorage.removeItem('pt-arrive')}}}}catch(e){{}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+KR:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="./site.css?v={V}">
 </head>
