@@ -15,12 +15,12 @@ OBJECTS = [
 
 # 표지 스티커: (파일, 설명, 모양, 너비, 데스크톱 left%, top%, 모바일 left%, top%, 회전, 지연)
 STICKERS = [
-    ("Group 51.png", "의자와 사이드 테이블", "soft", "clamp(100px, 8.6vw, 132px)", 70, 4, 4, 6, -7, 1.1),
-    ("Group 52.png", "덤벨", "soft", "clamp(80px, 6.6vw, 104px)", 50, 26, 34, 40, 9, 1.2),
-    ("Group 53.png", "구두가 걸린 스툴", "pill", "clamp(70px, 5.8vw, 92px)", 91, 38, 72, 2, 8, 1.3),
-    ("Group 54.png", "강아지 인형과 캐리어", "round", "clamp(96px, 8vw, 124px)", 62, 62, 64, 52, -5, 1.4),
-    ("Group 55.png", "라탄 스툴", "pill", "clamp(66px, 5.4vw, 86px)", 82, 70, 38, 6, 12, 1.5),
-    ("Group 59.png", "초록 방석", "round", "clamp(88px, 7.4vw, 116px)", 44, 74, 6, 56, -9, 1.6),
+    ("Group 51.png", "의자와 사이드 테이블", "soft", "clamp(130px, 11.2vw, 172px)", 70, 4, 4, 6, -7, 1.1),
+    ("Group 52.png", "덤벨", "soft", "clamp(104px, 8.6vw, 135px)", 50, 26, 34, 40, 9, 1.2),
+    ("Group 53.png", "구두가 걸린 스툴", "pill", "clamp(91px, 7.5vw, 120px)", 91, 38, 72, 2, 8, 1.3),
+    ("Group 54.png", "강아지 인형과 캐리어", "round", "clamp(125px, 10.4vw, 161px)", 62, 62, 64, 52, -5, 1.4),
+    ("Group 55.png", "라탄 스툴", "pill", "clamp(86px, 7.0vw, 112px)", 82, 70, 38, 6, 12, 1.5),
+    ("Group 59.png", "초록 방석", "round", "clamp(114px, 9.6vw, 151px)", 44, 74, 6, 56, -9, 1.6),
 ]
 
 
@@ -51,11 +51,6 @@ def home():
           </div>
           <div class="playground" aria-label="끌어서 움직여 볼 수 있는 오브젝트 사진들">
 {stickers}
-            <div class="badge" style="left:88%;top:2%" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><defs><path id="badge-circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text textLength="234" lengthAdjust="spacing"><textPath href="#badge-circle" textLength="234" lengthAdjust="spacing">still in use · still in use · </textPath></text></svg>
-              <b>✳</b>
-            </div>
-            <span class="drag-hint" style="left:56%;top:52%" aria-hidden="true">↻ drag me</span>
           </div>
         </div>
         <nav class="cover-foot" aria-label="이번 호 주요 기사">
@@ -196,6 +191,10 @@ def about():
           <div class="pull" data-reveal>
             <p class="quote-kr">단순한 과거로의 회귀나 원상복구가 아닙니다.</p>
           </div>
+          <div class="essay-pair">
+            {fig("./G1.png", "재구성한 의자의 디테일", "Fig. 02", "Detail", ratio="ratio-45")}
+            {fig("./G2.png", "재구성한 의자의 측면", "Fig. 03", "Side", ratio="ratio-45")}
+          </div>
           <p data-reveal>파티나는 세월의 흔적을 결함이 아닌 사물의 고유한 서사이자 정체성으로 바라봅니다. 제품이 거쳐온 시간과 개입의 과정을 공식적으로 기록하여 하나의 가치 있는 이력을 만들어냅니다.</p>
           <p data-reveal>나아가 파티나는 개별 의류 및 물건의 아카이빙을 넘어, 사물을 다시 소재로 환원하는 지속 가능한 순환 구조를 구축합니다.</p>
           <p data-reveal>사물의 성격에 따라 누군가의 역사적 오브제로 남기도 하고, 해체와 세척을 거쳐 새로운 제품의 부품과 자재로 순환되기도 합니다. 감정적 서사와 물질적 순환을 동시에 아우르는 파티나의 프로세스는,</p>
@@ -237,7 +236,14 @@ def shop():
     </section>
     <section class="section-tight">
       <div class="wrap">
-        <div class="shop-tools"><span class="kicker">10 objects</span><button type="button" class="btn" data-shuffle=".catalog">섞어 보기 <span class="arr">↻</span></button></div>
+        <div class="shop-tools">
+          <div class="view-toggle" role="group" aria-label="보기 방식">
+            <button type="button" class="is-active" data-view="scatter" aria-pressed="true">Scatter</button>
+            <button type="button" data-view="grid" aria-pressed="false">Grid</button>
+          </div>
+          <span class="meta">10 objects</span>
+          <button type="button" class="btn" data-shuffle=".catalog">섞어 보기 <span class="arr">↻</span></button>
+        </div>
         <div class="catalog">
 {figs}
         </div>

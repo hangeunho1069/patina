@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="./site.css?v=h3">
+  <link rel="stylesheet" href="./site.css?v=h4">
 </head>
 <body>
   <a class="sr-skip" href="#main">본문 바로가기</a>
@@ -59,7 +59,14 @@
     </section>
     <section class="section-tight">
       <div class="wrap">
-        <div class="shop-tools"><span class="kicker">10 objects</span><button type="button" class="btn" data-shuffle=".catalog">섞어 보기 <span class="arr">↻</span></button></div>
+        <div class="shop-tools">
+          <div class="view-toggle" role="group" aria-label="보기 방식">
+            <button type="button" class="is-active" data-view="scatter" aria-pressed="true">Scatter</button>
+            <button type="button" data-view="grid" aria-pressed="false">Grid</button>
+          </div>
+          <span class="meta">10 objects</span>
+          <button type="button" class="btn" data-shuffle=".catalog">섞어 보기 <span class="arr">↻</span></button>
+        </div>
         <div class="catalog">
 <figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 51.png" alt="의자와 사이드 테이블" loading="lazy"></div><figcaption><span><b>Chair & side table</b></span><span>No.01 — 의자와 사이드 테이블</span></figcaption></figure>
 <figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 52.png" alt="덤벨" loading="lazy"></div><figcaption><span><b>Dumbbell</b></span><span>No.02 — 덤벨</span></figcaption></figure>
@@ -103,6 +110,6 @@
       <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
     </div>
   </footer>
-  <script src="./site.js?v=h3"></script>
+  <script src="./site.js?v=h4"></script>
 </body>
 </html>

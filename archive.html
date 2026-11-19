@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="./site.css?v=h3">
+  <link rel="stylesheet" href="./site.css?v=h4">
 </head>
 <body>
   <a class="sr-skip" href="#main">본문 바로가기</a>
@@ -68,7 +68,7 @@
     <section class="section" style="padding-top:0">
       <div class="wrap">
         <div class="sec-head"><span class="no">§ 03.1</span><span class="kicker">Index of works</span><span class="meta">4 entries</span></div>
-        <article class="entry">
+        <article class="entry" id="entry-001">
           <span class="entry-no" data-reveal>001</span>
           <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./G001.png" alt="나무 의자 Graft 001" loading="lazy"></div><figcaption><span>Fig. 001</span><span>Chair</span></figcaption></figure>
           <div class="entry-text">
@@ -77,7 +77,7 @@
             <p data-reveal>사용자의 반려의자는 오랜시간 자리를 지켰습니다. 오랜시간의 가구 그 헤리티지를 유지하고 들이기 위한 대안모델, 참여의자이며 수리를 지속하고 싶다는 사용자 지향 그 문맥이 형태를 완성하였습니다.</p>
           </div>
         </article>
-        <article class="entry">
+        <article class="entry" id="entry-002">
           <span class="entry-no" data-reveal>002</span>
           <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./G002.png" alt="책상 판이 더해진 의자 Graft 002" loading="lazy"></div><figcaption><span>Fig. 002</span><span>All-in-one desk</span></figcaption></figure>
           <div class="entry-text">
@@ -86,7 +86,7 @@
             <p data-reveal>이번 과제는 Graft 001의 연장선으로써 책상과 클라이언트의 동선의 니즈가 되어 주었습니다. 부드러운 형태 스틸을 활용하여 사용자가 작업에 집중할 수 있도록 미니멀하고 실용적으로 디자인한 가구입니다.</p>
           </div>
         </article>
-        <article class="entry">
+        <article class="entry" id="entry-003">
           <span class="entry-no" data-reveal>003</span>
           <figure class="fig" data-reveal="img"><div class="fig-media"><div class="plate-empty">Image forthcoming</div></div><figcaption><span>Fig. 003</span><span>Apron</span></figcaption></figure>
           <div class="entry-text">
@@ -95,7 +95,7 @@
             <p data-reveal>사물의 흔적을 미려한 접합에서 실용적인 가치를 연장선 방향을 과제로 삼았습니다. 시간 형상에나 이음새에서 사용자들의 신뢰를 보강하는 방식으로 가장 살려주었으며, 데님 섬유의 질간 내구성을 배경으로 수선과 마감이 반복될 수 있는 구조를 갖추었습니다.</p>
           </div>
         </article>
-        <article class="entry">
+        <article class="entry" id="entry-004">
           <span class="entry-no" data-reveal>004</span>
           <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./G004.png" alt="등받이를 재구성한 의자 Denim 004" loading="lazy"></div><figcaption><span>Fig. 004</span><span>Potina</span></figcaption></figure>
           <div class="entry-text">
@@ -130,10 +130,10 @@
             <table class="ledger">
               <thead><tr><th scope="col">Date</th><th scope="col">Product</th><th scope="col">Username</th><th scope="col">Status</th></tr></thead>
               <tbody>
-            <tr><td>2025/11/25</td><td>Graft 001</td><td>RAGKE</td><td><span class="status">Returned</span></td></tr>
-            <tr><td>2025/12/30</td><td>Graft 002</td><td>DEADOUD</td><td><span class="status">Returned</span></td></tr>
-            <tr><td>2026/05/13</td><td>Graft 003</td><td>KIMDILDI00</td><td><span class="status">Returned</span></td></tr>
-            <tr class="is-available"><td>2026/05/23</td><td>Graft 004</td><td>GEUNHOHO</td><td><span class="status">Available</span></td></tr>
+            <tr data-peek="./G001.png"><td>2025/11/25</td><td><a href="#entry-001">Graft 001 <span class="arr" aria-hidden="true">↓</span></a></td><td>RAGKE</td><td><span class="status">Returned</span></td></tr>
+            <tr data-peek="./G002.png"><td>2025/12/30</td><td><a href="#entry-002">Graft 002 <span class="arr" aria-hidden="true">↓</span></a></td><td>DEADOUD</td><td><span class="status">Returned</span></td></tr>
+            <tr data-peek=""><td>2026/05/13</td><td><a href="#entry-003">Graft 003 <span class="arr" aria-hidden="true">↓</span></a></td><td>KIMDILDI00</td><td><span class="status">Returned</span></td></tr>
+            <tr class="is-available" data-peek="./graft004.png"><td>2026/05/23</td><td><a href="#entry-004">Graft 004 <span class="arr" aria-hidden="true">↓</span></a></td><td>GEUNHOHO</td><td><span class="status">Available</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -163,6 +163,6 @@
       <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
     </div>
   </footer>
-  <script src="./site.js?v=h3"></script>
+  <script src="./site.js?v=h4"></script>
 </body>
 </html>

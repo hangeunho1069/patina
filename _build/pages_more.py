@@ -19,10 +19,10 @@ ENTRIES = [
 ]
 
 LOG = [
-    ("2025/11/25", "Graft 001", "RAGKE", "Returned", False),
-    ("2025/12/30", "Graft 002", "DEADOUD", "Returned", False),
-    ("2026/05/13", "Graft 003", "KIMDILDI00", "Returned", False),
-    ("2026/05/23", "Graft 004", "GEUNHOHO", "Available", True),
+    ("2025/11/25", "Graft 001", "RAGKE", "Returned", False, "001", "./G001.png"),
+    ("2025/12/30", "Graft 002", "DEADOUD", "Returned", False, "002", "./G002.png"),
+    ("2026/05/13", "Graft 003", "KIMDILDI00", "Returned", False, "003", ""),
+    ("2026/05/23", "Graft 004", "GEUNHOHO", "Available", True, "004", "./graft004.png"),
 ]
 
 
@@ -34,7 +34,7 @@ def archive():
         else:
             media = ('<figure class="fig" data-reveal="img"><div class="fig-media"><div class="plate-empty">Image forthcoming</div></div>'
                      f'<figcaption><span>Fig. {no}</span><span>{sub}</span></figcaption></figure>')
-        entries.append(f"""        <article class="entry">
+        entries.append(f"""        <article class="entry" id="entry-{no}">
           <span class="entry-no" data-reveal>{no}</span>
           {media}
           <div class="entry-text">
@@ -45,8 +45,8 @@ def archive():
         </article>""")
     entries = "\n".join(entries)
     rows = "\n".join(
-        f'            <tr{AV if hi else ""}><td>{d}</td><td>{p}</td><td>{u}</td><td><span class="status">{s}</span></td></tr>'
-        for d, p, u, s, hi in LOG
+        f'            <tr{AV if hi else ""} data-peek="{img}"><td>{d}</td><td><a href="#entry-{no}">{p} <span class="arr" aria-hidden="true">↓</span></a></td><td>{u}</td><td><span class="status">{s}</span></td></tr>'
+        for d, p, u, s, hi, no, img in LOG
     )
     body = f"""
     <section class="page-top">

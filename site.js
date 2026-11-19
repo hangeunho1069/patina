@@ -559,6 +559,66 @@
   }
 
   // ------------------------------------------------------------------------
+  // 10b. Objects 보기 전환 (Scatter / Grid) — 자리 이동을 FLIP으로 부드럽게
+  // ------------------------------------------------------------------------
+  function setupViewToggle() {
+    var group = document.querySelector('.view-toggle');
+    var grid = document.querySelector('.catalog');
+    if (!group || !grid) return;
+    group.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-view]');
+      if (!b || b.classList.contains('is-active')) return;
+      var items = Array.prototype.slice.call(grid.children);
+      var first = new Map(items.map(function (el) { return [el, el.getBoundingClientRect()]; }));
+      group.querySelectorAll('[data-view]').forEach(function (x) {
+        var on = x === b;
+        x.classList.toggle('is-active', on);
+        x.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      grid.classList.toggle('is-grid', b.getAttribute('data-view') === 'grid');
+      if (reduce) return;
+      items.forEach(function (el, i) {
+        var a = first.get(el), c = el.getBoundingClientRect();
+        var dx = a.left - c.left, dy = a.top - c.top, sx = a.width / c.width;
+        if (!dx && !dy && sx === 1) return;
+        el.animate([
+          { transformOrigin: 'top left', transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + sx + ')' },
+          { transformOrigin: 'top left', transform: 'none' }
+        ], { duration: 750, delay: i * 25, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' });
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // 10c. Archive 로그: 행에 올리면 사진 미리보기, 누르면 해당 항목으로
+  // ------------------------------------------------------------------------
+  function setupLogPeek() {
+    var rows = document.querySelectorAll('.ledger tbody tr[data-peek]');
+    if (!rows.length) return;
+    var peek = document.createElement('div');
+    peek.className = 'log-peek';
+    peek.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(peek);
+    rows.forEach(function (tr) {
+      tr.addEventListener('mouseenter', function () {
+        var src = tr.getAttribute('data-peek');
+        peek.innerHTML = src ? '<img src="' + src + '" alt="">' : '<div class="plate-empty">Image forthcoming</div>';
+        peek.classList.add('is-on');
+      });
+      tr.addEventListener('mousemove', function (e) {
+        peek.style.left = (e.clientX + 130) + 'px';
+        peek.style.top = e.clientY + 'px';
+      });
+      tr.addEventListener('mouseleave', function () { peek.classList.remove('is-on'); });
+      tr.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        var a = tr.querySelector('a[href^="#"]');
+        if (a) a.click();
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------------
   // 11. 커서
   // ------------------------------------------------------------------------
   function setupCursor() {
@@ -598,6 +658,8 @@
     setupStickers();
     setupTiltAndMagnet();
     setupShuffle();
+    setupViewToggle();
+    setupLogPeek();
     setupCursor();
     requestAnimationFrame(function () {
       setTimeout(function () { root.classList.add('is-loaded'); }, 60);

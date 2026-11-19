@@ -2,7 +2,7 @@
 # Pages are written as plain static HTML; this file only keeps header/footer identical.
 import html as _html
 
-V = "h3"  # asset version (cache busting)
+V = "h4"  # asset version (cache busting)
 
 NAV = [
     ("About", "./about.html", "Still in use", "./Group 55.png"),
