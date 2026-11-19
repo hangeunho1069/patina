@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="has-intro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>patina</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="interactions.css?v=4">
+  <script>try{var s=sessionStorage,c=document.documentElement.classList;if(s.getItem('pt-curtain')){c.add('curtain-in');s.removeItem('pt-curtain')}if(s.getItem('pt-intro'))c.add('intro-seen')}catch(e){}</script>
 </head>
 <body>
 
@@ -27,19 +29,35 @@
     
   </header>
 
-  <section class="hero-section">
-  <div class="hero-bg" style="background-image: url('Mask group.png');">
-<div class="hero-bg" style="background-image: url('./Mask group.png');">
-<div class="hero-logo">
-        <img src="./logoW.png" alt="patina main logo">
+  <!-- 첫 진입 인트로: 브랜드 그린 3색 패널이 차례로 걷히며 히어로가 열립니다 -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro-panel intro-p3"></div>
+    <div class="intro-panel intro-p2"></div>
+    <div class="intro-panel intro-p1">
+      <img class="intro-logo" src="./logoW.png" alt="">
+      <span class="intro-line"></span>
+    </div>
   </div>
+
+  <section class="hero-section">
+    <div class="hero-bg">
+      <div class="hero-media" style="background-image: url('./Mask group.png');"></div>
+      <div class="hero-logo">
+        <img src="./logoW.png" alt="patina main logo">
+      </div>
+      <p class="hero-tagline">Still in use — objects that keep their time.</p>
+      <a href="#grid" class="scroll-cue" aria-label="아래로 스크롤">
+        <span>SCROLL</span>
+        <i></i>
+      </a>
     </div>
   </section>
 
-  <section class="grid-section">
+  <section class="grid-section" id="grid">
     <div class="grid-container">
  <a href="./archive.html" style="display: block; text-decoration: none;">
   <div class="card" style="background-image: url('./Group 51.png');">
+    <span class="card-label">ARCHIVE <b>&rarr;</b></span>
     <div class="cover color-darkgreen slide-left"></div>
   </div>
 </a>
@@ -70,6 +88,7 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
+  <script src="interactions.js?v=4"></script>
 </body>
 </html>

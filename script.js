@@ -7,14 +7,79 @@ document.addEventListener('DOMContentLoaded', function() {
   // ------------------------------------------------------------------------
   // 1. [공통] 초록색 커버 박스 사방 스와이프 엔진
   // ------------------------------------------------------------------------
-  const covers = document.querySelectorAll('.cover');
-  
-  if (covers.length > 0) {
+  // (a) 폼 페이지의 전체 화면 커버: 기존처럼 로드 직후 걷힙니다
+  const masterCovers = document.querySelectorAll('.page-master-covers .cover');
+  if (masterCovers.length > 0) {
     setTimeout(() => {
-      covers.forEach(cover => {
-        cover.classList.add('active');
-      });
+      masterCovers.forEach(cover => cover.classList.add('active'));
     }, 500);
+  }
+
+  // (b) 이미지 카드 커버: 화면에 들어오는 순간 한 장씩 순서대로 열립니다
+  const cardCovers = Array.from(document.querySelectorAll('.cover'))
+    .filter(cover => !cover.closest('.page-master-covers'));
+
+  // 카드 배경 이미지를 별도 레이어로 옮겨, 열릴 때 사진이 살짝 줌아웃되도록 합니다
+  cardCovers.forEach(cover => {
+    const card = cover.parentElement;
+    const bg = card.style.backgroundImage;
+    if (bg && !card.querySelector(':scope > .media-layer')) {
+      const layer = document.createElement('div');
+      layer.className = 'media-layer';
+      layer.style.backgroundImage = bg;
+      card.style.backgroundImage = 'none';
+      card.insertBefore(layer, card.firstChild);
+    }
+  });
+
+  const openCover = (cover, delay) => {
+    setTimeout(() => {
+      cover.classList.add('active');
+      cover.parentElement.classList.add('is-open');
+    }, delay);
+  };
+
+  // 인트로가 끝난 뒤부터 열리도록 첫 페이지에서는 대기 시간을 둡니다
+  const root = document.documentElement;
+  const introWait = root.classList.contains('has-intro')
+    ? (root.classList.contains('intro-seen') ? 600 : 2600)
+    : 250;
+  const startTime = performance.now();
+
+  if (cardCovers.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => {
+            const ra = a.boundingClientRect, rb = b.boundingClientRect;
+            return (ra.top - rb.top) || (ra.left - rb.left);
+          });
+        const wait = Math.max(0, introWait - (performance.now() - startTime));
+        visible.forEach((entry, i) => {
+          openCover(entry.target, wait + i * 140);
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.25 });
+      cardCovers.forEach(cover => io.observe(cover));
+
+      // 안전장치: 교차 감지가 멈춰도 화면 안의 커버는 반드시 열리도록 주기적으로 확인
+      const coverSweep = setInterval(() => {
+        if (performance.now() - startTime < introWait) return;
+        const left = cardCovers.filter(c => !c.classList.contains('active'));
+        if (!left.length) { clearInterval(coverSweep); return; }
+        let n = 0;
+        left.forEach(c => {
+          const r = c.getBoundingClientRect();
+          if (r.top < window.innerHeight * 0.9 && r.bottom > 0) {
+            io.unobserve(c);
+            openCover(c, n++ * 140);
+          }
+        });
+      }, 700);
+    } else {
+      cardCovers.forEach((cover, i) => openCover(cover, 500 + i * 100));
+    }
   }
 
 

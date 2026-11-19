@@ -78,7 +78,7 @@ body {
 .nav a {
   text-decoration: none;
   color: #000000; 
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
   /* margin-left: 30px; 기존 마진은 지우고 상위 패널의 gap으로 제어합니다 */
@@ -181,7 +181,7 @@ body {
 /* --- 모바일 반응형 미디어 쿼리 --- */
 @media (max-width: 768px) {
   .header { padding: 20px; }
-  .main-title { font-size: 50px; }
+  .main-title { font-size: 56px; }
   .nav a { display: none; } /* 모바일에서는 메뉴 숨기고 햄버거만 */
   
   /* 모바일에서는 3열이 좁으니 1열 세로 매칭으로 변경 */
@@ -217,7 +217,7 @@ body {
   position: absolute;
   top: 120px;
   left: 50px;
-  font-size: 24px;
+  font-size: 27px;
   color: #fff;
   text-decoration: none;
   transition: transform 0.3s ease;
@@ -231,13 +231,13 @@ body {
   color: #1e392a; /* 딥그린 */
 }
 .about-main-title {
-  font-size: 56px;
+  font-size: 64px;
   font-family: serif;
   font-weight: 400;
   margin-bottom: 12px;
 }
 .about-sub-title {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 400;
   letter-spacing: -0.5px;
   opacity: 0.8;
@@ -272,7 +272,7 @@ body {
 
 /* 브랜드 철학 텍스트 스타일링 */
 .philosophy-text-box p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 2;
   color: #333333;
   margin-bottom: 45px;
@@ -282,7 +282,7 @@ body {
 
 /* 하이라이트 문구 */
 .highlight-summary {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
   color: #1e392a;
   margin-top: 60px;
@@ -292,7 +292,7 @@ body {
 
 /* 최하단 영문 슬로건 */
 .content-footer-slogan p {
-  font-size: 20px;
+  font-size: 23px;
   font-family: 'Urbanist', sans-serif;
   font-weight: 700;
   line-height: 1.4;
@@ -318,10 +318,10 @@ body {
 
 /* 모바일 대응 반응형 */
 @media (max-width: 768px) {
-  .about-main-title { font-size: 40px; }
+  .about-main-title { font-size: 46px; }
   .about-content-card { border-top-left-radius: 40px; border-top-right-radius: 40px; padding: 60px 20px; }
   .back-arrow { top: 100px; left: 20px; }
-  .philosophy-text-box p { font-size: 13px; line-height: 1.8; }
+  .philosophy-text-box p { font-size: 16px; line-height: 1.8; }
 }
 /* ==========================================================================
    ABOUT 페이지 최적화 및 인터랙션 스타일 (여기에 누적해서 추가하세요)
@@ -359,7 +359,7 @@ body {
   position: absolute;
   top: 130px;
   left: 50px;
-  font-size: 28px;
+  font-size: 32px;
   color: #1e392a;
   text-decoration: none;
   transition: transform 0.3s ease;
@@ -374,13 +374,13 @@ body {
   color: #1e392a; 
 }
 .about-main-title {
-  font-size: 64px;
+  font-size: 72px;
   font-family: serif;
   font-weight: 400;
   margin-bottom: 16px;
 }
 .about-sub-title {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 500;
   letter-spacing: -0.5px;
 }
@@ -415,7 +415,7 @@ body {
 
 /* 철학 텍스트 단락 조절 */
 .philosophy-text-box p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 2.1;
   color: #333333;
   margin-bottom: 50px;
@@ -425,7 +425,7 @@ body {
 
 /* 요약 하이라이트 행 문구 */
 .highlight-summary {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 700;
   color: #1e392a;
   margin-top: 70px;
@@ -435,7 +435,7 @@ body {
 
 /* 최하단 슬로건 */
 .content-footer-slogan p {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 700;
   line-height: 1.5;
   color: #000000;
@@ -458,12 +458,12 @@ body {
 
 /* 반응형 모바일 최적화 */
 @media (max-width: 768px) {
-  .about-main-title { font-size: 44px; }
-  .about-sub-title { font-size: 14px; }
+  .about-main-title { font-size: 50px; }
+  .about-sub-title { font-size: 17px; }
   .about-content-card { border-top-left-radius: 40px; border-top-right-radius: 40px; padding: 70px 20px; }
-  .back-arrow { top: 110px; left: 20px; font-size: 22px; }
-  .philosophy-text-box p { font-size: 13px; line-height: 1.9; }
-  .highlight-summary { margin-bottom: 80px; font-size: 16px; }
+  .back-arrow { top: 110px; left: 20px; font-size: 25px; }
+  .philosophy-text-box p { font-size: 16px; line-height: 1.9; }
+  .highlight-summary { margin-bottom: 80px; font-size: 19px; }
 }
 /* ==========================================================================
    ARCHIVE 페이지 전용 레이아웃 스타일
@@ -506,7 +506,7 @@ body {
   position: absolute !important;
   top: 40px !important;  /* 👈 이미지 내부 상단 여백 조절 */
   left: 60px !important;
-  font-size: 28px !important;
+  font-size: 32px !important;
   color: #000000 !important; /* 👈 1번 시안처럼 블랙으로 변경 */
   text-decoration: none;
   z-index: 10 !important;
@@ -521,7 +521,7 @@ body {
 }
 
 .archive-hero-text h2 {
-  font-size: 42px;
+  font-size: 48px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* 1번 시안 고딕 느낌 매칭 */
   font-weight: 700;
   color: #000000 !important; /* 👈 블랙으로 변경 */
@@ -529,7 +529,7 @@ body {
 }
 
 .archive-hero-text p {
-  font-size: 14px;
+  font-size: 17px;
   color: #333333 !important; /* 👈 1번 시안처럼 어두운 톤으로 변경 */
   margin-top: 8px;
   font-weight: 500;
@@ -555,7 +555,7 @@ body {
   padding: 0 50px;
 }
 .archive-intro-text p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 2;
   color: #000000;
   word-break: keep-all;
@@ -596,19 +596,19 @@ body {
   background-color: #d1d5d2; /* 3번 비어있는 칸용 */
 }
 .item-desc-box h3 {
-  font-size: 22px;
+  font-size: 25px;
   font-family: serif;
   font-weight: 500;
   margin-bottom: 4px;
 }
 .item-desc-box h4 {
-  font-size: 12px;
+  font-size: 15px;
   color: #555;
   font-weight: 600;
   margin-bottom: 20px;
 }
 .item-desc-box p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
   color: #222;
   word-break: keep-all;
@@ -643,13 +643,13 @@ body {
   text-align: center;
 }
 .provenance-title {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 500;
   letter-spacing: -0.5px;
   margin-bottom: 6px;
 }
 .provenance-subtitle {
-  font-size: 12px;
+  font-size: 15px;
   color: #666;
   font-style: italic;
   margin-bottom: 60px;
@@ -657,7 +657,7 @@ body {
 .log-table {
   width: 100%;
   border-collapse: collapse; /* 테이블 테두리 선 겹치게 처리 */
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 0.5px;
 }
 .log-table th {
@@ -686,7 +686,7 @@ body {
   .item-img-box { width: 100%; }
   .gallery-row-2 { grid-template-columns: 1fr; }
   .archive-gallery-section, .archive-intro-text { padding: 0 20px; }
-  .log-table th, .log-table td { padding: 12px 5px; font-size: 11px; }
+  .log-table th, .log-table td { padding: 12px 5px; font-size: 14px; }
 }
 /* ==========================================================================
    SHOP 페이지 시안 100% 매칭 모자이크 그리드 스타일
@@ -707,7 +707,7 @@ body {
   text-align: left;
 }
 .shop-header-text h2 {
-  font-size: 48px;
+  font-size: 54px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
   color: #000000;
@@ -715,7 +715,7 @@ body {
   letter-spacing: -0.5px;
 }
 .shop-header-text p {
-  font-size: 15px;
+  font-size: 18px;
   color: #000000;
   font-weight: 500;
   margin: 0;
@@ -783,7 +783,7 @@ body {
   background-color: #3b462c; 
   color: #ffffff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.2px;
   
@@ -840,7 +840,7 @@ body {
   text-align: left;
 }
 .contact-header-text h2 {
-  font-size: 48px;
+  font-size: 54px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
   color: #000000;
@@ -864,7 +864,7 @@ body {
 /* 3. 섹션 공통 소제목 스타일 (의뢰 시 가치, 의뢰 절차) */
 .contact-value-section h3,
 .contact-process-section h3 {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: #000000;
   margin-bottom: 24px;
@@ -876,7 +876,7 @@ body {
   margin-bottom: 65px;
 }
 .value-text-box p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
   color: #333333;
   margin: 0 0 4px 0;
@@ -911,14 +911,14 @@ body {
 }
 
 .process-card h4 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: #000000;
   margin: 0 0 10px 0;
   letter-spacing: -0.2px;
 }
 .process-card p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.5;
   color: #666666;
   margin: 0;
@@ -926,7 +926,7 @@ body {
 
 /* 하단 작은 유의사항 안내 문구 */
 .process-notice {
-  font-size: 11px;
+  font-size: 14px;
   color: #666666;
   text-align: left;
   margin: 0 0 75px 0;
@@ -948,7 +948,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   border: 1.5px solid #000000; /* 시안 특유의 정갈한 블랙 외곽선 */
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.5px;
@@ -994,7 +994,7 @@ body {
   text-align: left;
 }
 .request-header-text h2 {
-  font-size: 48px;
+  font-size: 54px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
   color: #000000;
@@ -1002,7 +1002,7 @@ body {
   letter-spacing: -0.5px;
 }
 .request-header-text p {
-  font-size: 15px;
+  font-size: 18px;
   color: #000000;
   font-weight: 600;
   margin: 0;
@@ -1030,7 +1030,7 @@ body {
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5); /* 어두운 사진 위 글씨 가독성 확보 */
 }
 .banner-overlay-text p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
   font-weight: 500;
   margin: 0 0 4px 0;
@@ -1071,13 +1071,13 @@ body {
 
 /* 타이틀 타이포그래피 */
 .level-info-box h3 {
-  font-size: 26px;
+  font-size: 29px;
   font-weight: 700;
   color: #1e392a; /* patina 고유 딥그린 */
   margin: 0 0 8px 0;
 }
 .level-info-box h4 {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
   color: #222222;
   margin: 0 0 4px 0;
@@ -1085,7 +1085,7 @@ body {
 }
 .eng-sub {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   color: #777777;
   font-weight: 500;
   margin-bottom: 40px;
@@ -1097,13 +1097,13 @@ body {
 }
 .detail-item strong {
   display: block;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   color: #000000;
   margin-bottom: 6px;
 }
 .detail-item p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.6;
   color: #333333;
   margin: 0;
@@ -1139,7 +1139,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   border: 1.5px solid #000000;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.3px;
   cursor: pointer;
@@ -1162,8 +1162,8 @@ body {
   .row-advanced .level-img-box { grid-row: 2; } /* 모바일에서도 글씨가 먼저 나오게 순서 교정 */
   .level-info-box { padding: 40px 25px; }
   .level-img-box { height: 300px; }
-  .level-info-box h3 { font-size: 22px; }
-  .level-info-box h4 { font-size: 16px; }
+  .level-info-box h3 { font-size: 25px; }
+  .level-info-box h4 { font-size: 19px; }
   .eng-sub { margin-bottom: 25px; }
   .start-request-btn { width: 100%; }
 }
@@ -1189,7 +1189,7 @@ body {
   margin-bottom: 70px;
 }
 .form-back-arrow {
-  font-size: 28px;
+  font-size: 32px;
   color: #000000;
   text-decoration: none;
   margin-top: 5px;
@@ -1199,7 +1199,7 @@ body {
   transform: translateX(-4px);
 }
 .form-title-text h2 {
-  font-size: 48px;
+  font-size: 54px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
   color: #000000;
@@ -1207,7 +1207,7 @@ body {
   letter-spacing: -0.5px;
 }
 .form-title-text p {
-  font-size: 15px;
+  font-size: 18px;
   color: #000000;
   font-weight: 600;
   margin: 0;
@@ -1215,7 +1215,7 @@ body {
 
 /* 서비스 레벨 타이틀 */
 .service-level-section h3 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: #000000;
   margin-bottom: 30px;
@@ -1262,20 +1262,20 @@ body {
   text-align: left;
 }
 .level-tag {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 700;
   color: #000000;
   margin: 0 0 6px 0;
   letter-spacing: -0.3px;
 }
 .level-name {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: #000000;
   margin: 0 0 30px 0;
 }
 .level-desc {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.7;
   color: #000000;
   font-weight: 500;
@@ -1283,7 +1283,7 @@ body {
   margin: 0;
 }
 .level-notice {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.5;
   color: #555555;
   font-weight: 500;
@@ -1303,7 +1303,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   border: 1.5px solid #000000;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   width: 240px;
   height: 60px;
@@ -1361,7 +1361,7 @@ body {
   text-align: left;
 }
 .donate-header-text h2 {
-  font-size: 48px;
+  font-size: 54px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
   color: #000000;
@@ -1369,7 +1369,7 @@ body {
   letter-spacing: -0.5px;
 }
 .donate-header-text p {
-  font-size: 15px;
+  font-size: 18px;
   color: #000000;
   font-weight: 600;
   margin: 0;
@@ -1397,7 +1397,7 @@ body {
   padding: 0 30px;
 }
 .donate-banner-overlay p {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.2px;
   margin: 0;
@@ -1410,13 +1410,13 @@ body {
   padding: 0 20px;
 }
 .intro-bold {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   color: #000000;
   margin-bottom: 24px;
 }
 .intro-desc {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.9;
   color: #000000;
   font-weight: 500;
@@ -1430,7 +1430,7 @@ body {
 }
 .collect-section h3,
 .donate-process-section h3 {
-  font-size: 26px;
+  font-size: 29px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 800;
   color: #000000;
@@ -1457,13 +1457,13 @@ body {
   background-color: #f4f5f6;
 }
 .collect-card span {
-  font-size: 11px;
+  font-size: 14px;
   color: #000000;
   font-weight: 600;
   letter-spacing: -0.2px;
 }
 .collect-notice {
-  font-size: 10px;
+  font-size: 12px;
   color: #555555;
   font-weight: 600;
   margin-top: 35px;
@@ -1501,7 +1501,7 @@ body {
   border-radius: 50%;
   background-color: #3b462c; /* 파티나 시그니처 카키 그린 */
   color: #ffffff;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -1509,20 +1509,20 @@ body {
   margin-bottom: 18px;
 }
 .flow-step h4 {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   color: #000000;
   margin: 0 0 8px 0;
 }
 .flow-step p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.5;
   color: #666666;
   margin: 0;
   word-break: keep-all;
 }
 .flow-arrow {
-  font-size: 20px;
+  font-size: 23px;
   color: #bbbbbb;
   font-weight: 400;
   padding-bottom: 30px;
@@ -1541,13 +1541,13 @@ body {
   padding-bottom: 20px;
 }
 .form-title-box h3 {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   color: #1e392a;
   margin: 0 0 6px 0;
 }
 .form-title-box p {
-  font-size: 12px;
+  font-size: 15px;
   color: #666666;
   margin: 0;
 }
@@ -1569,7 +1569,7 @@ body {
   gap: 8px;
 }
 .input-group label {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   color: #000000;
 }
@@ -1582,7 +1582,7 @@ body {
   padding: 14px 16px;
   border: 1px solid #d1d5db;
   background-color: #ffffff;
-  font-size: 13px;
+  font-size: 16px;
   border-radius: 6px;
   color: #000000;
   box-sizing: border-box;
@@ -1613,7 +1613,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   border: 1.5px solid #000000;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   width: 240px;
   height: 60px;
@@ -1695,7 +1695,7 @@ body {
   text-align: left;
 }
 .form-main-title-lv1 {
-  font-size: 42px;
+  font-size: 48px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
   color: #000000;
@@ -1719,13 +1719,13 @@ body {
 
 /* 시안 속 굵직한 서체 스타일 */
 .input-group-lv1 label {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   color: #000000;
   letter-spacing: -0.3px;
 }
 .upload-sub-label-lv1 {
-  font-size: 13px;
+  font-size: 16px;
   color: #222222;
   margin: -6px 0 4px 0;
 }
@@ -1737,7 +1737,7 @@ body {
   padding: 14px 16px;
   border: 1.5px solid #000000; /* 시안 특유의 선명한 검은선 */
   background-color: #ffffff;
-  font-size: 15px;
+  font-size: 18px;
   border-radius: 0px; /* 👈 라운딩을 제거하여 완전한 직사각형으로 고정 */
   color: #000000;
   box-sizing: border-box;
@@ -1756,7 +1756,7 @@ body {
   position: relative;
   padding-left: 28px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   color: #000000;
   user-select: none;
@@ -1807,7 +1807,7 @@ body {
   padding: 4px 0 !important;
   width: 100%;
   max-width: 500px;
-  font-size: 14px;
+  font-size: 17px;
   background-color: transparent !important;
 }
 
@@ -1842,7 +1842,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   border: 1.5px solid #000000;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.5px;
   
@@ -1860,8 +1860,8 @@ body {
 
 /* 모바일 화면 최적화 */
 @media (max-width: 768px) {
-  .form-main-title-lv1 { font-size: 32px; }
-  .input-group-lv1 label { font-size: 18px; }
+  .form-main-title-lv1 { font-size: 36px; }
+  .input-group-lv1 label { font-size: 21px; }
   .submit-action-btn-lv1 { width: 100%; }
 }
 /* ==========================================================================
@@ -1879,7 +1879,7 @@ body {
 
 /* Small, Medium, Large 글씨 강세 유지 */
 .size-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: #000000;
   line-height: 1.2;
@@ -1887,7 +1887,7 @@ body {
 
 /* 👈 [브랜드 톤 반영] 사용자가 읽기 편한 미니멀 가이드라인 서체 속성 */
 .size-guide-desc {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   color: #666666; /* 너무 튀지 않는 차분한 회색 */
   line-height: 1.5;
@@ -2064,21 +2064,21 @@ body.about-page .about-wrapper {
 
 /* 카드 내 타이포그래피 정렬 */
 .process-vertical-list .process-card .step-num {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: #000000;
   margin-bottom: 6px;
   display: block;
 }
 .process-vertical-list .process-card h4 {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: #000000;
   margin: 0 0 6px 0;
   letter-spacing: -0.3px;
 }
 .process-vertical-list .process-card p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.6;
   color: #666666;
   margin: 0;
@@ -2089,7 +2089,7 @@ body.about-page .about-wrapper {
   width: 100%;
   text-align: left;
   padding: 14px 45px; /* 👈 왼쪽 여백을 살짝 주어 숫자 01, 02 라인과 세로 수직축을 정갈하게 매칭 */
-  font-size: 18px;
+  font-size: 21px;
   color: #3b462c;     /* 파티나 시그니처 딥그린 컬러 포인트 */
   font-weight: 700;
   user-select: none;
@@ -2098,7 +2098,7 @@ body.about-page .about-wrapper {
 
 /* 하단 유의사항 안내 문구 */
 .process-notice {
-  font-size: 12px;
+  font-size: 15px;
   color: #666666;
   margin: 35px 0 70px 0;
   text-align: left;
@@ -2131,7 +2131,7 @@ body.about-page .about-wrapper {
   display: inline-block;
   border: 1px solid #000;
   padding: 5px 12px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 20px;
@@ -2161,7 +2161,7 @@ body.about-page .about-wrapper {
   justify-content: center;
   align-items: center;
   height: 50px;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   color: #000;
   border-right: 1.5px solid #000;
@@ -2206,7 +2206,7 @@ body.about-page .about-wrapper {
 
 /* 메인 타이틀 줄바꿈 방지 및 폰트 셋업 */
 .request-form-lv3-page .form-main-title-lv1 {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 700;
   color: #000000;
   margin: 0;
@@ -2218,7 +2218,7 @@ body.about-page .about-wrapper {
   display: inline-block;
   border: 1px solid #000000;
   padding: 3px 8px;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #000000;
