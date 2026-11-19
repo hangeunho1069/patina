@@ -3,134 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>patina - Request: Standard</title>
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="interactions.css?v=4">
-  <script>try{var s=sessionStorage,c=document.documentElement.classList;if(s.getItem('pt-curtain')){c.add('curtain-in');s.removeItem('pt-curtain')}if(s.getItem('pt-intro'))c.add('intro-seen')}catch(e){}</script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Request: Standard — patina</title>
+  <meta name="description" content="Lv1 Standard 의뢰서">
+  <meta name="theme-color" content="#f2eee5">
+  <link rel="icon" href="./logoG.png">
+  <script>try{if(sessionStorage.getItem('pt-arrive')){document.documentElement.classList.add('arriving');sessionStorage.removeItem('pt-arrive')}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="./site.css?v=2">
 </head>
-<body class="request-form-lv1-page">
-
-  <header class="header archive-header">
-    <div class="logo">
-      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+<body>
+  <a class="sr-skip" href="#main">본문 바로가기</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="./index.html" aria-label="patina 홈"><img src="./logoG.png" alt="patina" width="104" height="35"></a>
+      <div class="mast-meta meta"><span>Issue No.01</span><span>Still in use</span></div>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="./about.html">About</a>
+        <a href="./shop.html">Objects</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./request.html">Request</a>
+        <a href="./donate.html">Donate</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <button type="button" class="contents-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="contents">Contents <i aria-hidden="true"></i></button>
     </div>
-    <nav class="nav">
-      <a href="./about.html">ABOUT</a>
-      <a href="./shop.html">SHOP</a>
-      <a href="./contact.html" class="active">CONTACT</a>
-      <a href="./donate.html">DONATE</a>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
   </header>
-
-  <main class="form-wrapper bounce-up-animation">
-    
-    <div class="form-header-zone-lv1">
-      <a href="./request_form.html" class="form-back-arrow">←</a>
-      <h2 class="form-main-title-lv1">Request: Standard</h2>
+  <div class="contents" id="contents" role="dialog" aria-modal="true" aria-label="목차" aria-hidden="true">
+    <div class="wrap contents-head">
+      <span class="kicker">Contents — Issue No.01</span>
+      <button type="button" class="contents-close kicker">Close <span aria-hidden="true"></span></button>
     </div>
+    <div class="wrap">
+      <ol class="contents-list">
+        <li><a href="./about.html" data-peek="./Group 55.png"><span class="no">01</span><span class="ttl">About<em>Still in use</em></span><span class="pg">p.012</span></a></li>
+        <li><a href="./shop.html" data-peek="./Group 53.png"><span class="no">02</span><span class="ttl">Objects<em>오브젝트</em></span><span class="pg">p.024</span></a></li>
+        <li><a href="./archive.html" data-peek="./graft004.png"><span class="no">03</span><span class="ttl">Archive<em>아카이브</em></span><span class="pg">p.036</span></a></li>
+        <li><a href="./request.html" data-peek="./Frame 85.png"><span class="no">04</span><span class="ttl">Request<em>수선 의뢰</em></span><span class="pg">p.048</span></a></li>
+        <li><a href="./donate.html" data-peek="./donate1.png"><span class="no">05</span><span class="ttl">Donate<em>기부</em></span><span class="pg">p.060</span></a></li>
+        <li><a href="./contact.html" data-peek="./request1.png"><span class="no">06</span><span class="ttl">Contact<em>의뢰 절차</em></span><span class="pg">p.072</span></a></li>
+      </ol>
+    </div>
+    <div class="wrap contents-foot meta"><span>patina — Still in use</span><span>Seoul, 2026</span></div>
+  </div>
+  <main id="main">
 
-    <section class="lv1-form-section">
-      <form id="lv1RequestForm" class="actual-lv1-form" onsubmit="return false;">
-        
-        <div class="input-group-lv1">
-          <label>Object name</label>
-          <input type="text" id="objName" required>
-        </div>
-
-        <div class="input-group-lv1">
-          <label>Object type</label>
-          <div class="radio-selector-group">
-            <label class="radio-container">
-              <input type="radio" name="objType" value="Clothing" required>
-              <span class="custom-radio"></span> Clothing
-            </label>
-            <label class="radio-container">
-              <input type="radio" name="objType" value="Bag">
-              <span class="custom-radio"></span> Bag
-            </label>
-            <label class="radio-container">
-              <input type="radio" name="objType" value="Furniture">
-              <span class="custom-radio"></span> Furniture
-            </label>
-            <label class="radio-container">
-              <input type="radio" name="objType" value="Other" id="typeOtherRadio">
-              <span class="custom-radio"></span> Other
-            </label>
-            <div class="other-underline-box">
-              <span>:</span>
-              <input type="text" id="objTypeOtherText" class="underline-input" disabled>
+    <section class="page-top section" style="padding-top:calc(var(--head-h) + clamp(40px, 6vw, 88px))">
+      <div class="wrap grid form-shell">
+        <aside class="form-side">
+          <div class="sticky">
+            <a class="link-arrow" href="./request_form.html"><span class="arr">←</span> 레벨 다시 선택</a>
+            <p class="kicker">§ 04.2 — Lv1</p>
+            <h1 class="h2" data-lines><span class="line"><span>Request:</span></span><span class="line"><span><em>Standard</em></span></span></h1>
+            <p class="soft">표면 처리 — 구조를 바꾸지 않고 소재 본연의 경년 변화를 지켜요.</p>
+            <ol class="progress-steps"><li class="is-done" data-n="1">서비스 레벨 선택</li><li class="is-current" data-n="2">의뢰서 작성</li></ol>
+          </div>
+        </aside>
+        <form class="form-main" id="lv1RequestForm" data-flow="request" data-label="Lv1. Standard" novalidate>
+          <div class="field">
+            <label class="label" for="objName">Object name <span class="req">필수</span></label>
+            <input class="input" type="text" id="objName" name="objName" required>
+          </div>
+          <fieldset class="field">
+            <legend class="label">Object type <span class="req">필수</span></legend>
+            <div class="options inline"><label class="option"><input type="radio" name="objType" value="Clothing" required><b>Clothing</b></label><label class="option"><input type="radio" name="objType" value="Bag"><b>Bag</b></label><label class="option"><input type="radio" name="objType" value="Furniture"><b>Furniture</b></label><label class="option"><input type="radio" name="objType" value="Other"><b>Other</b></label>
+              <div class="option-other"><span class="meta">Other :</span><input class="input" type="text" id="objTypeOtherText" name="objTypeOther" data-other-for="objType" aria-label="기타 종류 직접 입력" disabled></div>
             </div>
-          </div>
-        </div>
-
-       <div class="input-group-lv1">
-          <label>Size</label>
-          <div class="radio-selector-group">
+          </fieldset>
+          <fieldset class="field">
+            <legend class="label">Size <span class="req">필수</span></legend>
             
-            <label class="radio-container">
-              <input type="radio" name="objSize" value="Small" required>
-              <span class="custom-radio"></span> 
-              <div class="radio-label-content">
-                <span class="size-title">Small</span>
-                <span class="size-guide-desc">한 손에 들어오는 소형 소품 및 패션 잡화 (지갑, 파우치, 장갑, 벨트 등)</span>
-              </div>
-            </label>
-            
-            <label class="radio-container">
-              <input type="radio" name="objSize" value="Medium">
-              <span class="custom-radio"></span>
-              <div class="radio-label-content">
-                <span class="size-title">Medium</span>
-                <span class="size-guide-desc">일반적인 수거 박스에 담기는 크기의 의류 및 소형 가구 (재킷, 토트백, 1인용 스툴/의자 등)</span>
-              </div>
-            </label>
-            
-            <label class="radio-container">
-              <input type="radio" name="objSize" value="Large">
-              <span class="custom-radio"></span>
-              <div class="radio-label-content">
-                <span class="size-title">Large</span>
-                <span class="size-guide-desc">부피가 큰 아우터 및 개별 배송이 필요한 대형 가구 (롱코트, 벤치, 다이닝 테이블, 선반 등)</span>
-              </div>
-            </label>
-            
-          </div>
-        </div>
-
-        <div class="input-group-lv1">
-          <label>Upload photos</label>
-          <p class="upload-sub-label-lv1">현재 제품의 상태가 잘 들어나는 이미지 1~5장</p>
-          
-          <div class="photo-upload-box-canvas" id="uploadZone">
-            <input type="file" id="objPhotos" multiple accept="image/*" style="display: none;">
-            <div class="canvas-center-icon">
-              <i class="fa-regular fa-image" style="font-size: 32px; color: #666;"></i>
+            <div class="options"><label class="option"><input type="radio" name="objSize" value="Small" required><span><b>Small</b><span>한 손에 들어오는 소형 소품 및 패션 잡화 (지갑, 파우치, 장갑, 벨트 등)</span></span></label><label class="option"><input type="radio" name="objSize" value="Medium"><span><b>Medium</b><span>일반적인 수거 박스에 담기는 크기의 의류 및 소형 가구 (재킷, 토트백, 1인용 스툴/의자 등)</span></span></label><label class="option"><input type="radio" name="objSize" value="Large"><span><b>Large</b><span>부피가 큰 아우터 및 개별 배송이 필요한 대형 가구 (롱코트, 벤치, 다이닝 테이블, 선반 등)</span></span></label></div>
+          </fieldset>
+          <div class="field">
+            <p class="label">Upload photos <span class="req">최대 5장</span></p>
+            <p class="hint">현재 제품의 상태가 잘 드러나는 이미지 1~5장</p>
+            <div class="upload" tabindex="0" role="button" aria-label="사진 업로드">
+              <input type="file" id="objPhotos" name="photos" multiple accept="image/*" data-max="5">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-9 8"/></svg>
+              <strong>클릭하거나 사진을 끌어다 놓으세요</strong>
+              <span class="meta">JPG · PNG · HEIC</span>
             </div>
-            <div class="file-preview-list" id="filePreview"></div>
+            <ul class="file-list" aria-live="polite"></ul>
           </div>
-        </div>
-
-        <div class="input-group-lv1">
-          <label>Additional notes</label>
-          <p class="upload-sub-label-lv1">요청사항과 제품에 담긴 추억에 대해 자유롭게 서술해주세요!</p>
-          <textarea id="objNotes" rows="8" required></textarea>
-        </div>
-
-        <div class="form-submit-zone-lv1">
-          <button type="submit" class="submit-action-btn-lv1">SUBMIT</button>
-        </div>
-
-      </form>
+          <div class="field">
+            <label class="label" for="objNotes">Additional notes <span class="req">필수</span></label>
+            <p class="hint">요청사항과 제품에 담긴 추억에 대해 자유롭게 서술해주세요!</p>
+            <textarea class="textarea" id="objNotes" name="objNotes" rows="7" required></textarea>
+          </div>
+          <div class="form-actions">
+            <p class="form-error" aria-live="polite"></p>
+            <button type="submit" class="btn btn-solid">Submit <span class="arr">→</span></button>
+          </div>
+        </form>
+      </div>
     </section>
 
   </main>
-
-  <script src="script.js?v=4"></script>
-  <script src="interactions.js?v=4"></script>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="grid colophon-top">
+        <p class="colophon-statement">We don't just preserve objects — <em>we redefine their existence through time.</em></p>
+        <div class="colophon-col">
+          <h4>Read</h4>
+          <ul><li><a href="./about.html">About</a></li><li><a href="./shop.html">Objects</a></li><li><a href="./archive.html">Archive</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Take part</h4>
+          <ul><li><a href="./request.html">Request</a></li><li><a href="./donate.html">Donate</a></li><li><a href="./contact.html">Contact</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Start</h4>
+          <ul><li><a href="./request_form.html">Start a Request</a></li><li><a href="./donate.html#donate-form">Donate an object</a></li></ul>
+        </div>
+      </div>
+      <div class="colophon-mark"><img src="./logoW.png" alt="" loading="lazy" width="2068" height="691"></div>
+      <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
+    </div>
+  </footer>
+  <script src="./site.js?v=2"></script>
 </body>
 </html>

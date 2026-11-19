@@ -3,145 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>patina - ARCHIVE</title>
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="interactions.css?v=4">
-  <script>try{var s=sessionStorage,c=document.documentElement.classList;if(s.getItem('pt-curtain')){c.add('curtain-in');s.removeItem('pt-curtain')}if(s.getItem('pt-intro'))c.add('intro-seen')}catch(e){}</script>
+  <title>Archive — patina</title>
+  <meta name="description" content="Graft 001—004: 파티나의 개입으로 다시 태어난 가구들과 그 이력.">
+  <meta name="theme-color" content="#f2eee5">
+  <link rel="icon" href="./logoG.png">
+  <script>try{if(sessionStorage.getItem('pt-arrive')){document.documentElement.classList.add('arriving');sessionStorage.removeItem('pt-arrive')}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="./site.css?v=2">
 </head>
-<body class="archive-page">
-
- <header class="header archive-header">
-    <div class="logo">
-      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+<body>
+  <a class="sr-skip" href="#main">본문 바로가기</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="./index.html" aria-label="patina 홈"><img src="./logoG.png" alt="patina" width="104" height="35"></a>
+      <div class="mast-meta meta"><span>Issue No.01</span><span>Still in use</span></div>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="./about.html">About</a>
+        <a href="./shop.html">Objects</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./request.html">Request</a>
+        <a href="./donate.html">Donate</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <button type="button" class="contents-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="contents">Contents <i aria-hidden="true"></i></button>
     </div>
-    <nav class="nav">
-      <a href="./about.html">ABOUT</a>
-      <a href="./archive.html" class="active">SHOP</a> <a href="#">CONTACT</a>
-      <a href="./donate.html">DONATE</a> 
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
   </header>
-
-  <section class="archive-hero">
-    <div class="archive-hero-container">
-      <a href="./index.html" class="archive-back-arrow">←</a>
-      <div class="archive-hero-text">
-        <h2>Graft 004</h2>
-        <p>This is patina.</p>
-      </div>
-      <div class="archive-hero-img-box">
-        <img src="./graft004.png" alt="Graft 004 Main">
-      </div>
+  <div class="contents" id="contents" role="dialog" aria-modal="true" aria-label="목차" aria-hidden="true">
+    <div class="wrap contents-head">
+      <span class="kicker">Contents — Issue No.01</span>
+      <button type="button" class="contents-close kicker">Close <span aria-hidden="true"></span></button>
     </div>
-  </section>
-
-
-  <div class="archive-intro-text">
-    <p>파티나가 제시하는 가구는 단순한 '수리이력판 물건'이 아닙니다. 그것은 누군가의 일상 속에서 축적된 시간의 기록이자, 유일한 서사 그 자체입니다.<br>
-    이 개별 프로젝트는 결함에 얽매이지 않고 질감과 흔적을 정체성으로 재정의하며, 창의적인 공간과 미술품이라는 새로운 기능적 의의와 함께<br>
-    각 유저와의 상호작용으로 재해석된 지속 가능한 디자인 연구 작품으로 파티나의 영역을 넓히고 있습니다.</p>
+    <div class="wrap">
+      <ol class="contents-list">
+        <li><a href="./about.html" data-peek="./Group 55.png"><span class="no">01</span><span class="ttl">About<em>Still in use</em></span><span class="pg">p.012</span></a></li>
+        <li><a href="./shop.html" data-peek="./Group 53.png"><span class="no">02</span><span class="ttl">Objects<em>오브젝트</em></span><span class="pg">p.024</span></a></li>
+        <li><a href="./archive.html" data-peek="./graft004.png"><span class="no">03</span><span class="ttl">Archive<em>아카이브</em></span><span class="pg">p.036</span></a></li>
+        <li><a href="./request.html" data-peek="./Frame 85.png"><span class="no">04</span><span class="ttl">Request<em>수선 의뢰</em></span><span class="pg">p.048</span></a></li>
+        <li><a href="./donate.html" data-peek="./donate1.png"><span class="no">05</span><span class="ttl">Donate<em>기부</em></span><span class="pg">p.060</span></a></li>
+        <li><a href="./contact.html" data-peek="./request1.png"><span class="no">06</span><span class="ttl">Contact<em>의뢰 절차</em></span><span class="pg">p.072</span></a></li>
+      </ol>
+    </div>
+    <div class="wrap contents-foot meta"><span>patina — Still in use</span><span>Seoul, 2026</span></div>
   </div>
+  <main id="main">
 
-  <section class="archive-list-section">
-    <div class="archive-list-container">
-      
-      <div class="archive-list-item">
-        <div class="item-img-box"><img src="./G001.png" alt="Graft 001"></div>
-        <div class="item-desc-box">
-          <h3>Graft 001</h3>
-          <h4>Chair</h4>
-          <p>사용자의 반려의자는 오랜시간 자리를 지켰습니다.<br>오랜시간의 가구 그 헤리티지를 유지하고 들이기 위한 대안모델, 참여의자이며 수리를<br>지속하고 싶다는 사용자 지향 그 문맥이 형태를 완성하였습니다.</p>
+    <section class="page-top">
+      <div class="wrap grid article-head">
+        <p class="kicker"><span>§ 03 — Archive</span><span>Graft 001—004</span></p>
+        <h1 class="h1" data-lines><span class="line"><span>This is</span></span><span class="line"><span><em>patina.</em></span></span></h1>
+        <div class="aside"><p class="body-lg soft" data-reveal>누군가의 일상 속에서 축적된 시간의 기록이자, 유일한 서사 그 자체.</p></div>
+      </div>
+      <div class="wrap"><figure class="fig " data-reveal="img"><div class="fig-media ratio-21"><img src="./graft004.png" alt="등받이를 재구성한 나무 의자 Graft 004"></div><figcaption><span>Fig. 00 — Graft 004</span><span>Featured object</span></figcaption></figure></div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid">
+        <p class="lede dropcap" data-reveal style="grid-column:3 / span 8">파티나가 제시하는 가구는 단순한 '수리이력판 물건'이 아닙니다. 그것은 누군가의 일상 속에서 축적된 시간의 기록이자, 유일한 서사 그 자체입니다. 이 개별 프로젝트는 결함에 얽매이지 않고 질감과 흔적을 정체성으로 재정의하며, 창의적인 공간과 미술품이라는 새로운 기능적 의의와 함께 각 유저와의 상호작용으로 재해석된 지속 가능한 디자인 연구 작품으로 파티나의 영역을 넓히고 있습니다.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 03.1</span><span class="kicker">Index of works</span><span class="meta">4 entries</span></div>
+        <article class="entry">
+          <span class="entry-no" data-reveal>001</span>
+          <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./G001.png" alt="나무 의자 Graft 001" loading="lazy"></div><figcaption><span>Fig. 001</span><span>Chair</span></figcaption></figure>
+          <div class="entry-text">
+            <span class="tag" data-reveal>Chair</span>
+            <h3 class="h2" data-lines><span class="line"><span>Graft 001</span></span></h3>
+            <p data-reveal>사용자의 반려의자는 오랜시간 자리를 지켰습니다. 오랜시간의 가구 그 헤리티지를 유지하고 들이기 위한 대안모델, 참여의자이며 수리를 지속하고 싶다는 사용자 지향 그 문맥이 형태를 완성하였습니다.</p>
+          </div>
+        </article>
+        <article class="entry">
+          <span class="entry-no" data-reveal>002</span>
+          <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./G002.png" alt="책상 판이 더해진 의자 Graft 002" loading="lazy"></div><figcaption><span>Fig. 002</span><span>All-in-one desk</span></figcaption></figure>
+          <div class="entry-text">
+            <span class="tag" data-reveal>All-in-one desk</span>
+            <h3 class="h2" data-lines><span class="line"><span>Graft 002</span></span></h3>
+            <p data-reveal>이번 과제는 Graft 001의 연장선으로써 책상과 클라이언트의 동선의 니즈가 되어 주었습니다. 부드러운 형태 스틸을 활용하여 사용자가 작업에 집중할 수 있도록 미니멀하고 실용적으로 디자인한 가구입니다.</p>
+          </div>
+        </article>
+        <article class="entry">
+          <span class="entry-no" data-reveal>003</span>
+          <figure class="fig" data-reveal="img"><div class="fig-media"><div class="plate-empty">Image forthcoming</div></div><figcaption><span>Fig. 003</span><span>Apron</span></figcaption></figure>
+          <div class="entry-text">
+            <span class="tag" data-reveal>Apron</span>
+            <h3 class="h2" data-lines><span class="line"><span>Graft 003</span></span></h3>
+            <p data-reveal>사물의 흔적을 미려한 접합에서 실용적인 가치를 연장선 방향을 과제로 삼았습니다. 시간 형상에나 이음새에서 사용자들의 신뢰를 보강하는 방식으로 가장 살려주었으며, 데님 섬유의 질간 내구성을 배경으로 수선과 마감이 반복될 수 있는 구조를 갖추었습니다.</p>
+          </div>
+        </article>
+        <article class="entry">
+          <span class="entry-no" data-reveal>004</span>
+          <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./G004.png" alt="등받이를 재구성한 의자 Denim 004" loading="lazy"></div><figcaption><span>Fig. 004</span><span>Potina</span></figcaption></figure>
+          <div class="entry-text">
+            <span class="tag" data-reveal>Potina</span>
+            <h3 class="h2" data-lines><span class="line"><span>Denim 004</span></span></h3>
+            <p data-reveal>사용자의 헤리티지를 고스란히 담아 완전히 새로운 형태의 Potina를 제작했습니다. 의자 등받이를 떼어 롤 코드를 들이고, 이례코드 대용 이지가 조합되지 않게끔 만들어 전체 단면 형태에 가치를 연출하였습니다.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 03.2</span><span class="kicker">Details</span><span class="meta">Plates</span></div>
+        <div class="gallery">
+          <figure class="fig g1" data-reveal="img"><div class="fig-media "><img src="./G1.png" alt="Graft 시리즈 의자 디테일" loading="lazy"></div><figcaption><span>Plate 01</span><span>Detail</span></figcaption></figure>
+          <figure class="fig g2" data-reveal="img"><div class="fig-media "><img src="./G2.png" alt="Graft 시리즈 의자 측면" loading="lazy"></div><figcaption><span>Plate 02</span><span>Detail</span></figcaption></figure>
+          <figure class="fig g3" data-reveal="img"><div class="fig-media ratio-21"><img src="./G3.png" alt="사용 중인 Graft 의자" loading="lazy"></div><figcaption><span>Plate 03</span><span>In use</span></figcaption></figure>
         </div>
       </div>
+    </section>
 
-      <div class="archive-list-item">
-        <div class="item-img-box"><img src="./G002.png" alt="Graft 002"></div>
-        <div class="item-desc-box">
-          <h3>Graft 002</h3>
-          <h4>All-in-one desk</h4>
-          <p>이번 과제는 Graft 001의 연장선으로써 책상과 클라이언트의 동선의 니즈가 되<br>어 주었습니다. 부드러운 형태 스틸을 활용하여 사용자가 작업에 집중할 수 있<br>도록 미니멀하고 실용적으로 디자인한 가구입니다.</p>
+    <section class="section">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 03.3</span><span class="kicker">Provenance Log</span><span class="meta">A living record</span></div>
+        <div class="grid" style="row-gap:40px">
+          <div style="grid-column:1 / span 4">
+            <h2 class="h2" data-lines><span class="line"><span>Provenance</span></span><span class="line"><span><em>Log</em></span></span></h2>
+            <p class="soft" data-reveal style="margin-top:20px">A living record of the object's evolving life.</p>
+          </div>
+          <div style="grid-column:6 / span 7;overflow-x:auto" data-reveal>
+            <table class="ledger">
+              <thead><tr><th scope="col">Date</th><th scope="col">Product</th><th scope="col">Username</th><th scope="col">Status</th></tr></thead>
+              <tbody>
+            <tr><td>2025/11/25</td><td>Graft 001</td><td>RAGKE</td><td><span class="status">Returned</span></td></tr>
+            <tr><td>2025/12/30</td><td>Graft 002</td><td>DEADOUD</td><td><span class="status">Returned</span></td></tr>
+            <tr><td>2026/05/13</td><td>Graft 003</td><td>KIMDILDI00</td><td><span class="status">Returned</span></td></tr>
+            <tr class="is-available"><td>2026/05/23</td><td>Graft 004</td><td>GEUNHOHO</td><td><span class="status">Available</span></td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="archive-list-item">
-        <div class="item-img-box color-empty"></div>
-        <div class="item-desc-box">
-          <h3>Graft 003</h3>
-          <h4>Apron</h4>
-          <p>사물의 흔적을 미려한 접합에서 실용적인 가치를 연장선 방향을 과제로 삼았습니다. 시간 형상에<br>나 이음새에서 사용자들의 신뢰를 보강하는 방식으로 가장 살려주었으며, 데님 섬유의<br>질간 내구성을 배경으로 수선과 마감이 반복될 수 있는 구조를 갖추었습니다.</p>
+  </main>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="grid colophon-top">
+        <p class="colophon-statement">We don't just preserve objects — <em>we redefine their existence through time.</em></p>
+        <div class="colophon-col">
+          <h4>Read</h4>
+          <ul><li><a href="./about.html">About</a></li><li><a href="./shop.html">Objects</a></li><li><a href="./archive.html">Archive</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Take part</h4>
+          <ul><li><a href="./request.html">Request</a></li><li><a href="./donate.html">Donate</a></li><li><a href="./contact.html">Contact</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Start</h4>
+          <ul><li><a href="./request_form.html">Start a Request</a></li><li><a href="./donate.html#donate-form">Donate an object</a></li></ul>
         </div>
       </div>
-
-      <div class="archive-list-item">
-        <div class="item-img-box"><img src="./G004.png" alt="Denim 004"></div>
-        <div class="item-desc-box">
-          <h3>Denim 004</h3>
-          <h4>Potina</h4>
-          <p>사용자의 헤리티지를 고스란히 담아 완전히 새로운 형태의 Potina를 제작했습니다.<br>의자 등받이를 떼어 롤 코드를 들이고, 이례코드 대용 이지가 조합되지 않게끔<br>만들어 전체 단면 형태에 가치를 연출하였습니다.</p>
-        </div>
-      </div>
-
+      <div class="colophon-mark"><img src="./logoW.png" alt="" loading="lazy" width="2068" height="691"></div>
+      <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
     </div>
-  </section>
-
-  <section class="archive-gallery-section">
-    <div class="gallery-row-2">
-      <img src="./G1.png" alt="Detail 1">
-      <img src="./G2.png" alt="Detail 2">
-    </div>
-    <div class="gallery-row-1">
-      <img src="./G3.png" alt="Detail 3">
-    </div>
-  </section>
-
-  <section class="provenance-section">
-    <div class="provenance-container">
-      <h2 class="provenance-title">Provenance Log</h2>
-      <p class="provenance-subtitle">A living record of the object's evolving life</p>
-      
-      <table class="log-table">
-        <thead>
-          <tr>
-            <th>DATE</th>
-            <th>PRODUCT</th>
-            <th>USERNAME</th>
-            <th>STATUS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2025/11/25</td>
-            <td>GRAFT 001</td>
-            <td>RAGKE</td>
-            <td>RETURNED</td>
-          </tr>
-          <tr>
-            <td>2025/12/30</td>
-            <td>GRAFT 002</td>
-            <td>DEADOUD</td>
-            <td>RETURNED</td>
-          </tr>
-          <tr>
-            <td>2026/05/13</td>
-            <td>GRAFT 003</td>
-            <td>KIMDILDI00</td>
-            <td>RETURNED</td>
-          </tr>
-          <tr>
-            <td>2026/05/23</td>
-            <td>GRAFT 004</td>
-            <td class="user-highlight">GEUNHOHO</td>
-            <td class="status-available">AVAILABLE</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <script src="script.js?v=4"></script>
-  <script src="interactions.js?v=4"></script>
+  </footer>
+  <script src="./site.js?v=2"></script>
 </body>
 </html>

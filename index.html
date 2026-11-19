@@ -1,94 +1,200 @@
 <!DOCTYPE html>
-<html lang="ko" class="has-intro">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>patina</title>
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="interactions.css?v=4">
-  <script>try{var s=sessionStorage,c=document.documentElement.classList;if(s.getItem('pt-curtain')){c.add('curtain-in');s.removeItem('pt-curtain')}if(s.getItem('pt-intro'))c.add('intro-seen')}catch(e){}</script>
+  <title>patina — Still in use</title>
+  <meta name="description" content="시간이 축적된 사물을 수선·기록·순환시키는 참여형 디자인 플랫폼, patina.">
+  <meta name="theme-color" content="#f2eee5">
+  <link rel="icon" href="./logoG.png">
+  <script>try{if(sessionStorage.getItem('pt-arrive')){document.documentElement.classList.add('arriving');sessionStorage.removeItem('pt-arrive')}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="./site.css?v=2">
 </head>
 <body>
-
-  <header class="header">
-    
-    <div class="logo">
-      <img src="./logoG.png" alt="patina header logo">
-      </div>
-    
-    <nav class="nav">
-      <a href="./about.html">ABOUT</a>
-      <a href="./shop.html">SHOP</a>
-      <a href="./contact.html">CONTACT</a>
-      <a href="./donate.html">DONATE</a> 
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
-    
+  <a class="sr-skip" href="#main">본문 바로가기</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="./index.html" aria-label="patina 홈"><img src="./logoG.png" alt="patina" width="104" height="35"></a>
+      <div class="mast-meta meta"><span>Issue No.01</span><span>Still in use</span></div>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="./about.html">About</a>
+        <a href="./shop.html">Objects</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./request.html">Request</a>
+        <a href="./donate.html">Donate</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <button type="button" class="contents-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="contents">Contents <i aria-hidden="true"></i></button>
+    </div>
   </header>
-
-  <!-- 첫 진입 인트로: 브랜드 그린 3색 패널이 차례로 걷히며 히어로가 열립니다 -->
-  <div class="intro" aria-hidden="true">
-    <div class="intro-panel intro-p3"></div>
-    <div class="intro-panel intro-p2"></div>
-    <div class="intro-panel intro-p1">
-      <img class="intro-logo" src="./logoW.png" alt="">
-      <span class="intro-line"></span>
+  <div class="contents" id="contents" role="dialog" aria-modal="true" aria-label="목차" aria-hidden="true">
+    <div class="wrap contents-head">
+      <span class="kicker">Contents — Issue No.01</span>
+      <button type="button" class="contents-close kicker">Close <span aria-hidden="true"></span></button>
     </div>
+    <div class="wrap">
+      <ol class="contents-list">
+        <li><a href="./about.html" data-peek="./Group 55.png"><span class="no">01</span><span class="ttl">About<em>Still in use</em></span><span class="pg">p.012</span></a></li>
+        <li><a href="./shop.html" data-peek="./Group 53.png"><span class="no">02</span><span class="ttl">Objects<em>오브젝트</em></span><span class="pg">p.024</span></a></li>
+        <li><a href="./archive.html" data-peek="./graft004.png"><span class="no">03</span><span class="ttl">Archive<em>아카이브</em></span><span class="pg">p.036</span></a></li>
+        <li><a href="./request.html" data-peek="./Frame 85.png"><span class="no">04</span><span class="ttl">Request<em>수선 의뢰</em></span><span class="pg">p.048</span></a></li>
+        <li><a href="./donate.html" data-peek="./donate1.png"><span class="no">05</span><span class="ttl">Donate<em>기부</em></span><span class="pg">p.060</span></a></li>
+        <li><a href="./contact.html" data-peek="./request1.png"><span class="no">06</span><span class="ttl">Contact<em>의뢰 절차</em></span><span class="pg">p.072</span></a></li>
+      </ol>
+    </div>
+    <div class="wrap contents-foot meta"><span>patina — Still in use</span><span>Seoul, 2026</span></div>
   </div>
+  <main id="main">
 
-  <section class="hero-section">
-    <div class="hero-bg">
-      <div class="hero-media" style="background-image: url('./Mask group.png');"></div>
-      <div class="hero-logo">
-        <img src="./logoW.png" alt="patina main logo">
+    <!-- 표지 -->
+    <section class="cover wrap">
+      <div class="cover-meta meta"><span>Issue No.01 — 2026</span><span>Repair · Record · Care · Circulate</span><span>Seoul</span></div>
+      <div class="grid cover-body">
+        <div class="cover-title">
+          <p class="kicker" data-reveal>patina — participatory design platform</p>
+          <h1 class="display" data-lines><span class="line"><span>Still</span></span><span class="line"><span>in <em>use.</em></span></span></h1>
+          <p class="lede">버려지는 것들이 사라지지 않는 세계를 만듭니다.</p>
+        </div>
+        <figure class="fig cover-figure" data-reveal="img"><div class="fig-media "><img src="./Mask group.png" alt="초록색으로 칠해진 오래된 테이블"></div><figcaption><span>Cover — Fig. 01</span><span>Table, signature green</span></figcaption></figure>
       </div>
-      <p class="hero-tagline">Still in use — objects that keep their time.</p>
-      <a href="#grid" class="scroll-cue" aria-label="아래로 스크롤">
-        <span>SCROLL</span>
-        <i></i>
-      </a>
-    </div>
-  </section>
+      <nav class="cover-foot" aria-label="이번 호 주요 기사">
+        <a href="./about.html"><span class="no">01</span><span><span class="ttl">About</span><br><span class="kr">시간이 쌓인 사물</span></span></a>
+        <a href="./archive.html"><span class="no">02</span><span><span class="ttl">Archive</span><br><span class="kr">Graft 001—004</span></span></a>
+        <a href="./request.html"><span class="no">03</span><span><span class="ttl">Request</span><br><span class="kr">세 단계의 개입</span></span></a>
+        <a href="./donate.html"><span class="no">04</span><span><span class="ttl">Donate</span><br><span class="kr">Don't throw away</span></span></a>
+      </nav>
+    </section>
 
-  <section class="grid-section" id="grid">
-    <div class="grid-container">
- <a href="./archive.html" style="display: block; text-decoration: none;">
-  <div class="card" style="background-image: url('./Group 51.png');">
-    <span class="card-label">ARCHIVE <b>&rarr;</b></span>
-    <div class="cover color-darkgreen slide-left"></div>
-  </div>
-</a>
-<div class="card" style="background-image: url('./Group 52.png');">
-  <div class="cover color-olive slide-up"></div>
-</div>
-<div class="card" style="background-image: url('./Group 53.png');">
-  <div class="cover color-lightgreen slide-right"></div>
-</div>
-<div class="card" style="background-image: url('./Group 54.png');">
-  <div class="cover color-lightgreen slide-left"></div>
-</div>
-<div class="card" style="background-image: url('./Group 55.png');">
-  <div class="cover color-darkgreen slide-down"></div>
-</div>
-<div class="card" style="background-image: url('./Group 56.png');">
-  <div class="cover color-olive slide-right"></div>
-</div>
-<div class="card" style="background-image: url('./Group 57.png');">
-  <div class="cover color-olive slide-left"></div>
-</div>
-<div class="card" style="background-image: url('./Group 58.png');">
-  <div class="cover color-lightgreen slide-down"></div>
-</div>
-<div class="card" style="background-image: url('./Group 59.png');">
-  <div class="cover color-darkgreen slide-right"></div>
-</div>
-    </div>
-  </section>
+    <!-- 선언문 -->
+    <section class="section manifesto">
+      <div class="wrap grid">
+        <p class="quote-kr" data-reveal>파티나는 세월의 흔적을 결함이 아닌, <span class="hl">사물의 고유한 서사이자 정체성</span>으로 바라봅니다.</p>
+        <p class="manifesto-sign meta" data-reveal>From the editor — patina</p>
+      </div>
+    </section>
 
-  <script src="script.js?v=4"></script>
-  <script src="interactions.js?v=4"></script>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Repair<i>✳</i></span><span>Record<i>✳</i></span><span>Care<i>✳</i></span><span>Circulate<i>✳</i></span><span>Still in use<i>✳</i></span>
+        <span>Repair<i>✳</i></span><span>Record<i>✳</i></span><span>Care<i>✳</i></span><span>Circulate<i>✳</i></span><span>Still in use<i>✳</i></span>
+      </div>
+    </div>
+
+    <!-- 네 가지 동사 -->
+    <section class="section">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 01</span><span class="kicker">How patina works</span><span class="meta">p.012</span></div>
+        <div class="verbs">
+          <article class="verb" data-reveal><span class="no">01</span><h3>Repair</h3><p class="kr">수선하고</p><p>부분적인 손상이나 트렌드의 변화로 버려질 뻔한 사물의 잠재적 가치에 주목합니다.</p></article>
+          <article class="verb" data-reveal><span class="no">02</span><h3>Record</h3><p class="kr">기록하며</p><p>제품이 거쳐온 시간과 개입의 과정을 공식적으로 기록해 하나의 이력을 만듭니다.</p></article>
+          <article class="verb" data-reveal><span class="no">03</span><h3>Care</h3><p class="kr">관리하고</p><p>세월의 흔적을 지우지 않고, 사물의 고유한 정체성으로 이어 갑니다.</p></article>
+          <article class="verb" data-reveal><span class="no">04</span><h3>Circulate</h3><p class="kr">순환시킵니다</p><p>누군가의 역사적 오브제로 남기도 하고, 새로운 제품의 부품과 자재로 순환되기도 합니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 피처: Graft 004 -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 02</span><span class="kicker">Feature — From the archive</span><span class="meta">p.024</span></div>
+        <div class="grid feature-grid">
+          <div class="feature-media">
+            <figure class="fig " data-reveal="img"><a href="./archive.html"><div class="fig-media ratio-32"><img src="./graft004.png" alt="등받이를 재구성한 나무 의자 Graft 004" loading="lazy"></div></a><figcaption><span>Fig. 02 — Graft 004</span><span>This is patina.</span></figcaption></figure>
+          </div>
+          <div class="feature-text">
+            <span class="tag">Graft 004</span>
+            <h2 class="h2" data-lines><span class="line"><span>This is</span></span><span class="line"><span><em>patina.</em></span></span></h2>
+            <p data-reveal>파티나가 제시하는 가구는 단순한 '수리이력판 물건'이 아닙니다. 그것은 누군가의 일상 속에서 축적된 시간의 기록이자, 유일한 서사 그 자체입니다.</p>
+            <p class="soft small" data-reveal>결함에 얽매이지 않고 질감과 흔적을 정체성으로 재정의하는 지속 가능한 디자인 연구 작품.</p>
+            <a class="link-arrow" href="./archive.html" data-reveal>Read the archive <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 오브젝트 스트립 -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 03</span><span class="kicker">Objects — One and only object for me</span><span class="meta">p.036</span></div>
+        <div class="strip-head">
+          <h2 class="h2" data-lines><span class="line"><span>Nine objects,</span></span><span class="line"><span><em>nine stories.</em></span></span></h2>
+          <a class="link-arrow" href="./shop.html">All objects <span class="arr">→</span></a>
+        </div>
+      </div>
+      <div class="strip-wrap">
+        <div class="strip" tabindex="0" aria-label="오브젝트 목록, 좌우로 스크롤">
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 51.png" alt="의자와 사이드 테이블" loading="lazy"></div></a><figcaption><span>No.01</span><span>Chair & side table</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 52.png" alt="덤벨" loading="lazy"></div></a><figcaption><span>No.02</span><span>Dumbbell</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 53.png" alt="스툴과 구두" loading="lazy"></div></a><figcaption><span>No.03</span><span>Stool, heeled</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 54.png" alt="인형과 캐리어" loading="lazy"></div></a><figcaption><span>No.04</span><span>Corgi & carrier</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 55.png" alt="라탄 스툴" loading="lazy"></div></a><figcaption><span>No.05</span><span>Rattan stool</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 56.png" alt="전신 거울" loading="lazy"></div></a><figcaption><span>No.06</span><span>Standing mirror</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 57.png" alt="파란 의자" loading="lazy"></div></a><figcaption><span>No.07</span><span>Blue chair</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 58.png" alt="빨간 테이블" loading="lazy"></div></a><figcaption><span>No.08</span><span>Red table</span></figcaption></figure>
+<figure class="fig " data-reveal="img"><a href="./shop.html"><div class="fig-media "><img src="./Group 59.png" alt="초록 방석" loading="lazy"></div></a><figcaption><span>No.09</span><span>Green cushion</span></figcaption></figure>
+        </div>
+        <div class="strip-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- 세 단계 -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 04</span><span class="kicker">Request — How to use patina</span><span class="meta">p.048</span></div>
+        <div class="levels">
+          <a class="level" href="./request.html#lv1" data-reveal>
+            <div class="fig-media"><img src="./request2.png" alt="낡은 가죽 지갑" loading="lazy"></div>
+            <span class="meta">Lv1</span><h3>Standard</h3><p class="kr">본질을 지키는 가장 기본적인 체계</p><p>시간의 흔적들을 지우지 않고, 본연의 가치로 해석합니다.</p>
+          </a>
+          <a class="level" href="./request.html#lv2" data-reveal>
+            <div class="fig-media"><img src="./request3.png" alt="오래 입은 가죽 재킷" loading="lazy"></div>
+            <span class="meta">Lv2</span><h3>Advanced</h3><p class="kr">구조적 봉합</p><p>가시적인 스티치와 패치로 구조를 보강해 수선 흔적을 재해석합니다.</p>
+          </a>
+          <a class="level" href="./request.html#lv3" data-reveal>
+            <div class="fig-media"><img src="./request4.png" alt="화분이 된 낡은 부츠" loading="lazy"></div>
+            <span class="meta">Lv3</span><h3>Masterpiece</h3><p class="kr">재구성</p><p>물건의 역사는 보존하면서 형태를 변형해 새로운 구조로 재해석합니다.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기부 배너 -->
+    <section class="banner">
+      <div class="fig-media"><img src="./donate1.png" alt="작업대 위에 놓인 오래된 옷과 물건들" loading="lazy"></div>
+      <div class="wrap banner-inner">
+        <p class="kicker">§ 05 — Donate</p>
+        <h2 class="h1" data-lines><span class="line"><span>Don't throw away,</span></span><span class="line"><span><em>just patina!</em></span></span></h2>
+        <p class="lede">그냥 버리면 쓰레기가 되지만, patina를 만나면 새로운 이야기가 담긴 오브제로 다시 태어납니다.</p>
+        <div><a class="btn btn-light" href="./donate.html">기부하러 가기 <span class="arr">→</span></a></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="grid colophon-top">
+        <p class="colophon-statement">We don't just preserve objects — <em>we redefine their existence through time.</em></p>
+        <div class="colophon-col">
+          <h4>Read</h4>
+          <ul><li><a href="./about.html">About</a></li><li><a href="./shop.html">Objects</a></li><li><a href="./archive.html">Archive</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Take part</h4>
+          <ul><li><a href="./request.html">Request</a></li><li><a href="./donate.html">Donate</a></li><li><a href="./contact.html">Contact</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Start</h4>
+          <ul><li><a href="./request_form.html">Start a Request</a></li><li><a href="./donate.html#donate-form">Donate an object</a></li></ul>
+        </div>
+      </div>
+      <div class="colophon-mark"><img src="./logoW.png" alt="" loading="lazy" width="2068" height="691"></div>
+      <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
+    </div>
+  </footer>
+  <script src="./site.js?v=2"></script>
 </body>
 </html>

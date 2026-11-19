@@ -3,79 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>patina - Start a Request</title>
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="interactions.css?v=4">
-  <script>try{var s=sessionStorage,c=document.documentElement.classList;if(s.getItem('pt-curtain')){c.add('curtain-in');s.removeItem('pt-curtain')}if(s.getItem('pt-intro'))c.add('intro-seen')}catch(e){}</script>
+  <title>Start a Request — patina</title>
+  <meta name="description" content="patina 서비스 레벨 선택">
+  <meta name="theme-color" content="#f2eee5">
+  <link rel="icon" href="./logoG.png">
+  <script>try{if(sessionStorage.getItem('pt-arrive')){document.documentElement.classList.add('arriving');sessionStorage.removeItem('pt-arrive')}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="./site.css?v=2">
 </head>
-<body class="request-form-page">
-
-  <header class="header archive-header">
-    <div class="logo">
-      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+<body>
+  <a class="sr-skip" href="#main">본문 바로가기</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="./index.html" aria-label="patina 홈"><img src="./logoG.png" alt="patina" width="104" height="35"></a>
+      <div class="mast-meta meta"><span>Issue No.01</span><span>Still in use</span></div>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="./about.html">About</a>
+        <a href="./shop.html">Objects</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./request.html">Request</a>
+        <a href="./donate.html">Donate</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <button type="button" class="contents-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="contents">Contents <i aria-hidden="true"></i></button>
     </div>
-    <nav class="nav">
-      <a href="./about.html">ABOUT</a>
-      <a href="./shop.html">SHOP</a>
-      <a href="./contact.html" class="active">CONTACT</a>
-      <a href="./donate.html">DONATE</a> 
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
   </header>
-
-  <main class="form-wrapper bounce-up-animation">
-    
-    <div class="form-header-zone">
-      <a href="./request.html" class="form-back-arrow">←</a>
-      <div class="form-title-text">
-        <h2>Start a Request</h2>
-        <p>How to use patina</p>
-      </div>
+  <div class="contents" id="contents" role="dialog" aria-modal="true" aria-label="목차" aria-hidden="true">
+    <div class="wrap contents-head">
+      <span class="kicker">Contents — Issue No.01</span>
+      <button type="button" class="contents-close kicker">Close <span aria-hidden="true"></span></button>
     </div>
+    <div class="wrap">
+      <ol class="contents-list">
+        <li><a href="./about.html" data-peek="./Group 55.png"><span class="no">01</span><span class="ttl">About<em>Still in use</em></span><span class="pg">p.012</span></a></li>
+        <li><a href="./shop.html" data-peek="./Group 53.png"><span class="no">02</span><span class="ttl">Objects<em>오브젝트</em></span><span class="pg">p.024</span></a></li>
+        <li><a href="./archive.html" data-peek="./graft004.png"><span class="no">03</span><span class="ttl">Archive<em>아카이브</em></span><span class="pg">p.036</span></a></li>
+        <li><a href="./request.html" data-peek="./Frame 85.png"><span class="no">04</span><span class="ttl">Request<em>수선 의뢰</em></span><span class="pg">p.048</span></a></li>
+        <li><a href="./donate.html" data-peek="./donate1.png"><span class="no">05</span><span class="ttl">Donate<em>기부</em></span><span class="pg">p.060</span></a></li>
+        <li><a href="./contact.html" data-peek="./request1.png"><span class="no">06</span><span class="ttl">Contact<em>의뢰 절차</em></span><span class="pg">p.072</span></a></li>
+      </ol>
+    </div>
+    <div class="wrap contents-foot meta"><span>patina — Still in use</span><span>Seoul, 2026</span></div>
+  </div>
+  <main id="main">
 
-    <section class="service-level-section">
-      <h3>Service level</h3>
-      
-      <div class="level-card-grid">
-        
-        <div class="selectable-card" data-level="lv1">
-          <div class="card-inner">
-            <h4 class="level-tag">Lv1. Standard</h4>
-            <h5 class="level-name">표면 처리</h5>
-            <p class="level-desc">구조를 바꾸지 않고 표면을 처리 및 보존하며, 소재 본연의 자연스러운 경년 변화를 유지하며 돋보이게 합니다.</p>
+    <section class="page-top section" style="padding-top:calc(var(--head-h) + clamp(40px, 6vw, 88px))">
+      <div class="wrap grid form-shell">
+        <aside class="form-side">
+          <div class="sticky">
+            <a class="link-arrow" href="./request.html"><span class="arr">←</span> Request</a>
+            <p class="kicker">§ 04.1 — Start a Request</p>
+            <h1 class="h2" data-lines><span class="line"><span>Start a</span></span><span class="line"><span><em>Request</em></span></span></h1>
+            <p class="soft">진행하실 서비스 레벨을 하나 선택해 주세요. 레벨에 따라 의뢰서 항목이 달라집니다.</p>
+            <ol class="progress-steps"><li class="is-current" data-n="1">서비스 레벨 선택</li><li class="" data-n="2">의뢰서 작성</li></ol>
           </div>
-        </div>
-
-        <div class="selectable-card" data-level="lv2">
-          <div class="card-inner">
-            <h4 class="level-tag">Lv2. Advanced</h4>
-            <h5 class="level-name">구조적 봉합</h5>
-            <p class="level-desc">가시적인 스티치나 패치를 통해 구조를 보강하여, 수선 흔적 자체를 물건의 정체성으로 만듭니다.</p>
+        </aside>
+        <form class="form-main" data-flow="level" novalidate>
+          <div class="field" style="border-top:1px solid var(--ink)">
+            <p class="label">Service level <span class="req">필수</span></p>
+            <div class="pick-grid" data-pick-required="level" data-pick-message="진행하실 서비스 레벨(Lv1 ~ Lv3)을 하나 선택해 주세요.">
+            <label class="pick" data-reveal>
+              <input type="radio" name="level" value="lv1">
+              <span class="pick-check" aria-hidden="true"></span>
+              <span class="fig-media"><img src="./request2.png" alt="낡은 가죽 지갑" loading="lazy"></span>
+              <span class="pick-body"><span class="pick-title">Lv1. Standard</span><span class="kr">표면 처리</span><p>구조를 바꾸지 않고 표면을 처리 및 보존하며, 소재 본연의 자연스러운 경년 변화를 유지하며 돋보이게 합니다.</p></span>
+            </label>
+            <label class="pick" data-reveal>
+              <input type="radio" name="level" value="lv2">
+              <span class="pick-check" aria-hidden="true"></span>
+              <span class="fig-media"><img src="./request3.png" alt="닳은 가죽 재킷" loading="lazy"></span>
+              <span class="pick-body"><span class="pick-title">Lv2. Advanced</span><span class="kr">구조적 봉합</span><p>가시적인 스티치나 패치를 통해 구조를 보강하여, 수선 흔적 자체를 물건의 정체성으로 만듭니다.</p></span>
+            </label>
+            <label class="pick" data-reveal>
+              <input type="radio" name="level" value="lv3">
+              <span class="pick-check" aria-hidden="true"></span>
+              <span class="fig-media"><img src="./request4.png" alt="식물을 심은 부츠" loading="lazy"></span>
+              <span class="pick-body"><span class="pick-title">Lv3. Masterpiece</span><span class="kr">재구성</span><p>물건들이 가지고 있는 역사는 보존하면서 형태를 변형하고 새로운 오브제를 만들어 사물을 재해석합니다.</p><span class="note">*원형이 변경될 수 있습니다. 작업 진행 전 1:1 상담이 필수입니다.</span></span>
+            </label>
+            </div>
           </div>
-        </div>
-
-        <div class="selectable-card" data-level="lv3">
-          <div class="card-inner">
-            <h4 class="level-tag">Lv3. Masterpiece</h4>
-            <h5 class="level-name">재구성</h5>
-            <p class="level-desc">물건들이 가지고 있는 역사는 보존하면서 형태를 변형하고 새로운 오브제를 만들어 사물을 재해석합니다.</p>
-            <p class="level-notice">*원형이 변경될 수 있습니다.<br>작업 진행 전 1:1 상담이 필수입니다.</p>
+          <div class="form-actions">
+            <p class="form-error" aria-live="polite"></p>
+            <button type="submit" class="btn btn-solid">Next <span class="arr">→</span></button>
           </div>
-        </div>
-
+        </form>
       </div>
-    </section>
-
-    <section class="form-action-zone">
-      <button class="form-next-btn" id="nextStepBtn">Next</button>
     </section>
 
   </main>
-
-  <script src="script.js?v=4"></script>
-  <script src="interactions.js?v=4"></script>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="grid colophon-top">
+        <p class="colophon-statement">We don't just preserve objects — <em>we redefine their existence through time.</em></p>
+        <div class="colophon-col">
+          <h4>Read</h4>
+          <ul><li><a href="./about.html">About</a></li><li><a href="./shop.html">Objects</a></li><li><a href="./archive.html">Archive</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Take part</h4>
+          <ul><li><a href="./request.html">Request</a></li><li><a href="./donate.html">Donate</a></li><li><a href="./contact.html">Contact</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Start</h4>
+          <ul><li><a href="./request_form.html">Start a Request</a></li><li><a href="./donate.html#donate-form">Donate an object</a></li></ul>
+        </div>
+      </div>
+      <div class="colophon-mark"><img src="./logoW.png" alt="" loading="lazy" width="2068" height="691"></div>
+      <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
+    </div>
+  </footer>
+  <script src="./site.js?v=2"></script>
 </body>
 </html>

@@ -3,144 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>patina - DONATE</title>
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="interactions.css?v=4">
-  <script>try{var s=sessionStorage,c=document.documentElement.classList;if(s.getItem('pt-curtain')){c.add('curtain-in');s.removeItem('pt-curtain')}if(s.getItem('pt-intro'))c.add('intro-seen')}catch(e){}</script>
+  <title>Donate — patina</title>
+  <meta name="description" content="Don&#x27;t throw away, just patina! 쓰지 않는 옷과 물건을 patina에 기부해 주세요.">
+  <meta name="theme-color" content="#f2eee5">
+  <link rel="icon" href="./logoG.png">
+  <script>try{if(sessionStorage.getItem('pt-arrive')){document.documentElement.classList.add('arriving');sessionStorage.removeItem('pt-arrive')}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="./site.css?v=2">
 </head>
-<body class="donate-page">
-
-  <header class="header archive-header">
-    <div class="logo">
-      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+<body>
+  <a class="sr-skip" href="#main">본문 바로가기</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="./index.html" aria-label="patina 홈"><img src="./logoG.png" alt="patina" width="104" height="35"></a>
+      <div class="mast-meta meta"><span>Issue No.01</span><span>Still in use</span></div>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="./about.html">About</a>
+        <a href="./shop.html">Objects</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./request.html">Request</a>
+        <a href="./donate.html">Donate</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <button type="button" class="contents-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="contents">Contents <i aria-hidden="true"></i></button>
     </div>
-    <nav class="nav">
-      <a href="./about.html">ABOUT</a>
-      <a href="./shop.html">SHOP</a>
-      <a href="./contact.html">CONTACT</a>
-      <a href="./donate.html" class="active">DONATE</a>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
   </header>
-
-  <main class="donate-wrapper">
-    
-    <div class="donate-header-text">
-      <h2>Donate</h2>
-      <p>Don't throw away, just patina!</p>
+  <div class="contents" id="contents" role="dialog" aria-modal="true" aria-label="목차" aria-hidden="true">
+    <div class="wrap contents-head">
+      <span class="kicker">Contents — Issue No.01</span>
+      <button type="button" class="contents-close kicker">Close <span aria-hidden="true"></span></button>
     </div>
+    <div class="wrap">
+      <ol class="contents-list">
+        <li><a href="./about.html" data-peek="./Group 55.png"><span class="no">01</span><span class="ttl">About<em>Still in use</em></span><span class="pg">p.012</span></a></li>
+        <li><a href="./shop.html" data-peek="./Group 53.png"><span class="no">02</span><span class="ttl">Objects<em>오브젝트</em></span><span class="pg">p.024</span></a></li>
+        <li><a href="./archive.html" data-peek="./graft004.png"><span class="no">03</span><span class="ttl">Archive<em>아카이브</em></span><span class="pg">p.036</span></a></li>
+        <li><a href="./request.html" data-peek="./Frame 85.png"><span class="no">04</span><span class="ttl">Request<em>수선 의뢰</em></span><span class="pg">p.048</span></a></li>
+        <li><a href="./donate.html" data-peek="./donate1.png"><span class="no">05</span><span class="ttl">Donate<em>기부</em></span><span class="pg">p.060</span></a></li>
+        <li><a href="./contact.html" data-peek="./request1.png"><span class="no">06</span><span class="ttl">Contact<em>의뢰 절차</em></span><span class="pg">p.072</span></a></li>
+      </ol>
+    </div>
+    <div class="wrap contents-foot meta"><span>patina — Still in use</span><span>Seoul, 2026</span></div>
+  </div>
+  <main id="main">
 
-    <section class="donate-hero-banner">
-      <img src="./donate1.png" alt="patina donate visual">
-      <div class="donate-banner-overlay">
-        <p>버리기엔 아깝거나 귀찮고, 그대로 두기엔 자리를 차지하는 애매한 물건이 있나요?</p>
+    <section class="page-top">
+      <div class="wrap grid article-head">
+        <p class="kicker"><span>§ 05 — Donate</span><span>Take part</span></p>
+        <h1 class="h1" data-lines><span class="line"><span>Don't throw away,</span></span><span class="line"><span><em>just patina!</em></span></span></h1>
+        <div class="aside"><p class="body-lg soft" data-reveal>버리기엔 아깝거나 귀찮고, 그대로 두기엔 자리를 차지하는 애매한 물건이 있나요?</p></div>
       </div>
+      <div class="wrap"><figure class="fig " data-reveal="img"><div class="fig-media ratio-21"><img src="./donate1.png" alt="작업실 테이블 위의 오래된 옷과 물건들"></div><figcaption><span>Fig. 01 — Things left behind</span><span>Donate</span></figcaption></figure></div>
     </section>
 
-    <section class="donate-intro-section">
-      <p class="intro-bold">유행이 지나서, 혹은 작은 흠집 때문에 쓰지 않는 옷과 물건들.</p>
-      <p class="intro-desc">
-        그냥 버리면 쓰레기가 되지만, patina를 만나면 새로운 이야기가 담긴 오브제로 다시 태어납니다.<br>
-        당신의 일상을 채웠던 흔적을 patina에 기부해 주세요. 지속 가능한 사물의 순환이 당신의 손에서부터 시작됩니다.
-      </p>
-    </section>
-
-    <section class="collect-section">
-      <h3>What we collect</h3>
-      
-      <div class="collect-grid">
-        <div class="collect-card">
-          <div class="collect-img-box" style="background-image: url('./donate2.png');"></div>
-          <span>의류 및 패브릭</span>
-        </div>
-        <div class="collect-card">
-          <div class="collect-img-box" style="background-image: url('./donate3.png');"></div>
-          <span>선반 및 리빙</span>
-        </div>
-        <div class="collect-card">
-          <div class="collect-img-box" style="background-image: url('./donate4.png');"></div>
-          <span>패션 잡화</span>
-        </div>
-      </div>
-      
-      <p class="collect-notice">기부 불가 항목 (오염이 너무 심해 재작업이 불가능한 의류, 일회용 플라스틱 제품 등)</p>
-    </section>
-
-    <hr class="donate-divider">
-
-    <section class="donate-process-section">
-      <h3>Donate process</h3>
-      
-      <div class="process-flow-container">
-        <div class="flow-step">
-          <div class="step-icon">01</div>
-          <h4>기부 신청서 작성</h4>
-          <p>하단 폼에 물품 정보와<br>스토리, 사진을 등록합니다.</p>
-        </div>
-        
-        <div class="flow-arrow">→</div>
-        
-        <div class="flow-step">
-          <div class="step-icon">02</div>
-          <h4>수거 박스 발송</h4>
-          <p>선정된 기부자께 물품을 담을<br>파티나 에코 수거백을 보냅니다.</p>
-        </div>
-        
-        <div class="flow-arrow">→</div>
-        
-        <div class="flow-step">
-          <div class="step-icon">03</div>
-          <h4>오브제 업사이클</h4>
-          <p>디자이너들의 개입을 통해<br>새로운 아카이브 가구로 탄생합니다.</p>
+    <section class="section">
+      <div class="wrap grid">
+        <div style="grid-column:2 / span 10">
+          <p class="quote-kr" data-reveal>유행이 지나서, 혹은 작은 흠집 때문에 쓰지 않는 옷과 물건들.</p>
+          <p class="lede soft" data-reveal style="margin-top:32px;max-width:44ch">그냥 버리면 쓰레기가 되지만, patina를 만나면 새로운 이야기가 담긴 오브제로 다시 태어납니다. 당신의 일상을 채웠던 흔적을 patina에 기부해 주세요. 지속 가능한 사물의 순환이 당신의 손에서부터 시작됩니다.</p>
         </div>
       </div>
     </section>
 
-    <section class="donate-form-section">
-      <div class="form-title-box">
-        <h3>기부 신청하기</h3>
-        <p>사물이 품고 있는 소중한 흔적과 이야기를 들려주세요.</p>
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 05.1</span><span class="kicker">What we collect</span><span class="meta">3 categories</span></div>
+        <div class="collect">
+          <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./donate2.png" alt="개어 둔 니트와 데님" loading="lazy"></div><figcaption><span>의류 및 패브릭</span><span>01</span></figcaption></figure>
+          <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./donate3.png" alt="창가의 나무 선반과 컵" loading="lazy"></div><figcaption><span>선반 및 리빙</span><span>02</span></figcaption></figure>
+          <figure class="fig " data-reveal="img"><div class="fig-media "><img src="./donate4.png" alt="가방과 벨트, 구두" loading="lazy"></div><figcaption><span>패션 잡화</span><span>03</span></figcaption></figure>
+        </div>
+        <p class="notice" data-reveal>기부 불가 항목 — 오염이 너무 심해 재작업이 불가능한 의류, 일회용 플라스틱 제품 등</p>
       </div>
+    </section>
 
-      <form id="donateForm" class="actual-donate-form" onsubmit="return false;">
-        <div class="form-row-2">
-          <div class="input-group">
-            <label for="donateName">기부자 성함</label>
-            <input type="text" id="donateName" placeholder="성함을 입력해주세요" required>
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">§ 05.2</span><span class="kicker">Donate process</span><span class="meta">3 steps</span></div>
+        <ol class="steps">
+          <li class="step" data-reveal><span class="no">01</span><h4>기부 신청서 작성</h4><p>하단 폼에 물품 정보와 스토리, 사진을 등록합니다.</p></li>
+          <li class="step" data-reveal><span class="no">02</span><h4>수거 박스 발송</h4><p>선정된 기부자께 물품을 담을 파티나 에코 수거백을 보냅니다.</p></li>
+          <li class="step" data-reveal><span class="no">03</span><h4>오브제 업사이클</h4><p>디자이너들의 개입을 통해 새로운 아카이브 가구로 탄생합니다.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="donate-form" style="padding-top:0">
+      <div class="wrap grid form-shell">
+        <aside class="form-side">
+          <div class="sticky">
+            <p class="kicker">§ 05.3 — Form</p>
+            <h2 class="h2" data-lines><span class="line"><span>기부 신청하기</span></span></h2>
+            <p class="soft" data-reveal>사물이 품고 있는 소중한 흔적과 이야기를 들려주세요.</p>
           </div>
-          <div class="input-group">
-            <label for="donateContact">연락처</label>
-            <input type="tel" id="donateContact" placeholder="010-0000-0000" required>
+        </aside>
+        <form class="form-main" id="donateForm" data-flow="donate" novalidate>
+          <div class="field">
+            <div class="field-row">
+              <div class="field">
+                <label class="label" for="donateName">기부자 성함 <span class="req">필수</span></label>
+                <input class="input" type="text" id="donateName" name="name" placeholder="성함을 입력해주세요" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="label" for="donateContact">연락처 <span class="req">필수</span></label>
+                <input class="input" type="tel" id="donateContact" name="contact" placeholder="010-0000-0000" autocomplete="tel" required>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="input-group">
-          <label for="donateCategory">기부 물품 카테고리</label>
-          <select id="donateCategory" required>
-            <option value="" disabled selected>선택해 주세요</option>
-            <option value="fabric">의류 및 패브릭</option>
-            <option value="living">선반 및 리빙 가구</option>
-            <option value="etc">패션 잡화 및 기타 오브제</option>
-          </select>
-        </div>
-
-        <div class="input-group">
-          <label for="donateStory">사물에 담긴 기억이나 이야기</label>
-          <textarea id="donateStory" rows="5" placeholder="이 물건을 언제, 어떻게 주로 사용하셨나요? 버리기 아쉬웠던 특별한 추억이나 흔적에 대해 자유롭게 들려주세요." required></textarea>
-        </div>
-
-        <div class="form-submit-zone">
-          <button type="submit" class="submit-donate-btn">Submit Request</button>
-        </div>
-      </form>
+          <div class="field">
+            <label class="label" for="donateCategory">기부 물품 카테고리 <span class="req">필수</span></label>
+            <select class="select" id="donateCategory" name="category" required>
+              <option value="" disabled selected>선택해 주세요</option>
+              <option value="fabric">의류 및 패브릭</option>
+              <option value="living">선반 및 리빙 가구</option>
+              <option value="etc">패션 잡화 및 기타 오브제</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="label" for="donateStory">사물에 담긴 기억이나 이야기 <span class="req">필수</span></label>
+            <textarea class="textarea" id="donateStory" name="story" rows="6" placeholder="이 물건을 언제, 어떻게 주로 사용하셨나요? 버리기 아쉬웠던 특별한 추억이나 흔적에 대해 자유롭게 들려주세요." required></textarea>
+          </div>
+          <div class="form-actions">
+            <p class="form-error" aria-live="polite"></p>
+            <button type="submit" class="btn btn-solid">Submit <span class="arr">→</span></button>
+          </div>
+        </form>
+      </div>
     </section>
 
   </main>
-
-  <script src="script.js?v=4"></script>
-  <script src="interactions.js?v=4"></script>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="grid colophon-top">
+        <p class="colophon-statement">We don't just preserve objects — <em>we redefine their existence through time.</em></p>
+        <div class="colophon-col">
+          <h4>Read</h4>
+          <ul><li><a href="./about.html">About</a></li><li><a href="./shop.html">Objects</a></li><li><a href="./archive.html">Archive</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Take part</h4>
+          <ul><li><a href="./request.html">Request</a></li><li><a href="./donate.html">Donate</a></li><li><a href="./contact.html">Contact</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Start</h4>
+          <ul><li><a href="./request_form.html">Start a Request</a></li><li><a href="./donate.html#donate-form">Donate an object</a></li></ul>
+        </div>
+      </div>
+      <div class="colophon-mark"><img src="./logoW.png" alt="" loading="lazy" width="2068" height="691"></div>
+      <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
+    </div>
+  </footer>
+  <script src="./site.js?v=2"></script>
 </body>
 </html>

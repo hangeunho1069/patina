@@ -3,74 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>patina - SHOP</title>
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="interactions.css?v=4">
-  <script>try{var s=sessionStorage,c=document.documentElement.classList;if(s.getItem('pt-curtain')){c.add('curtain-in');s.removeItem('pt-curtain')}if(s.getItem('pt-intro'))c.add('intro-seen')}catch(e){}</script>
+  <title>Objects — patina</title>
+  <meta name="description" content="One and only object for me. 파티나의 손을 거쳐 다시 쓰이게 된 사물들.">
+  <meta name="theme-color" content="#f2eee5">
+  <link rel="icon" href="./logoG.png">
+  <script>try{if(sessionStorage.getItem('pt-arrive')){document.documentElement.classList.add('arriving');sessionStorage.removeItem('pt-arrive')}}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="./site.css?v=2">
 </head>
-<body class="shop-page">
-
-  <header class="header archive-header">
-    <div class="logo">
-      <a href="./index.html"><img src="./logoG.png" alt="patina header logo"></a>
+<body>
+  <a class="sr-skip" href="#main">본문 바로가기</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="./index.html" aria-label="patina 홈"><img src="./logoG.png" alt="patina" width="104" height="35"></a>
+      <div class="mast-meta meta"><span>Issue No.01</span><span>Still in use</span></div>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="./about.html">About</a>
+        <a href="./shop.html">Objects</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./request.html">Request</a>
+        <a href="./donate.html">Donate</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <button type="button" class="contents-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="contents">Contents <i aria-hidden="true"></i></button>
     </div>
-    <nav class="nav">
-      <a href="./about.html">ABOUT</a>
-      <a href="./shop.html">SHOP</a>
-      <a href="./contact.html">CONTACT</a>
-      <a href="./donate.html">DONATE</a> 
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
   </header>
-
-  <main class="shop-wrapper">
-    
-    <div class="shop-header-text">
-      <h2>Shop</h2>
-      <p>One and only object for me.</p>
+  <div class="contents" id="contents" role="dialog" aria-modal="true" aria-label="목차" aria-hidden="true">
+    <div class="wrap contents-head">
+      <span class="kicker">Contents — Issue No.01</span>
+      <button type="button" class="contents-close kicker">Close <span aria-hidden="true"></span></button>
     </div>
-
-    <div class="shop-mosaic-grid">
-      
-      <div class="shop-column left-col">
-        
-        <div class="grid-item item-1" style="background-image: url('./Group 51.png');">
-          <div class="cover color-darkgreen slide-left"></div>
-        </div>
-        
-        <div class="grid-item item-3" style="background-image: url('./Group 53.png');">
-          <div class="cover color-lightgreen slide-left"></div>
-        </div>
-        
-        <div class="item-btn-zone">
-          <a href="./archive.html" class="move-archive-btn">MOVE TO ARCHIVE</a>
-        </div>
-        
-      </div>
-
-      <div class="shop-column right-col">
-        
-        <div class="grid-item item-2" style="background-image: url('./Group 52.png');">
-          <div class="cover color-olive slide-up"></div>
-        </div>
-        
-        <div class="grid-item item-4" style="background-image: url('./Group 54.png');">
-          <div class="cover color-lightgreen slide-right"></div>
-        </div>
-        
-        <div class="grid-item item-5" style="background-image: url('./Mask group.png');">
-          <div class="cover color-darkgreen slide-down"></div>
-        </div>
-        
-      </div>
-
+    <div class="wrap">
+      <ol class="contents-list">
+        <li><a href="./about.html" data-peek="./Group 55.png"><span class="no">01</span><span class="ttl">About<em>Still in use</em></span><span class="pg">p.012</span></a></li>
+        <li><a href="./shop.html" data-peek="./Group 53.png"><span class="no">02</span><span class="ttl">Objects<em>오브젝트</em></span><span class="pg">p.024</span></a></li>
+        <li><a href="./archive.html" data-peek="./graft004.png"><span class="no">03</span><span class="ttl">Archive<em>아카이브</em></span><span class="pg">p.036</span></a></li>
+        <li><a href="./request.html" data-peek="./Frame 85.png"><span class="no">04</span><span class="ttl">Request<em>수선 의뢰</em></span><span class="pg">p.048</span></a></li>
+        <li><a href="./donate.html" data-peek="./donate1.png"><span class="no">05</span><span class="ttl">Donate<em>기부</em></span><span class="pg">p.060</span></a></li>
+        <li><a href="./contact.html" data-peek="./request1.png"><span class="no">06</span><span class="ttl">Contact<em>의뢰 절차</em></span><span class="pg">p.072</span></a></li>
+      </ol>
     </div>
+    <div class="wrap contents-foot meta"><span>patina — Still in use</span><span>Seoul, 2026</span></div>
+  </div>
+  <main id="main">
+
+    <section class="page-top">
+      <div class="wrap grid article-head">
+        <p class="kicker"><span>§ 02 — Objects</span><span>Catalogue</span></p>
+        <h1 class="h1" data-lines><span class="line"><span>One and only</span></span><span class="line"><span><em>object for me.</em></span></span></h1>
+        <div class="aside"><p class="body-lg soft" data-reveal>파티나의 손을 거쳐 다시 쓰이게 된 사물들. 같은 것은 하나도 없습니다.</p></div>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="catalog">
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 51.png" alt="의자와 사이드 테이블" loading="lazy"></div><figcaption><span><b>Chair & side table</b></span><span>No.01 — 의자와 사이드 테이블</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 52.png" alt="덤벨" loading="lazy"></div><figcaption><span><b>Dumbbell</b></span><span>No.02 — 덤벨</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 53.png" alt="스툴과 구두" loading="lazy"></div><figcaption><span><b>Stool, heeled</b></span><span>No.03 — 스툴과 구두</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 54.png" alt="인형과 캐리어" loading="lazy"></div><figcaption><span><b>Corgi & carrier</b></span><span>No.04 — 인형과 캐리어</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 55.png" alt="라탄 스툴" loading="lazy"></div><figcaption><span><b>Rattan stool</b></span><span>No.05 — 라탄 스툴</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 56.png" alt="전신 거울" loading="lazy"></div><figcaption><span><b>Standing mirror</b></span><span>No.06 — 전신 거울</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 57.png" alt="파란 의자" loading="lazy"></div><figcaption><span><b>Blue chair</b></span><span>No.07 — 파란 의자</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 58.png" alt="빨간 테이블" loading="lazy"></div><figcaption><span><b>Red table</b></span><span>No.08 — 빨간 테이블</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Group 59.png" alt="초록 방석" loading="lazy"></div><figcaption><span><b>Green cushion</b></span><span>No.09 — 초록 방석</span></figcaption></figure>
+<figure class="fig" data-reveal="img"><div class="fig-media"><img src="./Mask group.png" alt="시그니처 그린 테이블" loading="lazy"></div><figcaption><span><b>Signature green table</b></span><span>No.10 — 시그니처 그린 테이블</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:40px">
+        <h2 class="h2" data-lines><span class="line"><span>Every object</span></span><span class="line"><span><em>has a record.</em></span></span></h2>
+        <a class="btn btn-solid" href="./archive.html" data-reveal>Move to archive <span class="arr">→</span></a>
+      </div>
+    </section>
+
   </main>
-
-  <script src="script.js?v=4"></script>
-  <script src="interactions.js?v=4"></script>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="grid colophon-top">
+        <p class="colophon-statement">We don't just preserve objects — <em>we redefine their existence through time.</em></p>
+        <div class="colophon-col">
+          <h4>Read</h4>
+          <ul><li><a href="./about.html">About</a></li><li><a href="./shop.html">Objects</a></li><li><a href="./archive.html">Archive</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Take part</h4>
+          <ul><li><a href="./request.html">Request</a></li><li><a href="./donate.html">Donate</a></li><li><a href="./contact.html">Contact</a></li></ul>
+        </div>
+        <div class="colophon-col">
+          <h4>Start</h4>
+          <ul><li><a href="./request_form.html">Start a Request</a></li><li><a href="./donate.html#donate-form">Donate an object</a></li></ul>
+        </div>
+      </div>
+      <div class="colophon-mark"><img src="./logoW.png" alt="" loading="lazy" width="2068" height="691"></div>
+      <div class="colophon-base meta"><span>© 2026 patina. 버려지는 것들이 사라지지 않는 세계를 만듭니다.</span><span>Issue No.01 — Still in use</span></div>
+    </div>
+  </footer>
+  <script src="./site.js?v=2"></script>
 </body>
 </html>
