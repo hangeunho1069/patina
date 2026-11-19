@@ -60,7 +60,7 @@ def archive():
 
     <section class="section">
       <div class="wrap grid">
-        <p class="lede dropcap" data-reveal style="grid-column:3 / span 8">파티나가 제시하는 가구는 단순한 '수리이력판 물건'이 아닙니다. 그것은 누군가의 일상 속에서 축적된 시간의 기록이자, 유일한 서사 그 자체입니다. 이 개별 프로젝트는 결함에 얽매이지 않고 질감과 흔적을 정체성으로 재정의하며, 창의적인 공간과 미술품이라는 새로운 기능적 의의와 함께 각 유저와의 상호작용으로 재해석된 지속 가능한 디자인 연구 작품으로 파티나의 영역을 넓히고 있습니다.</p>
+        <p class="lede" data-reveal style="grid-column:3 / span 8">파티나가 제시하는 가구는 단순한 '수리이력판 물건'이 아닙니다. 그것은 누군가의 일상 속에서 축적된 시간의 기록이자, 유일한 서사 그 자체입니다. 이 개별 프로젝트는 결함에 얽매이지 않고 질감과 흔적을 정체성으로 재정의하며, 창의적인 공간과 미술품이라는 새로운 기능적 의의와 함께 각 유저와의 상호작용으로 재해석된 지속 가능한 디자인 연구 작품으로 파티나의 영역을 넓히고 있습니다.</p>
       </div>
     </section>
 
@@ -137,7 +137,7 @@ def contact():
       <div class="wrap grid essay">
         <aside class="essay-side"><div class="sticky"><p class="kicker">의뢰 시 가치</p><p class="meta">Why we take requests</p></div></aside>
         <div class="essay-body">
-          <p class="lede dropcap" data-reveal>세상 모든 사물들은 그것의 쓰임이 있습니다. 하지만 시간이 지남에 따라 그 쓰임을 다하여 종말을 맞이하게 됩니다.</p>
+          <p class="lede" data-reveal>세상 모든 사물들은 그것의 쓰임이 있습니다. 하지만 시간이 지남에 따라 그 쓰임을 다하여 종말을 맞이하게 됩니다.</p>
           <p data-reveal>patina는 이점에 주목하여 쓰임을 다한 사물들에 새로운 가치를 주고자 합니다.</p>
           <div class="pull" data-reveal><p class="quote-kr">쓰임을 다한 사물들일지라도, 그들은 분명 그 사용자의 추억의 조각들로 가득 차 있을 것입니다.</p></div>
           <p data-reveal>우리는 그러한 조각들을 기반으로 사물들을 재탄생시켜, 다시 돌려 드리고자 합니다.</p>

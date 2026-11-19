@@ -186,7 +186,7 @@ def about():
           </div>
         </aside>
         <div class="essay-body">
-          <p class="lede dropcap" data-reveal>파티나(PATINA)는 시간이 축적된 사물을 수거하여 새로운 '아카이브 오브제'로 전환하는 참여형 디자인 서비스 플랫폼입니다.</p>
+          <p class="lede" data-reveal>파티나(PATINA)는 시간이 축적된 사물을 수거하여 새로운 '아카이브 오브제'로 전환하는 참여형 디자인 서비스 플랫폼입니다.</p>
           <p data-reveal>수많은 사물들이 완벽한 기능 상실이 아닌, 부분적인 손상이나 트렌드의 변화로 인해 버려집니다. 파티나는 버려지기엔 아쉽고 그대로 방치하기엔 모호한 사물들의 잠재적 가치에 주목했습니다. 이를 수선하고, 기록하며, 관리하고, 순환시키는 시스템을 통해 사물의 생애 주기를 재정립하고자 합니다.</p>
           <div class="pull" data-reveal>
             <p class="quote-kr">단순한 과거로의 회귀나 원상복구가 아닙니다.</p>

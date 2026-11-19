@@ -1257,7 +1257,6 @@ html { overflow-x: clip; }
 /* About: 에세이 중간 사진 두 장 */
 .essay-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 1.6vw, 20px); margin: clamp(40px, 5vw, 72px) 0; }
 .essay-pair .fig:nth-child(2) { margin-top: clamp(32px, 5vw, 72px); }
-.essay-pair .fig:nth-child(2) .fig-media { border-radius: 999px 999px var(--r-img) var(--r-img); }
 
 /* Objects: 보기 전환 */
 .shop-tools { gap: 16px; }
