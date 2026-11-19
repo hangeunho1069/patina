@@ -1153,3 +1153,92 @@ html { overflow-x: clip; }
 }
 .verb:last-child, .level:last-child { border-right: 1px solid var(--rule); }
 .verb:nth-child(3):last-child { border-right-color: var(--green); }
+
+
+/* ==========================================================================
+   Hybrid tweaks v2 — 사진을 화면 가득 / 영문 제목 얇게 / 한글은 고딕
+   ========================================================================== */
+:root {
+  --f-serif-kr: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+}
+
+/* 영문 제목: 500 굵기로 얇고 우아하게 */
+.display, .h1, .h2, .h3,
+.contents-list .ttl, .colophon-statement, .marquee-track span, .step .no,
+.cover-foot .ttl, .verb h3, .level h3, .entry-no, .ledger td:nth-child(2),
+.pick-title, .catalog .fig figcaption b {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+.display { letter-spacing: -0.045em; }
+.marquee-track span { font-weight: 600; }
+
+/* 한글 인용·리드: 고딕으로 영문 제목과 톤 맞추기 */
+.quote-kr { font-family: var(--f-serif-kr); font-weight: 600; letter-spacing: -0.04em; line-height: 1.4; }
+.lede { font-family: var(--f-serif-kr); font-weight: 500; letter-spacing: -0.025em; }
+.verb .kr, .level .kr, .step h4, .chapter-text .sub, .pick-body .kr { font-family: var(--f-serif-kr); font-weight: 700; }
+.dropcap::first-letter { font-family: var(--f-serif-kr); font-weight: 700; }
+.contents-list .ttl em { font-family: var(--f-serif-kr); font-weight: 500; }
+
+/* 표지: 사진이 화면 가득, 그 위에 제목과 스티커 */
+.cover.cover-full {
+  position: relative;
+  display: block;
+  min-height: 100svh;
+  padding-top: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cover-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: var(--paper-2); }
+.cover-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 50%;
+  transform: scale(1.12);
+  transition: transform 2.4s var(--ease-out);
+}
+.is-loaded .cover-bg img { transform: scale(1); }
+/* 왼쪽은 종이색으로 은은하게 덮어 제목 가독성 확보 */
+.cover-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(242, 238, 229, 0.92) 0%, rgba(242, 238, 229, 0.7) 30%, rgba(242, 238, 229, 0.12) 58%, rgba(242, 238, 229, 0) 72%),
+    linear-gradient(0deg, rgba(242, 238, 229, 0.9) 0%, rgba(242, 238, 229, 0) 22%),
+    linear-gradient(180deg, rgba(242, 238, 229, 0.75) 0%, rgba(242, 238, 229, 0) 18%);
+}
+.cover-inner {
+  min-height: 100svh;
+  padding-top: var(--head-h);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.cover-full .cover-meta { border-bottom-color: rgba(24, 36, 26, 0.55); }
+.cover-full .cover-body { position: relative; align-items: end; padding: clamp(28px, 4vw, 56px) 0; }
+.cover-full .cover-title { grid-column: 1 / span 6; }
+.cover-full .cover-title .display { font-size: clamp(64px, 11vw, 188px); }
+.cover-full .cover-foot {
+  background: rgba(242, 238, 229, 0.78);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 0 var(--gutter);
+}
+.cover-full .playground { z-index: 3; }
+.cover-full .sticker { box-shadow: 0 20px 34px -16px rgba(24, 36, 26, 0.6); }
+
+@media (max-width: 860px) {
+  .cover-bg img { object-position: 72% 50%; }
+  .cover-bg::after {
+    background:
+      linear-gradient(180deg, rgba(242, 238, 229, 0.85) 0%, rgba(242, 238, 229, 0.3) 30%, rgba(242, 238, 229, 0.15) 55%, rgba(242, 238, 229, 0.92) 100%);
+  }
+  .cover-full .cover-title { grid-column: 1 / -1; }
+  .cover-full .cover-body { align-items: start; }
+  .cover-full .playground { position: relative; inset: auto; height: 300px; grid-column: 1 / -1; margin-top: 12px; }
+  .cover-full .badge { left: auto !important; right: 0; top: auto !important; bottom: -8px; width: 92px; }
+  .cover-full .drag-hint { left: 30% !important; top: 46% !important; }
+  .cover-full .cover-foot { margin: 0 calc(-1 * var(--gutter)); }
+}

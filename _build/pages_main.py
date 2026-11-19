@@ -15,9 +15,12 @@ OBJECTS = [
 
 # 표지 스티커: (파일, 설명, 모양, 너비, 데스크톱 left%, top%, 모바일 left%, top%, 회전, 지연)
 STICKERS = [
-    ("Group 59.png", "초록 방석", "round", "clamp(96px, 8vw, 128px)", 56, 74, 6, 30, -6, 1.2),
-    ("Group 53.png", "구두가 걸린 스툴", "pill", "clamp(80px, 6.4vw, 104px)", 92, 50, 70, 8, 8, 1.35),
-    ("Group 52.png", "덤벨", "soft", "clamp(84px, 7vw, 112px)", 48, 34, 40, 40, -10, 1.5),
+    ("Group 51.png", "의자와 사이드 테이블", "soft", "clamp(100px, 8.6vw, 132px)", 70, 4, 4, 6, -7, 1.1),
+    ("Group 52.png", "덤벨", "soft", "clamp(80px, 6.6vw, 104px)", 50, 26, 34, 40, 9, 1.2),
+    ("Group 53.png", "구두가 걸린 스툴", "pill", "clamp(70px, 5.8vw, 92px)", 91, 38, 72, 2, 8, 1.3),
+    ("Group 54.png", "강아지 인형과 캐리어", "round", "clamp(96px, 8vw, 124px)", 62, 62, 64, 52, -5, 1.4),
+    ("Group 55.png", "라탄 스툴", "pill", "clamp(66px, 5.4vw, 86px)", 82, 70, 38, 6, 12, 1.5),
+    ("Group 59.png", "초록 방석", "round", "clamp(88px, 7.4vw, 116px)", 44, 74, 6, 56, -9, 1.6),
 ]
 
 
@@ -36,30 +39,32 @@ def home():
     )
     body = f"""
     <!-- 표지 -->
-    <section class="cover wrap">
-      <div class="cover-meta meta"><span>Issue No.01 — 2026</span><span>Repair · Record · Care · Circulate</span><span>Seoul</span></div>
-      <div class="grid cover-body">
-        <div class="cover-title">
-          <p class="kicker" data-reveal>patina — participatory design platform</p>
-          <h1 class="display" data-lines><span class="line"><span>Still</span></span><span class="line"><span>in <em>use.</em></span></span></h1>
-          <p class="lede">버려지는 것들이 사라지지 않는 세계를 만듭니다.</p>
-        </div>
-        {fig("./Mask group.png", "초록색으로 칠해진 오래된 테이블", "Cover — Fig. 01", "Table, signature green", ratio="", lazy=False, cls="cover-figure")}
-        <div class="playground" aria-label="끌어서 움직여 볼 수 있는 오브젝트 사진들">
-{stickers}
-          <div class="badge" style="left:52%;top:6%" aria-hidden="true">
-            <svg viewBox="0 0 100 100"><defs><path id="badge-circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text textLength="234" lengthAdjust="spacing"><textPath href="#badge-circle" textLength="234" lengthAdjust="spacing">still in use · still in use · </textPath></text></svg>
-            <b>✳</b>
+    <section class="cover cover-full">
+      <div class="cover-bg" aria-hidden="true"><img src="./Mask group.png" alt="" fetchpriority="high"></div>
+      <div class="wrap cover-inner">
+        <div class="cover-meta meta"><span>Issue No.01 — 2026</span><span>Repair · Record · Care · Circulate</span><span>Cover — Table, signature green</span></div>
+        <div class="grid cover-body">
+          <div class="cover-title">
+            <p class="kicker" data-reveal>patina — participatory design platform</p>
+            <h1 class="display" data-lines><span class="line"><span>Still</span></span><span class="line"><span>in <em>use.</em></span></span></h1>
+            <p class="lede">버려지는 것들이 사라지지 않는 세계를 만듭니다.</p>
           </div>
-          <span class="drag-hint" style="left:44%;top:68%" aria-hidden="true">↻ drag</span>
+          <div class="playground" aria-label="끌어서 움직여 볼 수 있는 오브젝트 사진들">
+{stickers}
+            <div class="badge" style="left:88%;top:2%" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><defs><path id="badge-circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text textLength="234" lengthAdjust="spacing"><textPath href="#badge-circle" textLength="234" lengthAdjust="spacing">still in use · still in use · </textPath></text></svg>
+              <b>✳</b>
+            </div>
+            <span class="drag-hint" style="left:56%;top:52%" aria-hidden="true">↻ drag me</span>
+          </div>
         </div>
+        <nav class="cover-foot" aria-label="이번 호 주요 기사">
+          <a href="./about.html"><span class="no">01</span><span><span class="ttl">About</span><br><span class="kr">시간이 쌓인 사물</span></span></a>
+          <a href="./archive.html"><span class="no">02</span><span><span class="ttl">Archive</span><br><span class="kr">Graft 001—004</span></span></a>
+          <a href="./request.html"><span class="no">03</span><span><span class="ttl">Request</span><br><span class="kr">세 단계의 개입</span></span></a>
+          <a href="./donate.html"><span class="no">04</span><span><span class="ttl">Donate</span><br><span class="kr">Don't throw away</span></span></a>
+        </nav>
       </div>
-      <nav class="cover-foot" aria-label="이번 호 주요 기사">
-        <a href="./about.html"><span class="no">01</span><span><span class="ttl">About</span><br><span class="kr">시간이 쌓인 사물</span></span></a>
-        <a href="./archive.html"><span class="no">02</span><span><span class="ttl">Archive</span><br><span class="kr">Graft 001—004</span></span></a>
-        <a href="./request.html"><span class="no">03</span><span><span class="ttl">Request</span><br><span class="kr">세 단계의 개입</span></span></a>
-        <a href="./donate.html"><span class="no">04</span><span><span class="ttl">Donate</span><br><span class="kr">Don't throw away</span></span></a>
-      </nav>
     </section>
 
     <!-- 선언문 -->
